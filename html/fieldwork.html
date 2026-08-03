@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أثر | عالم الهندسة الكيميائية</title>
+    <link rel="icon" href="../Image/الشعار.png" type="image/png">
+    <!-- Google Fonts: Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="../js/tailwind-config.js"></script>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="flex flex-col min-h-screen text-slate-800">
+
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer group" onclick="navigate('home')">
+                    <img src="../Image/الشعار.png" alt="شعار أثر"
+                        class="h-12 md:h-14 w-auto object-contain ms-2 group-hover:scale-105 transition-transform duration-300 drop-shadow-lg">
+                </div>
+
+                <!-- Menu Button -->
+                <div class="flex items-center">
+                    <button onclick="toggleSideMenu()"
+                        class="text-white hover:text-accent focus:outline-none p-2 transition-colors">
+                        <i class="fa-solid fa-bars-staggered text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- Side Menu Overlay -->
+    <div id="menu-overlay" onclick="toggleSideMenu()"
+        class="fixed inset-0 bg-dark/60 backdrop-blur-sm z-[55] opacity-0 pointer-events-none transition-opacity duration-300">
+    </div>
+
+    <!-- Side Menu Panel -->
+    <div id="side-menu"
+        class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-primary/95 backdrop-blur-2xl z-[60] transform translate-x-full transition-transform duration-300 border-l border-white/10 shadow-2xl flex flex-col">
+        <div class="p-5 flex justify-between items-center border-b border-white/10">
+            <span class="font-black text-2xl text-white">القائمة</span>
+            <button onclick="toggleSideMenu()"
+                class="text-white hover:text-accent p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+        </div>
+        <div class="p-4 space-y-2 overflow-y-auto flex-grow">
+            <button onclick="navigate('home');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-house me-3 w-5 text-center"></i> الرئيسية</button>
+            <button onclick="navigate('about');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-user-graduate me-3 w-5 text-center"></i> عن الهندسة الكيميائية</button>
+            <button onclick="navigate('subjects');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-book-open me-3 w-5 text-center"></i> المواد الدراسية</button>
+            <button onclick="navigate('industries');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-oil-well me-3 w-5 text-center"></i> الصناعات الكيميائية</button>
+            <button onclick="navigate('fields');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-briefcase me-3 w-5 text-center"></i> مجالات العمل</button>
+            <button onclick="navigate('equipment');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-industry me-3 w-5 text-center"></i> المعدات الصناعية</button>
+            <button onclick="navigate('software');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-laptop-code me-3 w-5 text-center"></i> البرامج الهندسية</button>
+            <button onclick="navigate('library');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-book me-3 w-5 text-center"></i> المكتبة</button>
+            <button onclick="navigate('courses');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-certificate me-3 w-5 text-center"></i> الشهادات المهنية
+</button>
+            <button onclick="navigate('fieldwork');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-helmet-safety me-3 w-5 text-center"></i> العمل الميداني</button>
+        </div>
+    </div>
+
+    <main class="flex-grow">
+    <!-- ==================== FIELDWORK VIEW ==================== -->
+        <div id="view-fieldwork" class="view-section pt-32 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Back Button -->
+            <div class="mb-8">
+                <button onclick="navigate('home')"
+                    class="w-12 h-12 flex items-center justify-center bg-white border border-slate-200 text-slate-500 hover:text-secondary hover:border-secondary hover:bg-slate-50 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group"
+                    title="العودة للرئيسية">
+                    <i
+                        class="fa-solid fa-arrow-right-long text-xl transform group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </div>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-primary mb-4">العمل الميداني</h2>
+                <div class="w-24 h-2 bg-secondary rounded-full mx-auto"></div>
+            </div>
+            <!-- Intro & Diagrams -->
+            <div class="mb-16">
+                <div class="flex items-center gap-4 mb-8">
+                    <div
+                        class="w-12 h-12 bg-accent text-white rounded-xl flex items-center justify-center text-2xl shadow-lg">
+                        <i class="fa-solid fa-map-project"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">قراءة المخططات وفهم العملية</h3>
+                </div>
+                <p class="text-slate-600 font-medium mb-8 leading-relaxed text-lg">
+                    من أساسيات عمل المهندس الكيميائي في المصنع قراءة المخططات الهندسية لمعرفة تخطيط المصنع (Layout
+                    Planning) وتوزيع المعدات ومسارات الأنابيب لضمان تدفق العمليات.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div
+                        class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group">
+                        <div
+                            class="absolute -right-10 -top-10 w-32 h-32 bg-slate-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-700 ease-out z-0">
+                        </div>
+                        <div class="relative z-10">
+                            <div class="text-secondary font-black text-2xl mb-2">BFD</div>
+                            <h4 class="font-bold text-slate-800 mb-3">Block Flow Diagram</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed font-medium">يوضح التسلسل العام للعملية
+                                والوحدات الرئيسية في المصنع بشكل مبسط ومباشر.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group">
+                        <div
+                            class="absolute -right-10 -top-10 w-32 h-32 bg-blue-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-700 ease-out z-0">
+                        </div>
+                        <div class="relative z-10">
+                            <div class="text-blue-500 font-black text-2xl mb-2">PFD</div>
+                            <h4 class="font-bold text-slate-800 mb-3">Process Flow Diagram</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed font-medium">يبين تدفق المواد والطاقة بين
+                                وحدات التشغيل المختلفة مع تفاصيل موازنة المادة.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group">
+                        <div
+                            class="absolute -right-10 -top-10 w-32 h-32 bg-indigo-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-700 ease-out z-0">
+                        </div>
+                        <div class="relative z-10">
+                            <div class="text-indigo-600 font-black text-2xl mb-2">P&ID</div>
+                            <h4 class="font-bold text-slate-800 mb-3">Piping & Instrumentation</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed font-medium">يوضح المعدات التفصيلية، مسارات
+                                الأنابيب، الصمامات، وأجهزة القياس والتحكم بدقة.</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="mt-8 bg-gradient-to-r from-slate-100 to-slate-50 border border-slate-200 rounded-2xl p-6 flex items-start sm:items-center gap-5 shadow-sm">
+                    <div
+                        class="w-12 h-12 bg-white rounded-xl shadow text-orange-500 flex items-center justify-center shrink-0 text-2xl">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-lg">إجراءات التشغيل القياسية (SOP)</h4>
+                        <p class="text-slate-600 font-medium mt-1">يتطلب فهم وتشغيل المصنع الإلمام التام بـ (Standard
+                            Operating Procedures) لضمان التشغيل الآمن، الفعال، وتلافي الأخطاء.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Utilities -->
+            <div class="mb-16">
+                <div class="flex items-center gap-4 mb-8">
+                    <div
+                        class="w-12 h-12 bg-emerald-500 text-white rounded-xl flex items-center justify-center text-2xl shadow-lg">
+                        <i class="fa-solid fa-industry"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">خدمات المصنع الأساسية (Utilities)</h3>
+                </div>
+                <p class="text-slate-600 font-medium mb-8 leading-relaxed text-lg">
+                    هي خدمات مساعدة مشتركة ضرورية لتشغيل المعدات بظروف مستقرة وضمان سير العمليات بسلامة وأمان. وهي ليست
+                    مواد خام ولا منتجات نهائية.
+                </p>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-5">
+                    <div
+                        class="bg-white p-6 rounded-2xl border border-slate-100 text-center hover:border-emerald-400 hover:shadow-lg transition-all group">
+                        <i
+                            class="fa-solid fa-temperature-arrow-up text-4xl text-orange-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="font-bold text-slate-800 mb-2">أنظمة البخار</h4>
+                        <p class="text-sm text-slate-500 font-medium">توفير البخار (مشبع وفائق التسخين) لتلبية احتياجات
+                            الحرارة.</p>
+                    </div>
+                    <div
+                        class="bg-white p-6 rounded-2xl border border-slate-100 text-center hover:border-emerald-400 hover:shadow-lg transition-all group">
+                        <i
+                            class="fa-solid fa-droplet text-4xl text-blue-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="font-bold text-slate-800 mb-2">أنظمة المياه</h4>
+                        <p class="text-sm text-slate-500 font-medium">ماء مبرد ومحلول تبريد وماء منزوع الأملاح لدعم
+                            العمليات.</p>
+                    </div>
+                    <div
+                        class="bg-white p-6 rounded-2xl border border-slate-100 text-center hover:border-emerald-400 hover:shadow-lg transition-all group">
+                        <i
+                            class="fa-solid fa-wind text-4xl text-sky-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="font-bold text-slate-800 mb-2">الهواء والنيتروجين</h4>
+                        <p class="text-sm text-slate-500 font-medium">هواء مضغوط لدعم تشغيل المعدات والتحكم بالضغط
+                            بفعالية.</p>
+                    </div>
+                    <div
+                        class="bg-white p-6 rounded-2xl border border-slate-100 text-center hover:border-emerald-400 hover:shadow-lg transition-all group">
+                        <i
+                            class="fa-solid fa-fire text-4xl text-red-500 mb-4 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="font-bold text-slate-800 mb-2">أنظمة الغاز</h4>
+                        <p class="text-sm text-slate-500 font-medium">توفير الغازات اللازمة للعملية أو كوقود مباشر
+                            للمراجل.</p>
+                    </div>
+                    <div
+                        class="bg-white p-6 rounded-2xl border border-slate-100 text-center hover:border-emerald-400 hover:shadow-lg transition-all group">
+                        <i
+                            class="fa-solid fa-bolt text-4xl text-yellow-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="font-bold text-slate-800 mb-2">الكهرباء</h4>
+                        <p class="text-sm text-slate-500 font-medium">تزويد المصنع بالطاقة لتشغيل المعدات وأنظمة التحكم.
+                        </p>
+                    </div>
+                    <div
+                        class="bg-white p-6 rounded-2xl border border-slate-100 text-center hover:border-emerald-400 hover:shadow-lg transition-all group">
+                        <i
+                            class="fa-solid fa-pipe-valve text-4xl text-slate-600 mb-4 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="font-bold text-slate-800 mb-2">الصرف الصناعي</h4>
+                        <p class="text-sm text-slate-500 font-medium">إدارة ومعالجة المياه العادمة لضمان سلامة البيئة.
+                        </p>
+                    </div>
+                    <div
+                        class="bg-white p-6 rounded-2xl border border-slate-100 text-center hover:border-emerald-400 hover:shadow-lg transition-all group">
+                        <i
+                            class="fa-solid fa-fire-burner text-4xl text-zinc-500 mb-4 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="font-bold text-slate-800 mb-2">التنفيس والشعلة</h4>
+                        <p class="text-sm text-slate-500 font-medium">التخلص الآمن من الهيدروكربونات الزائدة والضغط
+                            لتجنب المخاطر.</p>
+                    </div>
+                    <div
+                        class="bg-white p-6 rounded-2xl border border-slate-100 text-center hover:border-emerald-400 hover:shadow-lg transition-all group">
+                        <i
+                            class="fa-solid fa-snowflake text-4xl text-cyan-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="font-bold text-slate-800 mb-2">التبريد</h4>
+                        <p class="text-sm text-slate-500 font-medium">توفير التبريد المطلوب لحفظ المواد في درجات حرارة
+                            منخفضة.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Operations Monitoring -->
+            <div class="mb-16">
+                <div class="flex items-center gap-4 mb-8">
+                    <div
+                        class="w-12 h-12 bg-purple-500 text-white rounded-xl flex items-center justify-center text-2xl shadow-lg">
+                        <i class="fa-solid fa-desktop"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">متابعة تشغيل المصنع ومراقبة البيانات</h3>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div
+                        class="bg-white p-8 md:p-10 rounded-[2rem] border border-slate-100 shadow-sm relative overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 w-2 h-full bg-gradient-to-b from-emerald-400 via-blue-500 to-red-500">
+                        </div>
+                        <h4 class="font-black text-2xl text-slate-800 mb-8">مراحل التشغيل الأساسية</h4>
+                        <ul class="space-y-6">
+                            <li class="flex items-start gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center shrink-0 mt-1">
+                                    <i class="fa-solid fa-play"></i></div>
+                                <div>
+                                    <h5 class="font-bold text-slate-800 text-lg">بدء التشغيل (Startup)</h5>
+                                    <p class="text-slate-500 font-medium leading-relaxed mt-1">تشغيل المصنع أو الوحدة
+                                        خطوة بخطوة وفق الإجراءات القياسية لضمان الدخول في حالة الاستقرار بأمان.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-blue-50 text-blue-500 flex items-center justify-center shrink-0 mt-1">
+                                    <i class="fa-solid fa-spinner fa-spin"></i></div>
+                                <div>
+                                    <h5 class="font-bold text-slate-800 text-lg">التشغيل المستمر (Steady-State)</h5>
+                                    <p class="text-slate-500 font-medium leading-relaxed mt-1">متابعة أداء المصنع أثناء
+                                        التشغيل المستمر ومراقبة العمليات بشكل لحظي للحفاظ على جودة المنتج.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-red-50 text-red-500 flex items-center justify-center shrink-0 mt-1">
+                                    <i class="fa-solid fa-power-off"></i></div>
+                                <div>
+                                    <h5 class="font-bold text-slate-800 text-lg">إيقاف التشغيل (Shutdown)</h5>
+                                    <p class="text-slate-500 font-medium leading-relaxed mt-1">إيقاف المصنع أو الوحدة
+                                        بشكل آمن ومدروس لتجنب أي أضرار بالمعدات أو البيئة.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-900 p-8 md:p-10 rounded-[2rem] border border-slate-800 shadow-xl text-white">
+                        <h4 class="font-black text-2xl mb-8 flex items-center gap-3"><i
+                                class="fa-solid fa-chart-line text-accent"></i> البيانات التشغيلية</h4>
+                        <p class="text-slate-400 font-medium mb-6 leading-relaxed">تمثل البيانات التشغيلية الأساس
+                            لاكتشاف الانحرافات قبل الفشل، وتحسين الأداء، واستهلاك الطاقة.</p>
+
+                        <div class="flex flex-wrap gap-3 mb-8">
+                            <span
+                                class="px-4 py-2 bg-white/10 text-white rounded-xl text-sm font-bold border border-white/5 shadow-inner">الحرارة
+                                والضغط</span>
+                            <span
+                                class="px-4 py-2 bg-white/10 text-white rounded-xl text-sm font-bold border border-white/5 shadow-inner">معدلات
+                                التدفق</span>
+                            <span
+                                class="px-4 py-2 bg-white/10 text-white rounded-xl text-sm font-bold border border-white/5 shadow-inner">استهلاك
+                                الطاقة</span>
+                            <span
+                                class="px-4 py-2 bg-white/10 text-white rounded-xl text-sm font-bold border border-white/5 shadow-inner">جودة
+                                المنتج</span>
+                        </div>
+
+                        <h5 class="font-bold text-accent mb-4 text-sm uppercase tracking-wider">مصادر جمع البيانات:</h5>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-slate-300 font-medium">
+                            <li class="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/5"><i
+                                    class="fa-solid fa-microchip text-secondary"></i> الأجهزة الميدانية</li>
+                            <li class="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/5"><i
+                                    class="fa-solid fa-server text-secondary"></i> أنظمة DCS & PLC</li>
+                            <li class="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/5"><i
+                                    class="fa-solid fa-display text-secondary"></i> المنصات (SCADA)</li>
+                            <li class="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/5"><i
+                                    class="fa-solid fa-clipboard-list text-secondary"></i> سجلات الصيانة</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Failures and Shutdowns -->
+            <div class="mb-16">
+                <div class="flex items-center gap-4 mb-8">
+                    <div
+                        class="w-12 h-12 bg-red-500 text-white rounded-xl flex items-center justify-center text-2xl shadow-lg">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">الأعطال والتوقفات في المصانع</h3>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Failures -->
+                    <div>
+                        <h4 class="font-bold text-xl text-slate-800 mb-5">مسببات التوقف المفاجئ</h4>
+                        <div class="space-y-4">
+                            <div
+                                class="bg-white p-5 rounded-2xl border-r-4 border-r-slate-400 shadow-sm border border-slate-100 flex gap-4">
+                                <i class="fa-solid fa-gears text-slate-400 text-2xl mt-1"></i>
+                                <div>
+                                    <h5 class="font-bold text-slate-800">أعطال ميكانيكية</h5>
+                                    <p class="text-sm text-slate-500 font-medium mt-1 leading-relaxed">تآكل أو تلف
+                                        الأجزاء المتحركة، فشل المضخات، الصمامات، وعدم الصيانة الدورية.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-white p-5 rounded-2xl border-r-4 border-r-blue-400 shadow-sm border border-slate-100 flex gap-4">
+                                <i class="fa-solid fa-gauge-high text-blue-400 text-2xl mt-1"></i>
+                                <div>
+                                    <h5 class="font-bold text-slate-800">مشاكل القياس والتحكم</h5>
+                                    <p class="text-sm text-slate-500 font-medium mt-1 leading-relaxed">تعطل الحساسات
+                                        (Sensor failure)، وفقدان الإشارات أو التشويش (Signal loss/noise).</p>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-white p-5 rounded-2xl border-r-4 border-r-orange-400 shadow-sm border border-slate-100 flex gap-4">
+                                <i class="fa-solid fa-flask-vial text-orange-400 text-2xl mt-1"></i>
+                                <div>
+                                    <h5 class="font-bold text-slate-800">مشاكل تشغيلية بالعملية</h5>
+                                    <p class="text-sm text-slate-500 font-medium mt-1 leading-relaxed">التوسخ والترسبات
+                                        (Fouling)، تلوث المواد، وضعف انتقال الحرارة أو الكتلة.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-white p-5 rounded-2xl border-r-4 border-r-red-400 shadow-sm border border-slate-100 flex gap-4">
+                                <i class="fa-solid fa-users text-red-400 text-2xl mt-1"></i>
+                                <div>
+                                    <h5 class="font-bold text-slate-800">الأخطاء البشرية</h5>
+                                    <p class="text-sm text-slate-500 font-medium mt-1 leading-relaxed">تجاوز أو إهمال
+                                        خطوات التشغيل المعتمدة، وسوء التواصل (Miscommunication) بين الطاقم.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shutdowns -->
+                    <div>
+                        <h4 class="font-bold text-xl text-slate-800 mb-5">أنواع التوقفات (Shutdowns)</h4>
+                        <div class="space-y-4">
+                            <div
+                                class="bg-red-50 p-5 rounded-2xl border border-red-100 transition-colors hover:bg-red-100">
+                                <h5 class="font-bold text-red-700 flex items-center gap-3 text-lg"><i
+                                        class="fa-solid fa-circle-radiation"></i> التوقف المفاجئ الطارئ (ESD)</h5>
+                                <p class="text-sm text-red-600 font-medium mt-2 leading-relaxed">يحدث عند وجود خطر مباشر
+                                    وحرج على السلامة أو البيئة أو المعدات، ويُنفذ نظامياً لتفادي الكوارث.</p>
+                            </div>
+                            <div
+                                class="bg-orange-50 p-5 rounded-2xl border border-orange-100 transition-colors hover:bg-orange-100">
+                                <h5 class="font-bold text-orange-700 flex items-center gap-3 text-lg"><i
+                                        class="fa-solid fa-plug-circle-xmark"></i> توقف العملية (Sudden Process)</h5>
+                                <p class="text-sm text-orange-600 font-medium mt-2 leading-relaxed">انقطاع غير متوقع في
+                                    سير العملية بسبب أعطال ميكانيكية مفاجئة، أخطاء بشرية، أو فشل أجهزة القياس.</p>
+                            </div>
+                            <div
+                                class="bg-emerald-50 p-5 rounded-2xl border border-emerald-100 transition-colors hover:bg-emerald-100">
+                                <h5 class="font-bold text-emerald-700 flex items-center gap-3 text-lg"><i
+                                        class="fa-solid fa-calendar-check"></i> التوقف المخطط (Planned)</h5>
+                                <p class="text-sm text-emerald-600 font-medium mt-2 leading-relaxed">توقف مؤقت ومجدول
+                                    مسبقاً لأغراض الصيانة الدورية، التفتيش الشامل، أو ترقية أنظمة المصنع.</p>
+                            </div>
+                            <div
+                                class="bg-yellow-50 p-5 rounded-2xl border border-yellow-100 transition-colors hover:bg-yellow-100">
+                                <h5 class="font-bold text-yellow-700 flex items-center gap-3 text-lg"><i
+                                        class="fa-solid fa-temperature-arrow-down"></i> التباطؤ (Slowdown)</h5>
+                                <p class="text-sm text-yellow-700 font-medium mt-2 leading-relaxed">انخفاض تدريجي في
+                                    الإنتاج، ويعتبر إنذاراً مبكراً لأعطال أكبر إذا لم يُعالج، قبل أن يتحول لتوقف كامل.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Maintenance & RCA -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Maintenance Types -->
+                <div class="bg-white p-8 md:p-10 rounded-[2rem] border border-slate-100 shadow-md">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-slate-800">أنواع الصيانة</h3>
+                    </div>
+
+                    <div class="mb-8 relative pl-6">
+                        <div class="absolute right-0 top-0 w-1 h-full bg-emerald-500 rounded-full"></div>
+                        <h4 class="font-bold text-xl text-slate-800 mb-2 mr-4">الصيانة الوقائية (Preventive)</h4>
+                        <p class="text-slate-500 font-medium leading-relaxed mr-4 mb-4">هي صيانة مجدولة تُنفذ قبل حدوث
+                            الأعطال للحفاظ على موثوقية المعدات وإطالة عمرها وتقليل التوقفات. تنفذ غالباً في أوقات التوقف
+                            المخطط.</p>
+                        <div class="mr-4 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <h6 class="font-bold text-slate-700 text-sm mb-2">أمثلة:</h6>
+                            <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
+                                <li>تنظيف المبادلات الحرارية.</li>
+                                <li>معايرة أجهزة القياس لضمان دقتها.</li>
+                                <li>الفحص الدوري للمضخات والضواغط.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-6">
+                        <div class="absolute right-0 top-0 w-1 h-full bg-orange-500 rounded-full"></div>
+                        <h4 class="font-bold text-xl text-slate-800 mb-2 mr-4">الصيانة التصحيحية (Corrective)</h4>
+                        <p class="text-slate-500 font-medium leading-relaxed mr-4 mb-4">هي صيانة تُنفذ بعد اكتشاف خلل أو
+                            عطل مفاجئ بهدف إعادة المعدة إلى حالتها التشغيلية الطبيعية. تأتي غالباً بعد توقف غير مخطط.
+                        </p>
+                        <div class="mr-4 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <h6 class="font-bold text-slate-700 text-sm mb-2">أمثلة:</h6>
+                            <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
+                                <li>إصلاح تسرب في خطوط الأنابيب.</li>
+                                <li>استبدال محرك مضخة محترق.</li>
+                                <li>تغيير صمام تالف لا يعمل.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RCA -->
+                <div
+                    class="bg-gradient-to-br from-slate-900 to-slate-800 p-8 md:p-10 rounded-[2rem] border border-slate-700 shadow-xl text-white relative overflow-hidden">
+                    <i class="fa-solid fa-magnifying-glass-chart absolute -left-10 -bottom-10 text-9xl opacity-5"></i>
+                    <div class="flex items-center gap-4 mb-6 relative z-10">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-accent text-white flex items-center justify-center text-xl shadow-lg shadow-accent/20">
+                            <i class="fa-solid fa-sitemap"></i>
+                        </div>
+                        <h3 class="text-2xl font-black">تحليل الأسباب الجذرية (RCA)</h3>
+                    </div>
+                    <p class="text-slate-300 font-medium mb-8 leading-relaxed relative z-10">عند وقوع المشاكل أو توقف
+                        العمليات، يتطلب الأمر تحليلاً نظامياً شاملاً للوصول للسبب الأساسي والجذري للمشكلة ومنع تكرارها.
+                    </p>
+
+                    <div class="space-y-6 relative z-10">
+                        <div
+                            class="flex gap-5 items-start bg-white/5 p-5 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors">
+                            <div
+                                class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center font-black text-accent shrink-0 border border-accent/30 text-xl">
+                                1</div>
+                            <div>
+                                <h5 class="font-bold text-lg text-white mb-1">طريقة لماذا؟ الـ 5 (5 Whys)</h5>
+                                <p class="text-sm text-slate-400 font-medium leading-relaxed">طريقة بسيطة تعتمد على طرح
+                                    سؤال "لماذا؟" خمس مرات متتالية للوصول للسبب الأساسي وليس مجرد علاج الأعراض الظاهرية.
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex gap-5 items-start bg-white/5 p-5 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors">
+                            <div
+                                class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center font-black text-accent shrink-0 border border-accent/30 text-xl">
+                                2</div>
+                            <div>
+                                <h5 class="font-bold text-lg text-white mb-1">مخطط عظم السمكة (Ishikawa)</h5>
+                                <p class="text-sm text-slate-400 font-medium leading-relaxed">طريقة منظمة لتصنيف وتحليل
+                                    كل الأسباب المحتملة للمشكلة تحت فئات واضحة: (المعدات، المواد، الأشخاص، العمليات،
+                                    البيئة).</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex gap-5 items-start bg-white/5 p-5 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors">
+                            <div
+                                class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center font-black text-accent shrink-0 border border-accent/30 text-xl">
+                                3</div>
+                            <div>
+                                <h5 class="font-bold text-lg text-white mb-1">تحليل شجرة الأعطال (FTA)</h5>
+                                <p class="text-sm text-slate-400 font-medium leading-relaxed">طريقة رسومية منطقية تبدأ
+                                    بالمشكلة أو الحدث المسبب للتوقف الرئيسي، وتتفرع لأسباب فرعية وصولاً للمسبب الجذري.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </main>
+
+    <footer class="bg-dark text-slate-400 py-12 mt-auto border-t-4 border-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex justify-center mb-6 cursor-pointer group" onclick="navigate('home')">
+                <img src="../Image/الشعار.png" alt="شعار أثر"
+                    class="h-20 md:h-24 w-auto object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <p class="font-medium max-w-md mx-auto mb-8">منصتك التعليمية الأقوى لاستكشاف الهندسة الكيميائية بأحدث الطرق
+                التفاعلية وبدون تعقيد.</p>
+
+            <!-- Social Icons -->
+            <p class="text-lg font-bold text-slate-300 mb-4">للتواصل معنا:</p>
+            <div class="flex justify-center items-center gap-4 mb-8">
+                <a href="https://wa.me/+966539899496?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D9%84%D8%AF%D9%8A%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D9%85%D9%86%20%D8%AE%D9%84%D8%A7%D9%84%20%D9%85%D9%88%D9%82%D8%B9%20%D8%A3%D8%AB%D8%B1." target="_blank"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-[#25D366] text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-green-500/20 group"
+                    title="تواصل عبر واتساب">
+                    <i class="fa-brands fa-whatsapp text-2xl group-hover:-rotate-12 transition-transform"></i>
+                </a>
+                <a href="mailto:AtheerBaessa@gmail.com"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-secondary text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-secondary/20 group"
+                    title="راسلنا عبر الإيميل">
+                    <i class="fa-regular fa-envelope text-2xl group-hover:rotate-12 transition-transform"></i>
+                </a>
+            </div>
+
+            <div class="text-sm font-bold text-slate-500 pt-8 border-t border-slate-800/50 max-w-md mx-auto">
+                &copy; 2026 جميع الحقوق محفوظة لمنصة أثر.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Toast Message Container -->
+    <div id="toast-container">
+        <i class="fa-solid fa-circle-info text-accent text-xl"></i>
+        <span id="toast-message" class="font-bold"></span>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

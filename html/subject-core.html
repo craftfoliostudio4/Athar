@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أثر | عالم الهندسة الكيميائية</title>
+    <link rel="icon" href="../Image/الشعار.png" type="image/png">
+    <!-- Google Fonts: Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="../js/tailwind-config.js"></script>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="flex flex-col min-h-screen text-slate-800">
+
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer group" onclick="navigate('home')">
+                    <img src="../Image/الشعار.png" alt="شعار أثر"
+                        class="h-12 md:h-14 w-auto object-contain ms-2 group-hover:scale-105 transition-transform duration-300 drop-shadow-lg">
+                </div>
+
+                <!-- Menu Button -->
+                <div class="flex items-center">
+                    <button onclick="toggleSideMenu()"
+                        class="text-white hover:text-accent focus:outline-none p-2 transition-colors">
+                        <i class="fa-solid fa-bars-staggered text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- Side Menu Overlay -->
+    <div id="menu-overlay" onclick="toggleSideMenu()"
+        class="fixed inset-0 bg-dark/60 backdrop-blur-sm z-[55] opacity-0 pointer-events-none transition-opacity duration-300">
+    </div>
+
+    <!-- Side Menu Panel -->
+    <div id="side-menu"
+        class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-primary/95 backdrop-blur-2xl z-[60] transform translate-x-full transition-transform duration-300 border-l border-white/10 shadow-2xl flex flex-col">
+        <div class="p-5 flex justify-between items-center border-b border-white/10">
+            <span class="font-black text-2xl text-white">القائمة</span>
+            <button onclick="toggleSideMenu()"
+                class="text-white hover:text-accent p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+        </div>
+        <div class="p-4 space-y-2 overflow-y-auto flex-grow">
+            <button onclick="navigate('home');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-house me-3 w-5 text-center"></i> الرئيسية</button>
+            <button onclick="navigate('about');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-user-graduate me-3 w-5 text-center"></i> عن الهندسة الكيميائية</button>
+            <button onclick="navigate('subjects');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-book-open me-3 w-5 text-center"></i> المواد الدراسية</button>
+            <button onclick="navigate('industries');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-oil-well me-3 w-5 text-center"></i> الصناعات الكيميائية</button>
+            <button onclick="navigate('fields');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-briefcase me-3 w-5 text-center"></i> مجالات العمل</button>
+            <button onclick="navigate('equipment');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-industry me-3 w-5 text-center"></i> المعدات الصناعية</button>
+            <button onclick="navigate('software');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-laptop-code me-3 w-5 text-center"></i> البرامج الهندسية</button>
+            <button onclick="navigate('library');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-book me-3 w-5 text-center"></i> المكتبة</button>
+            <button onclick="navigate('courses');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-certificate me-3 w-5 text-center"></i> الشهادات المهنية
+</button>
+            <button onclick="navigate('fieldwork');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-helmet-safety me-3 w-5 text-center"></i> العمل الميداني</button>
+        </div>
+    </div>
+
+        <main class="flex-grow">
+        <div id="view-subject-core" class="view-section active pt-32 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-8">
+                <button onclick="navigate('subjects')"
+                    class="w-12 h-12 flex items-center justify-center bg-white border border-slate-200 text-slate-500 hover:text-secondary hover:border-secondary hover:bg-slate-50 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group"
+                    title="العودة للمواد الدراسية">
+                    <i class="fa-solid fa-arrow-right-long text-xl transform group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </div>
+            
+            <div class="text-center mb-16">
+                <div class="w-20 h-20 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center text-4xl mx-auto mb-6 shadow-sm">
+                    <i class="fa-solid fa-atom"></i>
+                </div>
+                <h2 class="text-4xl font-black text-slate-800 mb-4">المواد الأساسية في التخصص</h2>
+                <div class="w-24 h-2 bg-blue-500 rounded-full mx-auto"></div>
+                <p class="text-lg text-slate-600 font-medium max-w-2xl mx-auto mt-6">المقررات الجوهرية التي تشكل العصب الأساسي لفهم وتطبيق الهندسة الكيميائية.</p>
+            </div>
+
+            <!-- Subject 1 -->
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm mb-8">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center text-3xl shadow-inner">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <h3 class="text-3xl font-black text-slate-800">موازنة المادة والطاقة</h3>
+                </div>
+                <p class="text-slate-600 font-medium leading-relaxed mb-8 text-lg">
+                    تُعد موازنة المادة والطاقة أول مادة تخصصية في الهندسة الكيميائية، وتهدف إلى تطبيق قوانين حفظ الكتلة والطاقة لتحليل العمليات الصناعية، وحساب كميات المواد والطاقة الداخلة والخارجة من المعدات والأنظمة الكيميائية.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- الأهداف -->
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <h4 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-bullseye text-blue-500"></i> الأهداف</h4>
+                        <ul class="space-y-2 text-slate-600 font-medium">
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i><span>فهم قانون حفظ المادة والطاقة.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i><span>إجراء موازنة المادة والطاقة للعمليات المختلفة.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i><span>تحليل تدفقات المواد داخل المصانع.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i><span>بناء الأساس لبقية مواد الهندسة الكيميائية.</span></li>
+                        </ul>
+                    </div>
+                    <!-- الموضوعات -->
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <h4 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-list text-blue-500"></i> الموضوعات الرئيسية</h4>
+                        <ul class="space-y-2 text-slate-600 font-medium">
+                            <li class="flex gap-2"><i class="fa-solid fa-angle-left text-blue-500 mt-1"></i><span>الوحدات والتحويلات.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-angle-left text-blue-500 mt-1"></i><span>العمليات المستقرة وغير المستقرة.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-angle-left text-blue-500 mt-1"></i><span>موازنة المادة وموازنة الطاقة.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-angle-left text-blue-500 mt-1"></i><span>عمليات الخلط والفصل.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-angle-left text-blue-500 mt-1"></i><span>العمليات ذات التفاعل الكيميائي.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-angle-left text-blue-500 mt-1"></i><span>(Recycle), (Bypass), (Purge).</span></li>
+                        </ul>
+                    </div>
+                    <!-- التطبيق -->
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <h4 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-industry text-blue-500"></i> أين تُطبق؟</h4>
+                        <div class="mb-4">
+                            <strong class="text-slate-700 block mb-2">العمليات:</strong>
+                            <ul class="space-y-1 text-slate-600 font-medium text-sm">
+                                <li class="flex gap-2"><i class="fa-solid fa-gears text-slate-400 mt-1"></i><span>الخلط، التسخين والتبريد.</span></li>
+                                <li class="flex gap-2"><i class="fa-solid fa-gears text-slate-400 mt-1"></i><span>التقطير، التبخير، التجفيف.</span></li>
+                                <li class="flex gap-2"><i class="fa-solid fa-gears text-slate-400 mt-1"></i><span>التفاعلات الكيميائية.</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong class="text-slate-700 block mb-2">المعدات:</strong>
+                            <ul class="space-y-1 text-slate-600 font-medium text-sm">
+                                <li class="flex gap-2"><i class="fa-solid fa-wrench text-slate-400 mt-1"></i><span>المفاعلات، المبادلات الحرارية.</span></li>
+                                <li class="flex gap-2"><i class="fa-solid fa-wrench text-slate-400 mt-1"></i><span>أبراج التقطير، الخزانات، الخلاطات.</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subject 2 -->
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm mb-8">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center text-3xl shadow-inner">
+                        <i class="fa-solid fa-fire-flame-curved"></i>
+                    </div>
+                    <h3 class="text-3xl font-black text-slate-800">الديناميكا الحرارية</h3>
+                </div>
+                <p class="text-slate-600 font-medium leading-relaxed mb-8 text-lg">
+                    تدرس العلاقة بين الحرارة والشغل والطاقة، وسلوك المواد في مختلف الظروف، وتوضح كيفية انتقال الطاقة وتحولها داخل العمليات الكيميائية.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <h4 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-bullseye text-blue-500"></i> الأهداف</h4>
+                        <ul class="space-y-2 text-slate-600 font-medium">
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i><span>فهم قوانين الديناميكا الحرارية.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i><span>دراسة خواص الموائع.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i><span>تحليل اتزان الأطوار.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i><span>حساب الطاقة في العمليات.</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <h4 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-list text-blue-500"></i> الموضوعات الرئيسية</h4>
+                        <ul class="space-y-2 text-slate-600 font-medium">
+                            <li class="flex gap-2"><i class="fa-solid fa-angle-left text-blue-500 mt-1"></i><span>القانون الأول والثاني للديناميكا الحرارية.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-angle-left text-blue-500 mt-1"></i><span>الإنثالبي والإنتروبي.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-angle-left text-blue-500 mt-1"></i><span>اتزان الأطوار.</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <h4 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-industry text-blue-500"></i> أين تُطبق؟</h4>
+                        <div class="mb-4">
+                            <strong class="text-slate-700 block mb-2">العمليات:</strong>
+                            <ul class="space-y-1 text-slate-600 font-medium text-sm">
+                                <li class="flex gap-2"><i class="fa-solid fa-gears text-slate-400 mt-1"></i><span>تسخين وتبريد الموائع، التبخير والتكثيف.</span></li>
+                                <li class="flex gap-2"><i class="fa-solid fa-gears text-slate-400 mt-1"></i><span>التقطير، التفاعلات الماصة والطاردة للحرارة.</span></li>
+                                <li class="flex gap-2"><i class="fa-solid fa-gears text-slate-400 mt-1"></i><span>إنتاج البخار، أنظمة التبريد والتكييف.</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong class="text-slate-700 block mb-2">المعدات:</strong>
+                            <ul class="space-y-1 text-slate-600 font-medium text-sm">
+                                <li class="flex gap-2"><i class="fa-solid fa-wrench text-slate-400 mt-1"></i><span>المبادلات الحرارية، الغلايات، المكثفات.</span></li>
+                                <li class="flex gap-2"><i class="fa-solid fa-wrench text-slate-400 mt-1"></i><span>المبخرات، الأفران الصناعية، التوربينات.</span></li>
+                                <li class="flex gap-2"><i class="fa-solid fa-wrench text-slate-400 mt-1"></i><span>الضواغط، المضخات، صمامات خفض الضغط.</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subject 3 -->
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm mb-8">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center text-3xl shadow-inner">
+                        <i class="fa-solid fa-water"></i>
+                    </div>
+                    <h3 class="text-3xl font-black text-slate-800">انتقال الزخم (ميكانيكا الموائع)</h3>
+                </div>
+                <p class="text-slate-600 font-medium leading-relaxed mb-8 text-lg">
+                    يدرس حركة الموائع والقوى المؤثرة عليها، ويُعد أساس تصميم أنظمة نقل السوائل والغازات داخل المصانع.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <h4 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-bullseye text-blue-500"></i> الأهداف</h4>
+                        <ul class="space-y-2 text-slate-600 font-medium">
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i><span>فهم حركة الموائع.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i><span>حساب الفقد في الضغط.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i><span>تصميم أنظمة الأنابيب.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i><span>اختيار المضخات.</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <h4 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-list text-blue-500"></i> الموضوعات الرئيسية</h4>
+                        <ul class="space-y-2 text-slate-600 font-medium">
+                            <li class="flex gap-2"><i class="fa-solid fa-angle-left text-blue-500 mt-1"></i><span>خصائص الموائع.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-angle-left text-blue-500 mt-1"></i><span>معادلة برنولي.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-angle-left text-blue-500 mt-1"></i><span>الفقد في الضغط والجريان داخل الأنابيب.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-angle-left text-blue-500 mt-1"></i><span>المضخات وعدادات التدفق.</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <h4 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-industry text-blue-500"></i> أين تُطبق؟</h4>
+                        <div class="mb-4">
+                            <strong class="text-slate-700 block mb-2">العمليات:</strong>
+                            <ul class="space-y-1 text-slate-600 font-medium text-sm">
+                                <li class="flex gap-2"><i class="fa-solid fa-gears text-slate-400 mt-1"></i><span>نقل السوائل والغازات.</span></li>
+                                <li class="flex gap-2"><i class="fa-solid fa-gears text-slate-400 mt-1"></i><span>الجريان داخل الأنابيب وحساب فاقد الضغط.</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong class="text-slate-700 block mb-2">المعدات:</strong>
+                            <ul class="space-y-1 text-slate-600 font-medium text-sm">
+                                <li class="flex gap-2"><i class="fa-solid fa-wrench text-slate-400 mt-1"></i><span>المضخات، الضواغط.</span></li>
+                                <li class="flex gap-2"><i class="fa-solid fa-wrench text-slate-400 mt-1"></i><span>الأنابيب، الصمامات.</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subject 4 -->
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm mb-8">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center text-3xl shadow-inner">
+                        <i class="fa-solid fa-temperature-arrow-up"></i>
+                    </div>
+                    <h3 class="text-3xl font-black text-slate-800">انتقال الحرارة</h3>
+                </div>
+                <p class="text-slate-600 font-medium leading-relaxed mb-8 text-lg">
+                    تدرس هذه المادة آليات انتقال الطاقة الحرارية بين الأجسام والموائع، وتوضح كيفية حساب وتحليل وتصميم أنظمة نقل الحرارة في العمليات الصناعية.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <h4 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-bullseye text-blue-500"></i> الأهداف</h4>
+                        <ul class="space-y-2 text-slate-600 font-medium">
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i><span>فهم آليات انتقال الحرارة المختلفة.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i><span>تحليل معدلات انتقال الحرارة.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i><span>تصميم وتحليل المبادلات الحرارية.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i><span>تحسين كفاءة استخدام الطاقة.</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <h4 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-list text-blue-500"></i> الموضوعات الرئيسية</h4>
+                        <ul class="space-y-2 text-slate-600 font-medium">
+                            <li class="flex gap-2"><i class="fa-solid fa-angle-left text-blue-500 mt-1"></i><span>التوصيل، الحمل، والإشعاع الحراري.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-angle-left text-blue-500 mt-1"></i><span>المبادلات الحرارية.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-angle-left text-blue-500 mt-1"></i><span>الغليان والتكثيف.</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <h4 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-industry text-blue-500"></i> أين تُطبق؟</h4>
+                        <div class="mb-4">
+                            <strong class="text-slate-700 block mb-2">العمليات:</strong>
+                            <ul class="space-y-1 text-slate-600 font-medium text-sm">
+                                <li class="flex gap-2"><i class="fa-solid fa-gears text-slate-400 mt-1"></i><span>التسخين، التبريد، التبخير، التكثيف.</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong class="text-slate-700 block mb-2">المعدات:</strong>
+                            <ul class="space-y-1 text-slate-600 font-medium text-sm">
+                                <li class="flex gap-2"><i class="fa-solid fa-wrench text-slate-400 mt-1"></i><span>المبادلات الحرارية، الغلايات.</span></li>
+                                <li class="flex gap-2"><i class="fa-solid fa-wrench text-slate-400 mt-1"></i><span>المكثفات، المبخرات.</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subject 5 -->
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm mb-8">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center text-3xl shadow-inner">
+                        <i class="fa-solid fa-share-nodes"></i>
+                    </div>
+                    <h3 class="text-3xl font-black text-slate-800">انتقال الكتلة</h3>
+                </div>
+                <p class="text-slate-600 font-medium leading-relaxed mb-8 text-lg">
+                    تدرس هذه المادة انتقال المواد بين الأطوار المختلفة نتيجة فروق التركيز، وتُعد الأساس العلمي لمعظم عمليات الفصل في الهندسة الكيميائية.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <h4 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-bullseye text-blue-500"></i> الأهداف</h4>
+                        <ul class="space-y-2 text-slate-600 font-medium">
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i><span>فهم آليات انتقال الكتلة.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i><span>تحليل معدلات الانتشار.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i><span>دراسة انتقال المادة بين الأطوار.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i><span>تطبيق مبادئ انتقال الكتلة في تصميم عمليات الفصل.</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <h4 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-list text-blue-500"></i> الموضوعات الرئيسية</h4>
+                        <ul class="space-y-2 text-slate-600 font-medium">
+                            <li class="flex gap-2"><i class="fa-solid fa-angle-left text-blue-500 mt-1"></i><span>الانتشار الجزيئي، الانتقال بالحمل.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-angle-left text-blue-500 mt-1"></i><span>معاملات انتقال الكتلة.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-angle-left text-blue-500 mt-1"></i><span>الانتقال بين الأطوار، ونظريات انتقال الكتلة.</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <h4 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-industry text-blue-500"></i> أين تُطبق؟</h4>
+                        <div class="mb-4">
+                            <strong class="text-slate-700 block mb-2">العمليات:</strong>
+                            <ul class="space-y-1 text-slate-600 font-medium text-sm">
+                                <li class="flex gap-2"><i class="fa-solid fa-gears text-slate-400 mt-1"></i><span>عمليات الفصل مثل التقطير والامتصاص.</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subject 6 -->
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm mb-8">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center text-3xl shadow-inner">
+                        <i class="fa-solid fa-filter"></i>
+                    </div>
+                    <h3 class="text-3xl font-black text-slate-800">عمليات الفصل</h3>
+                </div>
+                <p class="text-slate-600 font-medium leading-relaxed mb-8 text-lg">
+                    تتناول هذه المادة المبادئ والطرق المستخدمة لفصل مكونات المخاليط اعتماداً على اختلاف خواصها الفيزيائية أو الكيميائية، وهي من أهم العمليات في الصناعات الكيميائية.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <h4 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-bullseye text-blue-500"></i> الأهداف</h4>
+                        <ul class="space-y-2 text-slate-600 font-medium">
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i><span>فهم مبادئ عمليات الفصل واختيار التقنية المناسبة.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i><span>تصميم وتحليل وحدات الفصل.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i><span>تحسين كفاءة عمليات الفصل.</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <h4 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-list text-blue-500"></i> الموضوعات الرئيسية</h4>
+                        <ul class="space-y-2 text-slate-600 font-medium">
+                            <li class="flex gap-2"><i class="fa-solid fa-angle-left text-blue-500 mt-1"></i><span>التقطير، الامتصاص، الاستخلاص.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-angle-left text-blue-500 mt-1"></i><span>الامتزاز، التجفيف.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-angle-left text-blue-500 mt-1"></i><span>الترشيح، الأغشية.</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <h4 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-industry text-blue-500"></i> أين تُطبق؟</h4>
+                        <div class="mb-4">
+                            <strong class="text-slate-700 block mb-2">العمليات:</strong>
+                            <ul class="space-y-1 text-slate-600 font-medium text-sm">
+                                <li class="flex gap-2"><i class="fa-solid fa-gears text-slate-400 mt-1"></i><span>التقطير، الامتصاص، الاستخلاص، الترشيح، التجفيف.</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong class="text-slate-700 block mb-2">المعدات:</strong>
+                            <ul class="space-y-1 text-slate-600 font-medium text-sm">
+                                <li class="flex gap-2"><i class="fa-solid fa-wrench text-slate-400 mt-1"></i><span>أبراج التقطير والامتصاص.</span></li>
+                                <li class="flex gap-2"><i class="fa-solid fa-wrench text-slate-400 mt-1"></i><span>وحدات الاستخلاص، المرشحات، المجففات.</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subject 7 -->
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm mb-8">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center text-3xl shadow-inner">
+                        <i class="fa-solid fa-flask-vial"></i>
+                    </div>
+                    <h3 class="text-3xl font-black text-slate-800">هندسة التفاعلات الكيميائية</h3>
+                </div>
+                <p class="text-slate-600 font-medium leading-relaxed mb-8 text-lg">
+                    تدرس هذه المادة حركية التفاعلات الكيميائية وتصميم وتشغيل المفاعلات، بهدف تحقيق أعلى إنتاجية وكفاءة مع ضمان سلامة العملية.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <h4 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-bullseye text-blue-500"></i> الأهداف</h4>
+                        <ul class="space-y-2 text-slate-600 font-medium">
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i><span>فهم حركية التفاعلات الكيميائية.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i><span>تحليل العوامل المؤثرة في سرعة التفاعل.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i><span>تصميم المفاعلات الكيميائية.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i><span>اختيار ظروف التشغيل المثلى.</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <h4 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-list text-blue-500"></i> الموضوعات الرئيسية</h4>
+                        <ul class="space-y-2 text-slate-600 font-medium">
+                            <li class="flex gap-2"><i class="fa-solid fa-angle-left text-blue-500 mt-1"></i><span>حركية التفاعلات وقوانين سرعة التفاعل.</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-angle-left text-blue-500 mt-1"></i><span>المفاعلات الدفعية (Batch Reactors).</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-angle-left text-blue-500 mt-1"></i><span>المفاعلات المستمرة (CSTR, PFR).</span></li>
+                            <li class="flex gap-2"><i class="fa-solid fa-angle-left text-blue-500 mt-1"></i><span>المفاعلات الحفزية.</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <h4 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-industry text-blue-500"></i> أين تُطبق؟</h4>
+                        <div class="mb-4">
+                            <strong class="text-slate-700 block mb-2">العمليات:</strong>
+                            <ul class="space-y-1 text-slate-600 font-medium text-sm">
+                                <li class="flex gap-2"><i class="fa-solid fa-gears text-slate-400 mt-1"></i><span>التفاعلات الكيميائية، التحفيز.</span></li>
+                                <li class="flex gap-2"><i class="fa-solid fa-gears text-slate-400 mt-1"></i><span>إنتاج المواد الكيميائية وتشغيل المفاعلات.</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong class="text-slate-700 block mb-2">المعدات:</strong>
+                            <ul class="space-y-1 text-slate-600 font-medium text-sm">
+                                <li class="flex gap-2"><i class="fa-solid fa-wrench text-slate-400 mt-1"></i><span>المفاعلات الدفعية.</span></li>
+                                <li class="flex gap-2"><i class="fa-solid fa-wrench text-slate-400 mt-1"></i><span>مفاعلات الخزان المستمر (CSTR).</span></li>
+                                <li class="flex gap-2"><i class="fa-solid fa-wrench text-slate-400 mt-1"></i><span>المفاعلات الأنبوبية (PFR)، والحفزية (PBR).</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+    <footer class="bg-dark text-slate-400 py-12 mt-auto border-t-4 border-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex justify-center mb-6 cursor-pointer group" onclick="navigate('home')">
+                <img src="../Image/الشعار.png" alt="شعار أثر"
+                    class="h-20 md:h-24 w-auto object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <p class="font-medium max-w-md mx-auto mb-8">منصتك التعليمية الأقوى لاستكشاف الهندسة الكيميائية بأحدث الطرق
+                التفاعلية وبدون تعقيد.</p>
+
+            <!-- Social Icons -->
+            <p class="text-lg font-bold text-slate-300 mb-4">للتواصل معنا:</p>
+            <div class="flex justify-center items-center gap-4 mb-8">
+                <a href="https://wa.me/+966539899496?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D9%84%D8%AF%D9%8A%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D9%85%D9%86%20%D8%AE%D9%84%D8%A7%D9%84%20%D9%85%D9%88%D9%82%D8%B9%20%D8%A3%D8%AB%D8%B1." target="_blank"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-[#25D366] text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-green-500/20 group"
+                    title="تواصل عبر واتساب">
+                    <i class="fa-brands fa-whatsapp text-2xl group-hover:-rotate-12 transition-transform"></i>
+                </a>
+                <a href="mailto:AtheerBaessa@gmail.com"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-secondary text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-secondary/20 group"
+                    title="راسلنا عبر الإيميل">
+                    <i class="fa-regular fa-envelope text-2xl group-hover:rotate-12 transition-transform"></i>
+                </a>
+            </div>
+
+            <div class="text-sm font-bold text-slate-500 pt-8 border-t border-slate-800/50 max-w-md mx-auto">
+                &copy; 2026 جميع الحقوق محفوظة لمنصة أثر.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Toast Message Container -->
+    <div id="toast-container">
+        <i class="fa-solid fa-circle-info text-accent text-xl"></i>
+        <span id="toast-message" class="font-bold"></span>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أثر | عالم الهندسة الكيميائية</title>
+    <link rel="icon" href="../Image/الشعار.png" type="image/png">
+    <!-- Google Fonts: Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="../js/tailwind-config.js"></script>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="flex flex-col min-h-screen text-slate-800">
+
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer group" onclick="navigate('home')">
+                    <img src="../Image/الشعار.png" alt="شعار أثر"
+                        class="h-12 md:h-14 w-auto object-contain ms-2 group-hover:scale-105 transition-transform duration-300 drop-shadow-lg">
+                </div>
+
+                <!-- Menu Button -->
+                <div class="flex items-center">
+                    <button onclick="toggleSideMenu()"
+                        class="text-white hover:text-accent focus:outline-none p-2 transition-colors">
+                        <i class="fa-solid fa-bars-staggered text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- Side Menu Overlay -->
+    <div id="menu-overlay" onclick="toggleSideMenu()"
+        class="fixed inset-0 bg-dark/60 backdrop-blur-sm z-[55] opacity-0 pointer-events-none transition-opacity duration-300">
+    </div>
+
+    <!-- Side Menu Panel -->
+    <div id="side-menu"
+        class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-primary/95 backdrop-blur-2xl z-[60] transform translate-x-full transition-transform duration-300 border-l border-white/10 shadow-2xl flex flex-col">
+        <div class="p-5 flex justify-between items-center border-b border-white/10">
+            <span class="font-black text-2xl text-white">القائمة</span>
+            <button onclick="toggleSideMenu()"
+                class="text-white hover:text-accent p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+        </div>
+        <div class="p-4 space-y-2 overflow-y-auto flex-grow">
+            <button onclick="navigate('home');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-house me-3 w-5 text-center"></i> الرئيسية</button>
+            <button onclick="navigate('about');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-user-graduate me-3 w-5 text-center"></i> عن الهندسة الكيميائية</button>
+            <button onclick="navigate('subjects');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-book-open me-3 w-5 text-center"></i> المواد الدراسية</button>
+            <button onclick="navigate('industries');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-oil-well me-3 w-5 text-center"></i> الصناعات الكيميائية</button>
+            <button onclick="navigate('fields');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-briefcase me-3 w-5 text-center"></i> مجالات العمل</button>
+            <button onclick="navigate('equipment');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-industry me-3 w-5 text-center"></i> المعدات الصناعية</button>
+            <button onclick="navigate('software');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-laptop-code me-3 w-5 text-center"></i> البرامج الهندسية</button>
+            <button onclick="navigate('library');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-book me-3 w-5 text-center"></i> المكتبة</button>
+            <button onclick="navigate('courses');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-certificate me-3 w-5 text-center"></i> الشهادات المهنية
+</button>
+            <button onclick="navigate('fieldwork');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-helmet-safety me-3 w-5 text-center"></i> العمل الميداني</button>
+        </div>
+    </div>
+
+    <main class="flex-grow">
+    <!-- ==================== EQUIPMENT VIEW ==================== -->
+        <div id="view-equipment" class="view-section pt-32 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Back Button -->
+            <div class="mb-8">
+                <button onclick="navigate('home')"
+                    class="w-12 h-12 flex items-center justify-center bg-white border border-slate-200 text-slate-500 hover:text-secondary hover:border-secondary hover:bg-slate-50 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group"
+                    title="العودة للرئيسية">
+                    <i
+                        class="fa-solid fa-arrow-right-long text-xl transform group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </div>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-primary mb-4">المعدات الصناعية</h2>
+                <div class="w-24 h-2 bg-secondary rounded-full mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 1. معدات نقل الموائع -->
+                <div onclick="navigate('coming-soon')" class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-48 bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center text-blue-500 text-7xl group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h4 class="text-2xl font-black text-slate-800 mb-2">معدات نقل الموائع</h4>
+                        <p class="text-slate-500 font-medium leading-relaxed mb-4">أنابيب، مضخات، وصمامات لنقل السوائل والغازات.</p>
+                        <span class="inline-block px-4 py-2 bg-slate-50 text-secondary font-bold rounded-lg group-hover:bg-secondary group-hover:text-white transition-colors duration-300">عرض الأقسام <i class="fa-solid fa-arrow-left ms-2"></i></span>
+                    </div>
+                </div>
+
+                <!-- 2. معدات انتقال الحرارة -->
+                <div onclick="navigate('coming-soon')" class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-48 bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center text-orange-500 text-7xl group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-temperature-half"></i>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h4 class="text-2xl font-black text-slate-800 mb-2">معدات انتقال الحرارة</h4>
+                        <p class="text-slate-500 font-medium leading-relaxed mb-4">مبادلات حرارية، أفران، ومبردات لتنظيم درجات الحرارة.</p>
+                        <span class="inline-block px-4 py-2 bg-slate-50 text-secondary font-bold rounded-lg group-hover:bg-secondary group-hover:text-white transition-colors duration-300">عرض الأقسام <i class="fa-solid fa-arrow-left ms-2"></i></span>
+                    </div>
+                </div>
+
+                <!-- 3. معدات التفاعل -->
+                <div onclick="navigate('coming-soon')" class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-48 bg-gradient-to-br from-purple-50 to-purple-100 flex items-center justify-center text-purple-500 text-7xl group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-flask-vial"></i>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h4 class="text-2xl font-black text-slate-800 mb-2">معدات التفاعل</h4>
+                        <p class="text-slate-500 font-medium leading-relaxed mb-4">مفاعلات كيميائية وحيوية لإتمام التفاعلات بكفاءة.</p>
+                        <span class="inline-block px-4 py-2 bg-slate-50 text-secondary font-bold rounded-lg group-hover:bg-secondary group-hover:text-white transition-colors duration-300">عرض الأقسام <i class="fa-solid fa-arrow-left ms-2"></i></span>
+                    </div>
+                </div>
+
+                <!-- 4. معدات الفصل الميكانيكي -->
+                <div onclick="navigate('mech-separation')" class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-48 bg-gradient-to-br from-emerald-50 to-emerald-100 flex items-center justify-center text-emerald-500 text-7xl group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-filter"></i>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h4 class="text-2xl font-black text-slate-800 mb-2">معدات الفصل الميكانيكي</h4>
+                        <p class="text-slate-500 font-medium leading-relaxed mb-4">فلاتر، فرازات مركزية، ومعدات ترشيح لفصل المواد.</p>
+                        <span class="inline-block px-4 py-2 bg-slate-50 text-secondary font-bold rounded-lg group-hover:bg-secondary group-hover:text-white transition-colors duration-300">عرض الأقسام <i class="fa-solid fa-arrow-left ms-2"></i></span>
+                    </div>
+                </div>
+
+                <!-- 5. معدات الفصل الانتشاري -->
+                <div onclick="navigate('coming-soon')" class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-48 bg-gradient-to-br from-indigo-50 to-indigo-100 flex items-center justify-center text-indigo-500 text-7xl group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h4 class="text-2xl font-black text-slate-800 mb-2">معدات الفصل الانتشاري</h4>
+                        <p class="text-slate-500 font-medium leading-relaxed mb-4">أبراج التقطير، الاستخلاص، والامتصاص لفصل المكونات.</p>
+                        <span class="inline-block px-4 py-2 bg-slate-50 text-secondary font-bold rounded-lg group-hover:bg-secondary group-hover:text-white transition-colors duration-300">عرض الأقسام <i class="fa-solid fa-arrow-left ms-2"></i></span>
+                    </div>
+                </div>
+
+                <!-- 6. معدات المناولة والتخزين -->
+                <div onclick="navigate('coming-soon')" class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-48 bg-gradient-to-br from-rose-50 to-rose-100 flex items-center justify-center text-rose-500 text-7xl group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-warehouse"></i>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h4 class="text-2xl font-black text-slate-800 mb-2">معدات المناولة والتخزين</h4>
+                        <p class="text-slate-500 font-medium leading-relaxed mb-4">خزانات، صوامع، وسيور ناقلة لتخزين ونقل المواد الخام.</p>
+                        <span class="inline-block px-4 py-2 bg-slate-50 text-secondary font-bold rounded-lg group-hover:bg-secondary group-hover:text-white transition-colors duration-300">عرض الأقسام <i class="fa-solid fa-arrow-left ms-2"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </main>
+
+    <footer class="bg-dark text-slate-400 py-12 mt-auto border-t-4 border-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex justify-center mb-6 cursor-pointer group" onclick="navigate('home')">
+                <img src="../Image/الشعار.png" alt="شعار أثر"
+                    class="h-20 md:h-24 w-auto object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <p class="font-medium max-w-md mx-auto mb-8">منصتك التعليمية الأقوى لاستكشاف الهندسة الكيميائية بأحدث الطرق
+                التفاعلية وبدون تعقيد.</p>
+
+            <!-- Social Icons -->
+            <p class="text-lg font-bold text-slate-300 mb-4">للتواصل معنا:</p>
+            <div class="flex justify-center items-center gap-4 mb-8">
+                <a href="https://wa.me/+966539899496?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D9%84%D8%AF%D9%8A%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D9%85%D9%86%20%D8%AE%D9%84%D8%A7%D9%84%20%D9%85%D9%88%D9%82%D8%B9%20%D8%A3%D8%AB%D8%B1." target="_blank"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-[#25D366] text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-green-500/20 group"
+                    title="تواصل عبر واتساب">
+                    <i class="fa-brands fa-whatsapp text-2xl group-hover:-rotate-12 transition-transform"></i>
+                </a>
+                <a href="mailto:AtheerBaessa@gmail.com"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-secondary text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-secondary/20 group"
+                    title="راسلنا عبر الإيميل">
+                    <i class="fa-regular fa-envelope text-2xl group-hover:rotate-12 transition-transform"></i>
+                </a>
+            </div>
+
+            <div class="text-sm font-bold text-slate-500 pt-8 border-t border-slate-800/50 max-w-md mx-auto">
+                &copy; 2026 جميع الحقوق محفوظة لمنصة أثر.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Toast Message Container -->
+    <div id="toast-container">
+        <i class="fa-solid fa-circle-info text-accent text-xl"></i>
+        <span id="toast-message" class="font-bold"></span>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
