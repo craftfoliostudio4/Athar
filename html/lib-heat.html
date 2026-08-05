@@ -29,7 +29,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center cursor-pointer group" onclick="navigate('home')">
+                <div class="flex-shrink-0 flex items-center cursor-pointer group" onclick="window.location.href='library.html'">
                     <img src="../Image/الشعار.png" alt="شعار أثر"
                         class="h-12 md:h-14 w-auto object-contain ms-2 group-hover:scale-105 transition-transform duration-300 drop-shadow-lg">
                 </div>
@@ -83,7 +83,9 @@
             <button onclick="navigate('software');"
                 class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
                     class="fa-solid fa-laptop-code me-3 w-5 text-center"></i> البرامج الهندسية</button>
-            
+            <button onclick="navigate('library');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-book me-3 w-5 text-center"></i> المكتبة</button>
             <button onclick="navigate('courses');"
                 class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
                     class="fa-solid fa-certificate me-3 w-5 text-center"></i> الشهادات المهنية
@@ -91,118 +93,107 @@
             <button onclick="navigate('fieldwork');"
                 class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
                     class="fa-solid fa-helmet-safety me-3 w-5 text-center"></i> العمل الميداني</button>
-            <button onclick="navigate('library');"
-                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
-                    class="fa-solid fa-book me-3 w-5 text-center"></i> المكتبة</button>
         </div>
     </div>
 
-    <main class="flex-grow">
-    <!-- ==================== EQUIPMENT VIEW ==================== -->
-        <div id="view-equipment" class="view-section pt-32 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <main class="flex-grow pt-20">
+        <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <!-- Back Button -->
-            <div class="mb-8 sticky top-24 z-40 w-fit mr-4 md:mr-0">
-                <button onclick="navigate('home')"
-                    class="w-12 h-12 flex items-center justify-center bg-white border border-slate-200 text-slate-500 hover:text-secondary hover:border-secondary hover:bg-slate-50 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group"
-                    title="العودة للرئيسية">
-                    <i
-                        class="fa-solid fa-arrow-right-long text-xl transform group-hover:translate-x-1 transition-transform"></i>
+            <div class="mb-8 animate-slide-down sticky top-24 z-40 w-fit mr-4 md:mr-0">
+                <button onclick="window.location.href='library.html'"
+                    class="w-12 h-12 flex items-center justify-center bg-white border border-slate-200 text-slate-500 hover:text-rose-500 hover:border-rose-500 hover:bg-rose-50 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group"
+                    title="العودة للمكتبة">
+                    <i class="fa-solid fa-arrow-right-long text-xl transform group-hover:translate-x-1 transition-transform"></i>
                 </button>
             </div>
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-black text-primary mb-4">المعدات الصناعية</h2>
-                <div class="w-24 h-2 bg-secondary rounded-full mx-auto"></div>
+            
+            <div class="text-center mb-12 animate-slide-up">
+                <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-rose-50 text-rose-500 mb-6 shadow-sm border border-rose-100">
+                    <i class="fa-solid fa-fire text-4xl"></i>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-black text-slate-800 mb-4">انتقال الحرارة</h1>
+                <div class="w-24 h-1.5 bg-gradient-to-r from-rose-500 to-rose-300 rounded-full mx-auto mb-6"></div>
+                <p class="text-lg text-slate-500 font-medium max-w-2xl mx-auto">مقررات ومراجع تخص انتقال الحرارة.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 1. معدات نقل الموائع -->
-                <div onclick="navigate('fluid-transfer')" class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="h-48 bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center text-blue-500 text-7xl group-hover:scale-110 transition-transform duration-300">
-                        <i class="fa-solid fa-droplet"></i>
-                    </div>
-                    <div class="p-6 text-center">
-                        <h4 class="text-2xl font-black text-slate-800 mb-2">معدات نقل الموائع</h4>
-                        <p class="text-slate-500 font-medium leading-relaxed mb-4">أنابيب، مضخات، وصمامات لنقل السوائل والغازات.</p>
-                        <span class="inline-block px-4 py-2 bg-slate-50 text-secondary font-bold rounded-lg group-hover:bg-secondary group-hover:text-white transition-colors duration-300">عرض الأقسام <i class="fa-solid fa-arrow-left ms-2"></i></span>
-                    </div>
+                        <div class="animate-slide-up" style="animation-delay: 0.1s;">
+            
+            <div class="mb-10 animate-slide-up">
+                <div class="relative max-w-2xl mx-auto">
+                    <input type="text" id="searchInput" placeholder="ابحث عن كتاب في هذا القسم..." 
+                        class="w-full pl-12 pr-4 py-4 rounded-2xl border border-slate-200 focus:border-rose-500 focus:ring-2 focus:ring-rose-200 outline-none transition-all shadow-sm text-slate-700 bg-white/80 backdrop-blur-sm"
+                        onkeyup="filterBooks()">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 text-lg"></i>
                 </div>
-
-                <!-- 2. معدات انتقال الحرارة -->
-                <div onclick="navigate('heat-transfer')" class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="h-48 bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center text-orange-500 text-7xl group-hover:scale-110 transition-transform duration-300">
-                        <i class="fa-solid fa-temperature-half"></i>
-                    </div>
-                    <div class="p-6 text-center">
-                        <h4 class="text-2xl font-black text-slate-800 mb-2">معدات انتقال الحرارة</h4>
-                        <p class="text-slate-500 font-medium leading-relaxed mb-4">مبادلات حرارية، أفران، ومبردات لتنظيم درجات الحرارة.</p>
-                        <span class="inline-block px-4 py-2 bg-slate-50 text-secondary font-bold rounded-lg group-hover:bg-secondary group-hover:text-white transition-colors duration-300">عرض الأقسام <i class="fa-solid fa-arrow-left ms-2"></i></span>
-                    </div>
+            </div>
+            <script>
+                function filterBooks() {
+                    const query = document.getElementById('searchInput').value.toLowerCase();
+                    const books = document.querySelectorAll('.book-item');
+                    let hasVisible = false;
+                    books.forEach(book => {
+                        const title = book.querySelector('h3').innerText.toLowerCase();
+                        if (title.includes(query)) {
+                            book.style.display = 'flex';
+                            hasVisible = true;
+                        } else {
+                            book.style.display = 'none';
+                        }
+                    });
+                    
+                    const noResults = document.getElementById('noResults');
+                    if(!hasVisible) {
+                        if(!noResults) {
+                            const msg = document.createElement('div');
+                            msg.id = 'noResults';
+                            msg.className = 'text-center text-slate-500 mt-8 font-medium py-8 bg-slate-50 rounded-2xl border border-slate-100';
+                            msg.innerHTML = '<i class="fa-solid fa-face-frown text-3xl mb-3 text-slate-300 block"></i> لا يوجد كتاب مطابق للبحث في هذا القسم';
+                            document.getElementById('booksContainer').appendChild(msg);
+                        } else {
+                            noResults.style.display = 'block';
+                        }
+                    } else if (noResults) {
+                        noResults.style.display = 'none';
+                    }
+                }
+            </script>
+    
+            <div id="booksContainer" class="space-y-4">
+                <div id="heat" class="mt-12 mb-6 flex items-center gap-3 scroll-mt-32">
+                    <div class="w-2 h-8 bg-rose-500 rounded-full"></div>
+                    <h2 class="text-2xl font-black text-slate-800">انتقال الحرارة</h2>
                 </div>
-
-                <!-- 3. معدات التفاعل و الخلط -->
-                <div onclick="navigate('reaction-mixing')" class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="h-48 bg-gradient-to-br from-purple-50 to-purple-100 flex items-center justify-center text-purple-500 text-7xl group-hover:scale-110 transition-transform duration-300">
-                        <i class="fa-solid fa-flask-vial"></i>
+                <div class="space-y-4">
+        <!-- Book Item 4 -->
+                <div class="book-item bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-100 hover:shadow-md transition-all duration-300 flex flex-col sm:flex-row items-center justify-between gap-4 group hover:-translate-y-1">
+                    <div class="flex items-center gap-4 w-full sm:w-auto">
+                        <div class="w-14 h-14 rounded-2xl bg-slate-50 text-slate-400 flex flex-shrink-0 items-center justify-center text-2xl group-hover:bg-rose-50 group-hover:text-rose-500 transition-colors">
+                            <i class="fa-solid fa-book"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-lg text-right w-full sm:w-auto" dir="auto">انتقال الحرارة</h3>
                     </div>
-                    <div class="p-6 text-center">
-                        <h4 class="text-2xl font-black text-slate-800 mb-2">معدات التفاعل و الخلط</h4>
-                        <p class="text-slate-500 font-medium leading-relaxed mb-4">مفاعلات كيميائية وحيوية لإتمام التفاعلات بكفاءة.</p>
-                        <span class="inline-block px-4 py-2 bg-slate-50 text-secondary font-bold rounded-lg group-hover:bg-secondary group-hover:text-white transition-colors duration-300">عرض الأقسام <i class="fa-solid fa-arrow-left ms-2"></i></span>
-                    </div>
+                    <a href="https://drive.google.com/file/d/1ecDCziH7ptoD2TJjXdlTF6fHwflXPQnn/view?usp=drive_link" target="_blank" class="w-full sm:w-auto text-center px-8 py-3 bg-gradient-to-r from-rose-600 to-rose-400 hover:from-rose-500 hover:to-rose-300 text-white rounded-xl font-bold transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2 whitespace-nowrap group-hover:shadow-rose-500/25">
+                        <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i> إطلاع
+                    </a>
                 </div>
-
-                <!-- 4. معدات الفصل الميكانيكي -->
-                <div onclick="navigate('mech-separation')" class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="h-48 bg-gradient-to-br from-emerald-50 to-emerald-100 flex items-center justify-center text-emerald-500 text-7xl group-hover:scale-110 transition-transform duration-300">
-                        <i class="fa-solid fa-filter"></i>
+<!-- Book Item 15 -->
+                <div class="book-item bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-100 hover:shadow-md transition-all duration-300 flex flex-col sm:flex-row items-center justify-between gap-4 group hover:-translate-y-1">
+                    <div class="flex items-center gap-4 w-full sm:w-auto">
+                        <div class="w-14 h-14 rounded-2xl bg-slate-50 text-slate-400 flex flex-shrink-0 items-center justify-center text-2xl group-hover:bg-rose-50 group-hover:text-rose-500 transition-colors">
+                            <i class="fa-solid fa-book"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-lg text-right w-full sm:w-auto" dir="auto">Heat Transfer</h3>
                     </div>
-                    <div class="p-6 text-center">
-                        <h4 class="text-2xl font-black text-slate-800 mb-2">معدات الفصل الميكانيكي</h4>
-                        <p class="text-slate-500 font-medium leading-relaxed mb-4">فلاتر، فرازات مركزية، ومعدات ترشيح لفصل المواد.</p>
-                        <span class="inline-block px-4 py-2 bg-slate-50 text-secondary font-bold rounded-lg group-hover:bg-secondary group-hover:text-white transition-colors duration-300">عرض الأقسام <i class="fa-solid fa-arrow-left ms-2"></i></span>
-                    </div>
+                    <a href="https://drive.google.com/file/d/1ub69LPmrZWhIIS7YkCz3L8_7uTRm_CnB/view?usp=drive_link" target="_blank" class="w-full sm:w-auto text-center px-8 py-3 bg-gradient-to-r from-rose-600 to-rose-400 hover:from-rose-500 hover:to-rose-300 text-white rounded-xl font-bold transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2 whitespace-nowrap group-hover:shadow-rose-500/25">
+                        <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i> إطلاع
+                    </a>
                 </div>
-
-                <!-- 5. معدات الفصل الانتشاري -->
-                <div onclick="navigate('diffusive-separation')" class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="h-48 bg-gradient-to-br from-indigo-50 to-indigo-100 flex items-center justify-center text-indigo-500 text-7xl group-hover:scale-110 transition-transform duration-300">
-                        <i class="fa-solid fa-layer-group"></i>
-                    </div>
-                    <div class="p-6 text-center">
-                        <h4 class="text-2xl font-black text-slate-800 mb-2">معدات الفصل الانتشاري</h4>
-                        <p class="text-slate-500 font-medium leading-relaxed mb-4">أبراج التقطير، الاستخلاص، والامتصاص لفصل المكونات.</p>
-                        <span class="inline-block px-4 py-2 bg-slate-50 text-secondary font-bold rounded-lg group-hover:bg-secondary group-hover:text-white transition-colors duration-300">عرض الأقسام <i class="fa-solid fa-arrow-left ms-2"></i></span>
-                    </div>
-                </div>
-
-                <!-- 6. معدات المناولة والتخزين -->
-                <div onclick="navigate('coming-soon')" class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="h-48 bg-gradient-to-br from-rose-50 to-rose-100 flex items-center justify-center text-rose-500 text-7xl group-hover:scale-110 transition-transform duration-300">
-                        <i class="fa-solid fa-warehouse"></i>
-                    </div>
-                    <div class="p-6 text-center">
-                        <h4 class="text-2xl font-black text-slate-800 mb-2">معدات المناولة والتخزين</h4>
-                        <p class="text-slate-500 font-medium leading-relaxed mb-4">خزانات، صوامع، وسيور ناقلة لتخزين ونقل المواد الخام.</p>
-                        <span class="inline-block px-4 py-2 bg-slate-50 text-secondary font-bold rounded-lg group-hover:bg-secondary group-hover:text-white transition-colors duration-300">عرض الأقسام <i class="fa-solid fa-arrow-left ms-2"></i></span>
-                    </div>
-                </div>
-
-                <!-- 7. أجهزة القياس والتحكم -->
-                <div onclick="navigate('control-measurement')" class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="h-48 bg-gradient-to-br from-cyan-50 to-cyan-100 flex items-center justify-center text-cyan-500 text-7xl group-hover:scale-110 transition-transform duration-300">
-                        <i class="fa-solid fa-gauge-high"></i>
-                    </div>
-                    <div class="p-6 text-center">
-                        <h4 class="text-2xl font-black text-slate-800 mb-2">أجهزة القياس والتحكم</h4>
-                        <p class="text-slate-500 font-medium leading-relaxed mb-4">أجهزة لقياس الحرارة، الضغط، والتدفق للتحكم في العمليات الكيميائية.</p>
-                        <span class="inline-block px-4 py-2 bg-slate-50 text-secondary font-bold rounded-lg group-hover:bg-secondary group-hover:text-white transition-colors duration-300">عرض الأقسام <i class="fa-solid fa-arrow-left ms-2"></i></span>
-                    </div>
                 </div>
             </div>
         </div>
-
-        
+    </section>
     </main>
+
 
     <footer class="bg-dark text-slate-400 py-12 mt-auto border-t-4 border-secondary">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

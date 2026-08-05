@@ -83,9 +83,7 @@
             <button onclick="navigate('software');"
                 class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
                     class="fa-solid fa-laptop-code me-3 w-5 text-center"></i> البرامج الهندسية</button>
-            <button onclick="navigate('library');"
-                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
-                    class="fa-solid fa-book me-3 w-5 text-center"></i> المكتبة</button>
+            
             <button onclick="navigate('courses');"
                 class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
                     class="fa-solid fa-certificate me-3 w-5 text-center"></i> الشهادات المهنية
@@ -93,6 +91,9 @@
             <button onclick="navigate('fieldwork');"
                 class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
                     class="fa-solid fa-helmet-safety me-3 w-5 text-center"></i> العمل الميداني</button>
+            <button onclick="navigate('library');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-book me-3 w-5 text-center"></i> المكتبة</button>
         </div>
     </div>
 
@@ -120,9 +121,7 @@
 
                             <h1 class="text-4xl sm:text-5xl md:text-7xl font-black text-white mb-6 leading-tight drop-shadow-lg">
                                 مرحباً بك في <br>
-                                <span
-                                    class="text-transparent bg-clip-text bg-gradient-to-l from-accent via-blue-400 to-white">عالم
-                                    <span class="inline-block whitespace-nowrap">أثـــــر</span></span>
+                                <span class="text-transparent bg-clip-text bg-gradient-to-l from-accent via-blue-400 to-white whitespace-nowrap">عالم أثـــــر</span>
                             </h1>
 
                             <p
@@ -284,22 +283,7 @@
                         </div>
                     </div>
 
-                    <div onclick="navigate('library')"
-                        class="power-card rounded-[2rem] p-8 relative overflow-hidden group cursor-pointer hover:-translate-y-2 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-                        <div
-                            class="absolute -right-10 -top-10 w-32 h-32 bg-rose-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-700 ease-out">
-                        </div>
-                        <div
-                            class="icon-wrapper w-16 h-16 bg-rose-50 text-rose-500 rounded-2xl flex items-center justify-center text-3xl mb-6 relative z-10">
-                            <i class="fa-solid fa-book"></i>
-                        </div>
-                        <h3 class="text-2xl font-black text-slate-800 mb-3 relative z-10">المكتبة</h3>
-                        <p class="text-slate-500 leading-relaxed font-medium relative z-10">مكتبة شاملة للكتب والمراجع
-                            والمصطلحات الهامة في الهندسة الكيميائية.</p>
-                        <div class="mt-6 relative z-10 text-center">
-                            <span class="inline-flex items-center justify-center px-6 py-2 bg-slate-50 text-secondary font-bold rounded-xl group-hover:bg-secondary group-hover:text-white transition-colors duration-300 shadow-sm">استكشف <i class="fa-solid fa-arrow-left ms-2"></i></span>
-                        </div>
-                    </div>
+                    
 
                     <div onclick="navigate('courses')"
                         class="power-card rounded-[2rem] p-8 relative overflow-hidden group cursor-pointer hover:-translate-y-2 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
@@ -331,6 +315,22 @@
                         <h3 class="text-2xl font-black text-slate-800 mb-3 relative z-10">العمل الميداني</h3>
                         <p class="text-slate-500 leading-relaxed font-medium relative z-10">نظرة عامة على طبيعة العمل
                             الميداني والمهام اليومية للمهندس في الموقع.</p>
+                        <div class="mt-6 relative z-10 text-center">
+                            <span class="inline-flex items-center justify-center px-6 py-2 bg-slate-50 text-secondary font-bold rounded-xl group-hover:bg-secondary group-hover:text-white transition-colors duration-300 shadow-sm">استكشف <i class="fa-solid fa-arrow-left ms-2"></i></span>
+                        </div>
+                    </div>
+                    <div onclick="navigate('library')"
+                        class="power-card rounded-[2rem] p-8 relative overflow-hidden group cursor-pointer hover:-translate-y-2 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                        <div
+                            class="absolute -right-10 -top-10 w-32 h-32 bg-rose-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-700 ease-out">
+                        </div>
+                        <div
+                            class="icon-wrapper w-16 h-16 bg-rose-50 text-rose-500 rounded-2xl flex items-center justify-center text-3xl mb-6 relative z-10">
+                            <i class="fa-solid fa-book"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-slate-800 mb-3 relative z-10">المكتبة</h3>
+                        <p class="text-slate-500 leading-relaxed font-medium relative z-10">مكتبة شاملة للكتب والمراجع
+                            والمصطلحات الهامة في الهندسة الكيميائية.</p>
                         <div class="mt-6 relative z-10 text-center">
                             <span class="inline-flex items-center justify-center px-6 py-2 bg-slate-50 text-secondary font-bold rounded-xl group-hover:bg-secondary group-hover:text-white transition-colors duration-300 shadow-sm">استكشف <i class="fa-solid fa-arrow-left ms-2"></i></span>
                         </div>
