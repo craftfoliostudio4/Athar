@@ -41,7 +41,8 @@
                         <i class="fa-solid fa-bars-staggered text-2xl"></i>
                     </button>
                 </div>
-                </div>
+            </div>
+        </div>
 
     </nav>
 
@@ -95,58 +96,41 @@
         </div>
     </div>
 
-        <main class="flex-grow">
-        <div id="view-subjects" class="view-section active pt-32 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <main class="flex-grow">
+        <div id="view-cert-risk" class="view-section active pt-32 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-8 sticky top-24 z-40 w-fit mr-4 md:mr-0">
-                <button onclick="navigate('home')"
+                <button onclick="navigate('courses')"
                     class="w-12 h-12 flex items-center justify-center bg-white border border-slate-200 text-slate-500 hover:text-secondary hover:border-secondary hover:bg-slate-50 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group"
-                    title="العودة للرئيسية">
+                    title="العودة للشهادات المهنية">
                     <i class="fa-solid fa-arrow-right-long text-xl transform group-hover:translate-x-1 transition-transform"></i>
                 </button>
             </div>
             
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-black text-primary mb-4">المواد الدراسية</h2>
-                <div class="w-24 h-2 bg-secondary rounded-full mx-auto"></div>
-                <p class="text-lg text-slate-600 font-medium max-w-2xl mx-auto mt-6">تعرف على المواد الأكاديمية التي يدرسها طالب الهندسة الكيميائية وتطبيقاتها الصناعية.</p>
+                <div class="w-20 h-20 bg-red-50 text-red-600 rounded-2xl flex items-center justify-center text-4xl mx-auto mb-6 shadow-sm">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+                <h2 class="text-4xl font-black text-slate-800 mb-4">إدارة المخاطر</h2>
+                <div class="w-24 h-2 bg-red-600 rounded-full mx-auto"></div>
+                <p class="text-lg text-slate-600 font-medium max-w-2xl mx-auto mt-6">شهادات احترافية ومعايير عالمية متخصصة في إدارة المخاطر المؤسسية والمشاريع.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- 1. المواد العامة -->
-                <div onclick="navigate('subject-general')" class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="h-48 bg-gradient-to-br from-emerald-50 to-emerald-100 flex items-center justify-center text-emerald-500 text-7xl group-hover:scale-110 transition-transform duration-300">
-                        <i class="fa-solid fa-book"></i>
-                    </div>
-                    <div class="p-6 text-center flex-grow flex flex-col items-center">
-                        <h4 class="text-2xl font-black text-slate-800 mb-6">المواد العامة</h4>
-                        <span class="inline-block mt-auto px-6 py-3 bg-slate-50 text-secondary font-bold rounded-lg group-hover:bg-secondary group-hover:text-white transition-colors duration-300">استكشف <i class="fa-solid fa-arrow-left ms-2"></i></span>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                    <h4 class="text-xl font-bold text-slate-800 mb-2 font-en">PMI-RMP</h4>
+                    <p class="text-sm text-slate-500 mb-3">(Risk Management Professional)</p>
+                    <p class="text-slate-600 font-medium leading-relaxed">محترف إدارة المخاطر.</p>
                 </div>
-
-                <!-- 2. المواد الأساسية -->
-                <div onclick="navigate('subject-core')" class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="h-48 bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center text-blue-500 text-7xl group-hover:scale-110 transition-transform duration-300">
-                        <i class="fa-solid fa-atom"></i>
-                    </div>
-                    <div class="p-6 text-center flex-grow flex flex-col items-center">
-                        <h4 class="text-2xl font-black text-slate-800 mb-6">المواد الأساسية في التخصص</h4>
-                        <span class="inline-block mt-auto px-6 py-3 bg-slate-50 text-secondary font-bold rounded-lg group-hover:bg-secondary group-hover:text-white transition-colors duration-300">استكشف <i class="fa-solid fa-arrow-left ms-2"></i></span>
-                    </div>
-                </div>
-
-                <!-- 3. مواد التصميم -->
-                <div onclick="navigate('subject-design')" class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="h-48 bg-gradient-to-br from-purple-50 to-purple-100 flex items-center justify-center text-purple-500 text-7xl group-hover:scale-110 transition-transform duration-300">
-                        <i class="fa-solid fa-compass-drafting"></i>
-                    </div>
-                    <div class="p-6 text-center flex-grow flex flex-col items-center">
-                        <h4 class="text-2xl font-black text-slate-800 mb-6">مواد التصميم والتحكم</h4>
-                        <span class="inline-block mt-auto px-6 py-3 bg-slate-50 text-secondary font-bold rounded-lg group-hover:bg-secondary group-hover:text-white transition-colors duration-300">استكشف <i class="fa-solid fa-arrow-left ms-2"></i></span>
-                    </div>
+                
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                    <h4 class="text-xl font-bold text-slate-800 mb-2 font-en">ISO 31000</h4>
+                    <p class="text-sm text-slate-500 mb-3">(Risk Management)</p>
+                    <p class="text-slate-600 font-medium leading-relaxed">إدارة المخاطر.</p>
                 </div>
             </div>
         </div>
     </main>
+
 
 
     <footer class="bg-dark text-slate-400 py-12 mt-auto border-t-4 border-secondary">

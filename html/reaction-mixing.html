@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أثر | معدات التفاعل والخلط</title>
+    <link rel="icon" href="../Image/الشعار.png" type="image/png">
+    <!-- Google Fonts: Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="../js/tailwind-config.js"></script>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="flex flex-col min-h-screen text-slate-800">
+
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer group" onclick="navigate('home')">
+                    <img src="../Image/الشعار.png" alt="شعار أثر"
+                        class="h-12 md:h-14 w-auto object-contain ms-2 group-hover:scale-105 transition-transform duration-300 drop-shadow-lg">
+                </div>
+
+                <!-- Menu Button -->
+                <div class="flex items-center">
+                    <button onclick="toggleSideMenu()"
+                        class="text-white hover:text-accent focus:outline-none p-2 transition-colors">
+                        <i class="fa-solid fa-bars-staggered text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Side Menu Overlay -->
+    <div id="menu-overlay" onclick="toggleSideMenu()"
+        class="fixed inset-0 bg-dark/60 backdrop-blur-sm z-[55] opacity-0 pointer-events-none transition-opacity duration-300">
+    </div>
+
+    <!-- Side Menu Panel -->
+    <div id="side-menu"
+        class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-primary/95 backdrop-blur-2xl z-[60] transform translate-x-full transition-transform duration-300 border-l border-white/10 shadow-2xl flex flex-col">
+        <div class="p-5 flex justify-between items-center border-b border-white/10">
+            <span class="font-black text-2xl text-white">القائمة</span>
+            <button onclick="toggleSideMenu()"
+                class="text-white hover:text-accent p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+        </div>
+        <div class="p-4 space-y-2 overflow-y-auto flex-grow">
+            <button onclick="navigate('home');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-house me-3 w-5 text-center"></i> الرئيسية</button>
+            <button onclick="navigate('about');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-user-graduate me-3 w-5 text-center"></i> عن الهندسة الكيميائية</button>
+            <button onclick="navigate('subjects');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-book-open me-3 w-5 text-center"></i> المواد الدراسية</button>
+            <button onclick="navigate('industries');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-atom me-3 w-5 text-center"></i> التخصصات الدقيقة</button>
+            <button onclick="navigate('fields');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-briefcase me-3 w-5 text-center"></i> مجالات العمل</button>
+            <button onclick="navigate('equipment');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-industry me-3 w-5 text-center"></i> المعدات الصناعية</button>
+            <button onclick="navigate('software');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-laptop-code me-3 w-5 text-center"></i> البرامج الهندسية</button>
+            <button onclick="navigate('library');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-book me-3 w-5 text-center"></i> المكتبة</button>
+            <button onclick="navigate('courses');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-certificate me-3 w-5 text-center"></i> الشهادات المهنية
+</button>
+            <button onclick="navigate('fieldwork');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-helmet-safety me-3 w-5 text-center"></i> العمل الميداني</button>
+        </div>
+    </div>
+
+    <main class="flex-grow">
+    <!-- ==================== REACTION & MIXING VIEW ==================== -->
+        <div id="view-reaction-mixing" class="view-section pt-32 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 active">
+            <!-- Back Button -->
+            <div class="mb-8 flex justify-start items-center sticky top-24 z-40 mr-4 md:mr-0">
+                <button onclick="navigate('equipment')"
+                    class="w-12 h-12 flex items-center justify-center bg-white border border-slate-200 text-slate-500 hover:text-secondary hover:border-secondary hover:bg-slate-50 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group shrink-0"
+                    title="العودة للمعدات">
+                    <i class="fa-solid fa-arrow-right-long text-xl transform group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </div>
+            
+            <div class="text-center mb-10">
+                <h2 class="text-4xl md:text-5xl font-black text-primary mb-6">معدات التفاعل والخلط</h2>
+                <div class="w-24 h-2 bg-teal-500 rounded-full mx-auto mb-8"></div>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto font-medium leading-relaxed">نظرة تفصيلية على المعدات المستخدمة لإجراء التفاعلات الكيميائية تحت ظروف تشغيل محددة، ومعدات خلط ومزج السوائل والمواد اللزجة في العمليات الصناعية.</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="flex flex-wrap justify-center gap-3 mb-16">
+                <a href="#reactor-section" class="px-5 py-2.5 bg-white border border-slate-200 text-slate-600 rounded-xl hover:border-teal-500 hover:text-teal-600 transition-all font-bold text-sm shadow-sm hover:shadow-md"><i class="fa-solid fa-flask me-2"></i> معدات التفاعل</a>
+                <a href="#mixer-section" class="px-5 py-2.5 bg-white border border-slate-200 text-slate-600 rounded-xl hover:border-indigo-500 hover:text-indigo-600 transition-all font-bold text-sm shadow-sm hover:shadow-md"><i class="fa-solid fa-fan me-2"></i> معدات الخلط</a>
+            </div>
+
+            <div class="space-y-20">
+                <!-- 1. Reaction Equipment -->
+                <section id="reactor-section" class="scroll-mt-32">
+                    <div class="bg-white rounded-[2.5rem] shadow-xl shadow-slate-200/40 border border-slate-100 overflow-hidden">
+                        <div class="bg-gradient-to-r from-teal-600 to-teal-400 p-8 md:p-10 text-white flex flex-col md:flex-row items-center gap-6 text-center md:text-right relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PHBhdGggZD0iTTAgMGgyMHYyMEgwem0xMCAxMGgxMHYxMEgxMHoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=')]"></div>
+                            <div class="w-24 h-24 bg-white/20 rounded-3xl flex items-center justify-center backdrop-blur-sm shrink-0 border border-white/30 z-10">
+                                <i class="fa-solid fa-flask text-5xl drop-shadow-md"></i>
+                            </div>
+                            <div class="z-10">
+                                <h3 class="text-3xl md:text-4xl font-black mb-3">معدات التفاعل (Reaction Equipment)</h3>
+                                <p class="text-teal-50 font-medium text-lg max-w-xl">معدات صناعية تُستخدم لإجراء التفاعلات الكيميائية تحت ظروف تشغيل محددة بهدف تحويل المواد الخام إلى منتجات جديدة بكفاءة وأمان.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="p-8 md:p-12 space-y-12">
+                            <!-- Principle -->
+                            <div class="flex flex-col md:flex-row gap-8 items-start">
+                                <div class="w-16 h-16 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-gears text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-2xl font-black text-slate-800 mb-4">مبدأ العمل</h4>
+                                    <p class="text-slate-600 leading-relaxed text-lg">تعتمد معدات التفاعل على توفير بيئة مناسبة لحدوث التفاعل الكيميائي، مع التحكم في ظروف التشغيل وضمان خلط المواد المتفاعلة وانتقال الحرارة والكتلة لتحقيق أعلى كفاءة للتفاعل.</p>
+                                </div>
+                            </div>
+
+                            <hr class="border-slate-100">
+
+                            <!-- Types -->
+                            <div>
+                                <h4 class="text-2xl font-black text-slate-800 mb-8 flex items-center gap-3">
+                                    <i class="fa-solid fa-layer-group text-teal-500"></i>
+                                    الأنواع والفرق بينها
+                                </h4>
+                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    <!-- Type 1 -->
+                                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-teal-300 hover:shadow-md transition-all group">
+                                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-teal-500 mb-4 group-hover:scale-110 transition-transform">
+                                            <i class="fa-solid fa-rotate"></i>
+                                        </div>
+                                        <h5 class="text-xl font-bold text-slate-800 mb-3">1. مفاعل الدفعات (Batch)</h5>
+                                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">تُضاف جميع المواد المتفاعلة في بداية العملية، ويُجرى التفاعل ثم تُفرغ المنتجات.</p>
+                                        <div class="space-y-2 text-sm">
+                                            <p><span class="font-bold text-slate-700">الاستخدام:</span> الصناعات الدوائية والكيميائيات الدقيقة.</p>
+                                            <p><span class="font-bold text-teal-600">الميزة:</span> مرونة عالية وسهولة تغيير المنتج.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Type 2 -->
+                                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-teal-300 hover:shadow-md transition-all group">
+                                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-teal-500 mb-4 group-hover:scale-110 transition-transform">
+                                            <i class="fa-solid fa-arrows-spin"></i>
+                                        </div>
+                                        <h5 class="text-xl font-bold text-slate-800 mb-3">2. المفاعل المستمر (CSTR)</h5>
+                                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">تدخل المواد وتخرج بصورة مستمرة مع وجود تقليب مستمر ذو خلط كامل.</p>
+                                        <div class="space-y-2 text-sm">
+                                            <p><span class="font-bold text-slate-700">الاستخدام:</span> الصناعات الكيميائية والبتروكيميائية.</p>
+                                            <p><span class="font-bold text-teal-600">الميزة:</span> خلط متجانس وتحكم جيد بظروف التشغيل.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Type 3 -->
+                                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-teal-300 hover:shadow-md transition-all group">
+                                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-teal-500 mb-4 group-hover:scale-110 transition-transform">
+                                            <i class="fa-solid fa-pipe"></i>
+                                        </div>
+                                        <h5 class="text-xl font-bold text-slate-800 mb-3">3. المفاعل الأنبوبي (PFR)</h5>
+                                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">تتحرك المواد داخل أنبوب طويل في اتجاه واحد دون خلط طولي يُذكر.</p>
+                                        <div class="space-y-2 text-sm">
+                                            <p><span class="font-bold text-slate-700">الاستخدام:</span> إنتاج المواد بكميات كبيرة.</p>
+                                            <p><span class="font-bold text-teal-600">الميزة:</span> كفاءة تحويل مرتفعة للتفاعلات المستمرة.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Type 4 -->
+                                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-teal-300 hover:shadow-md transition-all group">
+                                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-teal-500 mb-4 group-hover:scale-110 transition-transform">
+                                            <i class="fa-solid fa-cubes-stacked"></i>
+                                        </div>
+                                        <h5 class="text-xl font-bold text-slate-800 mb-3">4. السرير المحشو (PBR)</h5>
+                                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">يحتوي على طبقة ثابتة من الحفاز الصلب يمر خلالها المائع.</p>
+                                        <div class="space-y-2 text-sm">
+                                            <p><span class="font-bold text-slate-700">الاستخدام:</span> التفاعلات الحفزية كالهدرجة والأكسدة.</p>
+                                            <p><span class="font-bold text-teal-600">الميزة:</span> كفاءة حفزية وسهولة فصل الحفاز.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Type 5 -->
+                                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-teal-300 hover:shadow-md transition-all group lg:col-span-2">
+                                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-teal-500 mb-4 group-hover:scale-110 transition-transform">
+                                            <i class="fa-solid fa-wind"></i>
+                                        </div>
+                                        <h5 class="text-xl font-bold text-slate-800 mb-3">5. السرير المميع (FBR)</h5>
+                                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">تُعلق جسيمات الحفاز بواسطة تيار من المائع لتصبح في حالة مميعة لتحسين الانتقال.</p>
+                                        <div class="space-y-2 text-sm">
+                                            <p><span class="font-bold text-slate-700">الاستخدام:</span> التكسير الحفزي (FCC)، الاحتراق.</p>
+                                            <p><span class="font-bold text-teal-600">الميزة:</span> توزيع متجانس للحفاز وكفاءة تشغيل عالية.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="border-slate-100">
+
+                            <!-- Apps & Maintenance -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="bg-teal-50/50 rounded-2xl p-8 border border-teal-100">
+                                    <h4 class="text-xl font-black text-teal-800 mb-6 flex items-center gap-3">
+                                        <i class="fa-solid fa-industry text-teal-500"></i> التطبيقات الصناعية
+                                    </h4>
+                                    <ul class="space-y-3">
+                                        <li class="flex items-center gap-3 text-slate-700"><i class="fa-solid fa-check text-teal-500"></i> الصناعات البتروكيميائية.</li>
+                                        <li class="flex items-center gap-3 text-slate-700"><i class="fa-solid fa-check text-teal-500"></i> صناعة الأسمدة والدوائية.</li>
+                                        <li class="flex items-center gap-3 text-slate-700"><i class="fa-solid fa-check text-teal-500"></i> البوليمرات والبلاستيك.</li>
+                                        <li class="flex items-center gap-3 text-slate-700"><i class="fa-solid fa-check text-teal-500"></i> تكرير النفط والغذائية.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-rose-50/50 rounded-2xl p-8 border border-rose-100">
+                                    <h4 class="text-xl font-black text-rose-800 mb-6 flex items-center gap-3">
+                                        <i class="fa-solid fa-wrench text-rose-500"></i> الأعطال والصيانة
+                                    </h4>
+                                    <div class="space-y-4">
+                                        <div>
+                                            <h5 class="font-bold text-rose-700 mb-2 text-sm">الأعطال:</h5>
+                                            <p class="text-sm text-slate-600 leading-relaxed">انخفاض كفاءة التفاعل، تراكم الرواسب، تآكل الجدران الداخلية، انسداد الخطوط، تعطل التقليب، انخفاض نشاط الحفاز.</p>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-bold text-emerald-700 mb-2 text-sm">الخطوات:</h5>
+                                            <p class="text-sm text-slate-600 leading-relaxed">تنظيف المفاعل دورياً، فحص التآكل والتشققات، صيانة الأختام والمحركات، تجديد الحفاز، معايرة القياسات وصمامات الأمان.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. Mixing Equipment -->
+                <section id="mixer-section" class="scroll-mt-32">
+                    <div class="bg-white rounded-[2.5rem] shadow-xl shadow-slate-200/40 border border-slate-100 overflow-hidden">
+                        <div class="bg-gradient-to-r from-indigo-600 to-indigo-400 p-8 md:p-10 text-white flex flex-col md:flex-row items-center gap-6 text-center md:text-right relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PHBhdGggZD0iTTAgMGgyMHYyMEgwem0xMCAxMGgxMHYxMEgxMHoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=')]"></div>
+                            <div class="w-24 h-24 bg-white/20 rounded-3xl flex items-center justify-center backdrop-blur-sm shrink-0 border border-white/30 z-10">
+                                <i class="fa-solid fa-fan text-5xl drop-shadow-md"></i>
+                            </div>
+                            <div class="z-10">
+                                <h3 class="text-3xl md:text-4xl font-black mb-3">الخلاط أو المقلب (Mixer / Agitator)</h3>
+                                <p class="text-indigo-50 font-medium text-lg max-w-xl">معدة ميكانيكية تُستخدم لخلط السوائل أو المعلقات أو المواد اللزجة بهدف الحصول على خليط متجانس وتحسين انتقال الحرارة.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="p-8 md:p-12 space-y-12">
+                            <!-- Principle -->
+                            <div class="flex flex-col md:flex-row gap-8 items-start">
+                                <div class="w-16 h-16 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-gears text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-2xl font-black text-slate-800 mb-4">مبدأ العمل</h4>
+                                    <p class="text-slate-600 leading-relaxed text-lg">يعمل الخلاط بواسطة محرك يدير عمودًا مزودًا بريش أو شفرات، فتتولد حركة دورانية داخل السائل تؤدي إلى مزج المكونات ومنع ترسب المواد الصلبة وتحسين التوزيع.</p>
+                                </div>
+                            </div>
+
+                            <hr class="border-slate-100">
+
+                            <!-- Types -->
+                            <div>
+                                <h4 class="text-2xl font-black text-slate-800 mb-8 flex items-center gap-3">
+                                    <i class="fa-solid fa-layer-group text-indigo-500"></i>
+                                    الأنواع والفرق بينها
+                                </h4>
+                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    <!-- Type 1 -->
+                                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-indigo-300 hover:shadow-md transition-all group">
+                                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-indigo-500 mb-4 group-hover:scale-110 transition-transform">
+                                            <i class="fa-solid fa-fan"></i>
+                                        </div>
+                                        <h5 class="text-xl font-bold text-slate-800 mb-3">1. المروحي (Propeller)</h5>
+                                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">يعتمد على ريش تشبه مروحة السفينة.</p>
+                                        <div class="space-y-2 text-sm">
+                                            <p><span class="font-bold text-slate-700">الاستخدام:</span> السوائل منخفضة اللزوجة.</p>
+                                            <p><span class="font-bold text-indigo-600">الميزة:</span> سرعة عالية وكفاءة جيدة.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Type 2 -->
+                                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-indigo-300 hover:shadow-md transition-all group">
+                                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-indigo-500 mb-4 group-hover:scale-110 transition-transform">
+                                            <i class="fa-solid fa-compact-disc"></i>
+                                        </div>
+                                        <h5 class="text-xl font-bold text-slate-800 mb-3">2. التوربيني (Turbine)</h5>
+                                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">يعتمد على ريش قصيرة مثبتة على قرص.</p>
+                                        <div class="space-y-2 text-sm">
+                                            <p><span class="font-bold text-slate-700">الاستخدام:</span> التشتت والتفاعلات الكيميائية.</p>
+                                            <p><span class="font-bold text-indigo-600">الميزة:</span> خلط قوي لمختلف التطبيقات.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Type 3 -->
+                                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-indigo-300 hover:shadow-md transition-all group">
+                                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-indigo-500 mb-4 group-hover:scale-110 transition-transform">
+                                            <i class="fa-solid fa-spoon"></i>
+                                        </div>
+                                        <h5 class="text-xl font-bold text-slate-800 mb-3">3. المجدافي (Paddle)</h5>
+                                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">يعتمد على شفرات مسطحة تحرك السائل بلطف.</p>
+                                        <div class="space-y-2 text-sm">
+                                            <p><span class="font-bold text-slate-700">الاستخدام:</span> السوائل متوسطة اللزوجة.</p>
+                                            <p><span class="font-bold text-indigo-600">الميزة:</span> خلط هادئ دون قص عالٍ.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Type 4 -->
+                                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-indigo-300 hover:shadow-md transition-all group">
+                                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-indigo-500 mb-4 group-hover:scale-110 transition-transform">
+                                            <i class="fa-solid fa-anchor"></i>
+                                        </div>
+                                        <h5 class="text-xl font-bold text-slate-800 mb-3">4. المرساة (Anchor)</h5>
+                                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">ريش كمرساة تلامس جدار الوعاء تقريباً.</p>
+                                        <div class="space-y-2 text-sm">
+                                            <p><span class="font-bold text-slate-700">الاستخدام:</span> السوائل عالية اللزوجة.</p>
+                                            <p><span class="font-bold text-indigo-600">الميزة:</span> يمنع التصاق المواد بالجدار.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Type 5 -->
+                                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-indigo-300 hover:shadow-md transition-all group lg:col-span-2">
+                                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-indigo-500 mb-4 group-hover:scale-110 transition-transform">
+                                            <i class="fa-solid fa-dna"></i>
+                                        </div>
+                                        <h5 class="text-xl font-bold text-slate-800 mb-3">5. الحلزوني الشريطي (Helical Ribbon)</h5>
+                                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">يعتمد على شريط حلزوني يدور داخل الوعاء.</p>
+                                        <div class="space-y-2 text-sm">
+                                            <p><span class="font-bold text-slate-700">الاستخدام:</span> السوائل شديدة اللزوجة.</p>
+                                            <p><span class="font-bold text-indigo-600">الميزة:</span> كفاءة عالية في خلط العجائن.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="border-slate-100">
+
+                            <!-- Apps & Maintenance -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="bg-indigo-50/50 rounded-2xl p-8 border border-indigo-100">
+                                    <h4 class="text-xl font-black text-indigo-800 mb-6 flex items-center gap-3">
+                                        <i class="fa-solid fa-industry text-indigo-500"></i> التطبيقات الصناعية
+                                    </h4>
+                                    <ul class="space-y-3">
+                                        <li class="flex items-center gap-3 text-slate-700"><i class="fa-solid fa-check text-indigo-500"></i> المفاعلات الكيميائية وخزانات التجهيز.</li>
+                                        <li class="flex items-center gap-3 text-slate-700"><i class="fa-solid fa-check text-indigo-500"></i> الصناعات الغذائية والدوائية.</li>
+                                        <li class="flex items-center gap-3 text-slate-700"><i class="fa-solid fa-check text-indigo-500"></i> صناعة الدهانات والبوليمرات.</li>
+                                        <li class="flex items-center gap-3 text-slate-700"><i class="fa-solid fa-check text-indigo-500"></i> محطات معالجة المياه.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-rose-50/50 rounded-2xl p-8 border border-rose-100">
+                                    <h4 class="text-xl font-black text-rose-800 mb-6 flex items-center gap-3">
+                                        <i class="fa-solid fa-wrench text-rose-500"></i> الأعطال والصيانة
+                                    </h4>
+                                    <div class="space-y-4">
+                                        <div>
+                                            <h5 class="font-bold text-rose-700 mb-2 text-sm">الأعطال:</h5>
+                                            <p class="text-sm text-slate-600 leading-relaxed">اهتزازات غير طبيعية، تآكل الريش، انخفاض كفاءة الخلط، ارتفاع حرارة المحرك، تلف المحامل.</p>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-bold text-emerald-700 mb-2 text-sm">الخطوات:</h5>
+                                            <p class="text-sm text-slate-600 leading-relaxed">فحص الريش والمحاذاة، تشحيم الأجزاء، تنظيف الخلاط من الرواسب دورياً، استبدال الأجزاء المتآكلة.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+<footer class="bg-dark text-slate-400 py-12 mt-auto border-t-4 border-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex justify-center mb-6 cursor-pointer group" onclick="navigate('home')">
+                <img src="../Image/الشعار.png" alt="شعار أثر"
+                    class="h-20 md:h-24 w-auto object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <p class="font-medium max-w-md mx-auto mb-8">منصتك التعليمية الأقوى لاستكشاف الهندسة الكيميائية بأحدث الطرق
+                التفاعلية وبدون تعقيد.</p>
+
+            <!-- Social Icons -->
+            <p class="text-lg font-bold text-slate-300 mb-4">للتواصل معنا:</p>
+            <div class="flex justify-center items-center gap-4 mb-8">
+                <a href="https://wa.me/+966539899496?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D9%84%D8%AF%D9%8A%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D9%85%D9%86%20%D8%AE%D9%84%D8%A7%D9%84%20%D9%85%D9%88%D9%82%D8%B9%20%D8%A3%D8%AB%D8%B1."
+                    target="_blank"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-[#25D366] text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-green-500/20 group"
+                    title="تواصل عبر واتساب">
+                    <i class="fa-brands fa-whatsapp text-2xl group-hover:-rotate-12 transition-transform"></i>
+                </a>
+                <a href="mailto:AtheerBaessa@gmail.com"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-secondary text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-secondary/20 group"
+                    title="راسلنا عبر الإيميل">
+                    <i class="fa-regular fa-envelope text-2xl group-hover:rotate-12 transition-transform"></i>
+                </a>
+                <a href="https://t.me/atheer3575" target="_blank"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-[#0088cc] text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/20 group"
+                    title="تواصل عبر تليجرام">
+                    <i class="fa-brands fa-telegram text-2xl group-hover:-rotate-12 transition-transform"></i>
+                </a>
+            </div>
+
+            <div class="flex flex-col items-center justify-center gap-4 pt-8 border-t border-slate-800/50 max-w-md mx-auto">
+                <div class="text-sm font-bold text-slate-500">
+                    &copy; 2026 جميع الحقوق محفوظة لمنصة أثر.
+                </div>
+                <a href="https://wa.me/967770721148?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D9%85%D9%88%D9%82%D8%B9%20%D8%A3%D8%AB%D8%B1%20%D9%88%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D9%85%D9%88%D9%82%D8%B9%20%D9%85%D8%B4%D8%A7%D8%A8%D9%87." target="_blank" class="flex items-center gap-2 text-xs font-medium text-slate-500 hover:text-white transition-colors duration-300 cursor-pointer bg-slate-800/30 hover:bg-slate-700/50 px-4 py-2 rounded-full border border-slate-700/50 group">
+                    <span>تم التصميم والتطوير من قبل</span>
+                    <img src="../Image/شعاري%20الرسمي.png" alt="شعار المطور" class="h-5 w-auto object-contain opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!-- Custom Toast Message Container -->
+    <div id="toast-container">
+        <i class="fa-solid fa-circle-info text-accent text-xl"></i>
+        <span id="toast-message" class="font-bold"></span>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script src="../js/script.js"></script>
+</body>
+</html>

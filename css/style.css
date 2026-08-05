@@ -111,3 +111,37 @@ body { top: 0 !important; }
 #goog-gt-tt { display: none !important; }
 .goog-te-spinner-pos { display: none !important; }
 .goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
+
+/* Center all grid items when they don't fill a row */
+.grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+}
+
+.grid > * {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Set gap variable based on Tailwind gap classes to calculate width precisely */
+.gap-4 { --gx: 1rem; }
+.gap-5 { --gx: 1.25rem; }
+.gap-6 { --gx: 1.5rem; }
+.gap-8 { --gx: 2rem; }
+.gap-12 { --gx: 3rem; }
+
+.grid-cols-2 > * { width: calc(50% - (var(--gx, 1rem) / 2)) !important; }
+
+@media (min-width: 640px) {
+    .sm\:grid-cols-2 > * { width: calc(50% - (var(--gx, 1rem) / 2)) !important; }
+}
+@media (min-width: 768px) {
+    .md\:grid-cols-2 > * { width: calc(50% - (var(--gx, 1.5rem) / 2)) !important; }
+    .md\:grid-cols-3 > * { width: calc(33.333% - (var(--gx, 1.5rem) * 2 / 3)) !important; }
+}
+@media (min-width: 1024px) {
+    .lg\:grid-cols-2 > * { width: calc(50% - (var(--gx, 2rem) / 2)) !important; }
+    .lg\:grid-cols-3 > * { width: calc(33.333% - (var(--gx, 2rem) * 2 / 3)) !important; }
+    .lg\:grid-cols-4 > * { width: calc(25% - (var(--gx, 3rem) * 3 / 4)) !important; }
+}

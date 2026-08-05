@@ -73,7 +73,7 @@
                     class="fa-solid fa-book-open me-3 w-5 text-center"></i> المواد الدراسية</button>
             <button onclick="navigate('industries');"
                 class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
-                    class="fa-solid fa-oil-well me-3 w-5 text-center"></i> الصناعات الكيميائية</button>
+                    class="fa-solid fa-atom me-3 w-5 text-center"></i> التخصصات الدقيقة</button>
             <button onclick="navigate('fields');"
                 class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
                     class="fa-solid fa-briefcase me-3 w-5 text-center"></i> مجالات العمل</button>
@@ -98,7 +98,7 @@
 
             <main class="flex-grow">
         <div id="view-cert-fe" class="view-section active pt-32 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-8">
+            <div class="mb-8 sticky top-24 z-40 w-fit mr-4 md:mr-0">
                 <button onclick="navigate('courses')"
                     class="w-12 h-12 flex items-center justify-center bg-white border border-slate-200 text-slate-500 hover:text-secondary hover:border-secondary hover:bg-slate-50 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group"
                     title="العودة للشهادات المهنية">
@@ -187,53 +187,77 @@
                     <div class="w-12 h-12 bg-teal-50 text-teal-500 rounded-xl flex items-center justify-center text-2xl">
                         <i class="fa-solid fa-book"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-slate-800">أبرز الموضوعات التي يغطيها الاختبار</h3>
+                    <h3 class="text-2xl font-bold text-slate-800">الموضوعات التي يغطيها الاختبار</h3>
                 </div>
                 
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
-                        <h4 class="font-bold text-teal-600 mb-2">1. الرياضيات والهندسة الأساسية</h4>
-                        <p class="text-sm text-slate-600">(التفاضل والتكامل، المعادلات التفاضلية، الإحصاء، الجبر الخطي، التحليل العددي)</p>
+                        <h4 class="font-bold text-teal-600 mb-2">1. الرياضيات (Mathematics)</h4>
+                        <p class="text-sm text-slate-600">(الهندسة التحليلية واللوغاريتمات وعلم المثلثات، التفاضل والتكامل، المعادلات التفاضلية، الطرق العددية، الجبر، الدقة والإحكام والأرقام المعنوية)</p>
                     </div>
                     <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
-                        <h4 class="font-bold text-teal-600 mb-2">2. الكيمياء والعلوم الأساسية</h4>
-                        <p class="text-sm text-slate-600">(الكيمياء العامة، العضوية، الفيزياء، خواص المواد)</p>
+                        <h4 class="font-bold text-teal-600 mb-2">2. الاحتمالات والإحصاء (Probability &amp; Statistics)</h4>
+                        <p class="text-sm text-slate-600">(التوزيعات الاحتمالية، القيمة المتوقعة، اختبار الفرضيات وتصميم التجارب، مقاييس النزعة المركزية والتشتت، الانحدار وملاءمة المنحنيات، التحكم الإحصائي في العمليات)</p>
                     </div>
                     <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
-                        <h4 class="font-bold text-teal-600 mb-2">3. موازنة المادة والطاقة</h4>
-                        <p class="text-sm text-slate-600">(موازنة المادة، موازنة الطاقة، الحسابات الصناعية)</p>
+                        <h4 class="font-bold text-teal-600 mb-2">3. العلوم الهندسية (Engineering Sciences)</h4>
+                        <p class="text-sm text-slate-600">(الميكانيكا الأساسية، الشغل والطاقة والقدرة، أساسيات الكهرباء والدوائر الكهربائية)</p>
                     </div>
                     <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
-                        <h4 class="font-bold text-teal-600 mb-2">4. الديناميكا الحرارية</h4>
-                        <p class="text-sm text-slate-600">(القانونان الأول والثاني، الخواص الحرارية، الاتزان الطوري)</p>
+                        <h4 class="font-bold text-teal-600 mb-2">4. علم المواد (Materials Science)</h4>
+                        <p class="text-sm text-slate-600">(الخصائص الكيميائية والفيزيائية والميكانيكية للمواد، أنواع المواد وتوافقها، التآكل وطرق مكافحته، البوليمرات والسيراميك والمواد المركبة)</p>
                     </div>
                     <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
-                        <h4 class="font-bold text-teal-600 mb-2">5. ميكانيكا الموائع</h4>
-                        <p class="text-sm text-slate-600">(الجريان في الأنابيب، المضخات، الفواقد، أعداد رينولدز)</p>
+                        <h4 class="font-bold text-teal-600 mb-2">5. الكيمياء والأحياء (Chemistry &amp; Biology)</h4>
+                        <p class="text-sm text-slate-600">(الكيمياء غير العضوية، الكيمياء العضوية، الكيمياء التحليلية، الكيمياء الحيوية والأحياء الدقيقة والأحياء الجزيئية، العمليات الحيوية)</p>
                     </div>
                     <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
-                        <h4 class="font-bold text-teal-600 mb-2">6. انتقال الحرارة</h4>
-                        <p class="text-sm text-slate-600">(التوصيل، الحمل الحراري، الإشعاع، المبادلات الحرارية)</p>
+                        <h4 class="font-bold text-teal-600 mb-2">6. ميكانيكا الموائع (Fluid Mechanics)</h4>
+                        <p class="text-sm text-slate-600">(خواص الموائع، الأعداد اللابعدية، معادلة الطاقة الميكانيكية، معادلة برنولي، الجريان الصفحي والمضطرب، قياس التدفق، المضخات والتوربينات والضواغط وأنظمة التفريغ، الجريان الانضغاطي والموائع غير النيوتونية)</p>
                     </div>
                     <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
-                        <h4 class="font-bold text-teal-600 mb-2">7. انتقال الكتلة</h4>
-                        <p class="text-sm text-slate-600">(الانتشار، الامتصاص، الاستخلاص، التقطير، التجفيف)</p>
+                        <h4 class="font-bold text-teal-600 mb-2">7. الديناميكا الحرارية (Thermodynamics)</h4>
+                        <p class="text-sm text-slate-600">(خواص المواد النقية والمخاليط، مخططات الأطوار والجداول الحرارية، قوانين الديناميكا الحرارية، العمليات الديناميكية الحرارية، الدورات الحرارية والكفاءة، اتزان الأطوار، الاتزان الكيميائي، حرارة التفاعل والخلط)</p>
                     </div>
                     <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
-                        <h4 class="font-bold text-teal-600 mb-2">8. هندسة التفاعلات الكيميائية</h4>
-                        <p class="text-sm text-slate-600">(تصميم المفاعلات، الحركية الكيميائية، CSTR, PFR, Batch)</p>
+                        <h4 class="font-bold text-teal-600 mb-2">8. موازنة المادة والطاقة (Material &amp; Energy Balances)</h4>
+                        <p class="text-sm text-slate-600">(موازنة المادة والطاقة في الحالة المستقرة وغير المستقرة، أنظمة إعادة التدوير والتجاوز، الموازنات مع التفاعلات الكيميائية)</p>
                     </div>
                     <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
-                        <h4 class="font-bold text-teal-600 mb-2">9. تصميم وتشغيل العمليات</h4>
-                        <p class="text-sm text-slate-600">(PFD, P&ID، المعدات، المرافق، تحسين العمليات)</p>
+                        <h4 class="font-bold text-teal-600 mb-2">9. انتقال الحرارة (Heat Transfer)</h4>
+                        <p class="text-sm text-slate-600">(التوصيل الحراري، الحمل الحراري، الإشعاع الحراري، معاملات انتقال الحرارة، معدات انتقال الحرارة وتصميمها وتشغيلها)</p>
                     </div>
                     <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
-                        <h4 class="font-bold text-teal-600 mb-2">10. التحكم بالعمليات</h4>
-                        <p class="text-sm text-slate-600">(أساسيات التحكم الآلي، أنظمة التحكم، أجهزة القياس)</p>
+                        <h4 class="font-bold text-teal-600 mb-2">10. انتقال الكتلة وعمليات الفصل (Mass Transfer &amp; Separation)</h4>
+                        <p class="text-sm text-slate-600">(الانتشار الجزيئي، انتقال الكتلة بالحمل، عمليات الفصل، طرق الاتزان المرحلي، معدات التلامس المستمر، الترطيب والتجفيف والتبخير)</p>
                     </div>
                     <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
-                        <h4 class="font-bold text-teal-600 mb-2">11. السلامة والهندسة المهنية</h4>
-                        <p class="text-sm text-slate-600">(سلامة العمليات، تقييم المخاطر، الجوانب الأخلاقية والقانونية)</p>
+                        <h4 class="font-bold text-teal-600 mb-2">11. مناولة المواد الصلبة (Solids Handling)</h4>
+                        <p class="text-sm text-slate-600">(خواص الجسيمات، عمليات معالجة المواد الصلبة، نقل وتخزين المواد الصلبة)</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                        <h4 class="font-bold text-teal-600 mb-2">12. هندسة التفاعلات الكيميائية (Chemical Reaction Engineering)</h4>
+                        <p class="text-sm text-slate-600">(معدلات التفاعل ورتبة التفاعل، ثابت سرعة التفاعل، التحول والمردود والانتقائية، أنواع التفاعلات، أنواع المفاعلات الكيميائية، الحفز)</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                        <h4 class="font-bold text-teal-600 mb-2">13. الاقتصاد الهندسي (Engineering Economics)</h4>
+                        <p class="text-sm text-slate-600">(القيمة الزمنية للنقود، التحليل الاقتصادي، عدم اليقين وتحليل المخاطر، اختيار وتقييم المشاريع)</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                        <h4 class="font-bold text-teal-600 mb-2">14. تصميم العمليات (Process Design)</h4>
+                        <p class="text-sm text-slate-600">(مخططات العمليات ومخططات الأنابيب والأجهزة، اختيار المعدات والتحجيم، تقدير تكاليف المعدات والمنشآت، تصميم وتحسين العمليات، المواصفات والمعايير الهندسية)</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                        <h4 class="font-bold text-teal-600 mb-2">15. التحكم في العمليات (Process Control)</h4>
+                        <p class="text-sm text-slate-600">(ديناميكية العمليات، استراتيجيات التحكم، تصميم حلقات التحكم وأنظمة التحكم الصناعية)</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                        <h4 class="font-bold text-teal-600 mb-2">16. السلامة والصحة والبيئة (Safety, Health &amp; Environment)</h4>
+                        <p class="text-sm text-slate-600">(خصائص المواد الخطرة، الصحة الصناعية، سلامة العمليات وتحليل المخاطر، الحماية من الضغط الزائد والمنخفض، إدارة ومعالجة النفايات، مخاطر التفاعلات الكيميائية)</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                        <h4 class="font-bold text-teal-600 mb-2">17. الأخلاقيات والممارسة المهنية (Ethics &amp; Professional Practice)</h4>
+                        <p class="text-sm text-slate-600">(أخلاقيات المهنة، العقود والاتفاقيات، السلامة والمسؤولية المهنية، الملكية الفكرية)</p>
                     </div>
                 </div>
             </div>
@@ -255,7 +279,8 @@
             <!-- Social Icons -->
             <p class="text-lg font-bold text-slate-300 mb-4">للتواصل معنا:</p>
             <div class="flex justify-center items-center gap-4 mb-8">
-                <a href="https://wa.me/+966539899496?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D9%84%D8%AF%D9%8A%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D9%85%D9%86%20%D8%AE%D9%84%D8%A7%D9%84%20%D9%85%D9%88%D9%82%D8%B9%20%D8%A3%D8%AB%D8%B1." target="_blank"
+                <a href="https://wa.me/+966539899496?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D9%84%D8%AF%D9%8A%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D9%85%D9%86%20%D8%AE%D9%84%D8%A7%D9%84%20%D9%85%D9%88%D9%82%D8%B9%20%D8%A3%D8%AB%D8%B1."
+                    target="_blank"
                     class="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-[#25D366] text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-green-500/20 group"
                     title="تواصل عبر واتساب">
                     <i class="fa-brands fa-whatsapp text-2xl group-hover:-rotate-12 transition-transform"></i>
@@ -265,10 +290,21 @@
                     title="راسلنا عبر الإيميل">
                     <i class="fa-regular fa-envelope text-2xl group-hover:rotate-12 transition-transform"></i>
                 </a>
+                <a href="https://t.me/atheer3575" target="_blank"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-[#0088cc] text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/20 group"
+                    title="تواصل عبر تليجرام">
+                    <i class="fa-brands fa-telegram text-2xl group-hover:-rotate-12 transition-transform"></i>
+                </a>
             </div>
 
-            <div class="text-sm font-bold text-slate-500 pt-8 border-t border-slate-800/50 max-w-md mx-auto">
-                &copy; 2026 جميع الحقوق محفوظة لمنصة أثر.
+            <div class="flex flex-col items-center justify-center gap-4 pt-8 border-t border-slate-800/50 max-w-md mx-auto">
+                <div class="text-sm font-bold text-slate-500">
+                    &copy; 2026 جميع الحقوق محفوظة لمنصة أثر.
+                </div>
+                <a href="https://wa.me/967770721148?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D9%85%D9%88%D9%82%D8%B9%20%D8%A3%D8%AB%D8%B1%20%D9%88%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D9%85%D9%88%D9%82%D8%B9%20%D9%85%D8%B4%D8%A7%D8%A8%D9%87." target="_blank" class="flex items-center gap-2 text-xs font-medium text-slate-500 hover:text-white transition-colors duration-300 cursor-pointer bg-slate-800/30 hover:bg-slate-700/50 px-4 py-2 rounded-full border border-slate-700/50 group">
+                    <span>تم التصميم والتطوير من قبل</span>
+                    <img src="../Image/شعاري%20الرسمي.png" alt="شعار المطور" class="h-5 w-auto object-contain opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+                </a>
             </div>
         </div>
     </footer>

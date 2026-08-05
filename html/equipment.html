@@ -73,7 +73,7 @@
                     class="fa-solid fa-book-open me-3 w-5 text-center"></i> المواد الدراسية</button>
             <button onclick="navigate('industries');"
                 class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
-                    class="fa-solid fa-oil-well me-3 w-5 text-center"></i> الصناعات الكيميائية</button>
+                    class="fa-solid fa-atom me-3 w-5 text-center"></i> التخصصات الدقيقة</button>
             <button onclick="navigate('fields');"
                 class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
                     class="fa-solid fa-briefcase me-3 w-5 text-center"></i> مجالات العمل</button>
@@ -100,7 +100,7 @@
     <!-- ==================== EQUIPMENT VIEW ==================== -->
         <div id="view-equipment" class="view-section pt-32 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Back Button -->
-            <div class="mb-8">
+            <div class="mb-8 sticky top-24 z-40 w-fit mr-4 md:mr-0">
                 <button onclick="navigate('home')"
                     class="w-12 h-12 flex items-center justify-center bg-white border border-slate-200 text-slate-500 hover:text-secondary hover:border-secondary hover:bg-slate-50 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group"
                     title="العودة للرئيسية">
@@ -115,7 +115,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- 1. معدات نقل الموائع -->
-                <div class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div onclick="navigate('fluid-transfer')" class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                     <div class="h-48 bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center text-blue-500 text-7xl group-hover:scale-110 transition-transform duration-300">
                         <i class="fa-solid fa-droplet"></i>
                     </div>
@@ -127,7 +127,7 @@
                 </div>
 
                 <!-- 2. معدات انتقال الحرارة -->
-                <div class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div onclick="navigate('heat-transfer')" class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                     <div class="h-48 bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center text-orange-500 text-7xl group-hover:scale-110 transition-transform duration-300">
                         <i class="fa-solid fa-temperature-half"></i>
                     </div>
@@ -138,13 +138,13 @@
                     </div>
                 </div>
 
-                <!-- 3. معدات التفاعل -->
-                <div class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <!-- 3. معدات التفاعل و الخلط -->
+                <div onclick="navigate('reaction-mixing')" class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                     <div class="h-48 bg-gradient-to-br from-purple-50 to-purple-100 flex items-center justify-center text-purple-500 text-7xl group-hover:scale-110 transition-transform duration-300">
                         <i class="fa-solid fa-flask-vial"></i>
                     </div>
                     <div class="p-6 text-center">
-                        <h4 class="text-2xl font-black text-slate-800 mb-2">معدات التفاعل</h4>
+                        <h4 class="text-2xl font-black text-slate-800 mb-2">معدات التفاعل و الخلط</h4>
                         <p class="text-slate-500 font-medium leading-relaxed mb-4">مفاعلات كيميائية وحيوية لإتمام التفاعلات بكفاءة.</p>
                         <span class="inline-block px-4 py-2 bg-slate-50 text-secondary font-bold rounded-lg group-hover:bg-secondary group-hover:text-white transition-colors duration-300">عرض الأقسام <i class="fa-solid fa-arrow-left ms-2"></i></span>
                     </div>
@@ -163,7 +163,7 @@
                 </div>
 
                 <!-- 5. معدات الفصل الانتشاري -->
-                <div class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div onclick="navigate('diffusive-separation')" class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                     <div class="h-48 bg-gradient-to-br from-indigo-50 to-indigo-100 flex items-center justify-center text-indigo-500 text-7xl group-hover:scale-110 transition-transform duration-300">
                         <i class="fa-solid fa-layer-group"></i>
                     </div>
@@ -175,7 +175,7 @@
                 </div>
 
                 <!-- 6. معدات المناولة والتخزين -->
-                <div class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div onclick="navigate('handling-storage')" class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                     <div class="h-48 bg-gradient-to-br from-rose-50 to-rose-100 flex items-center justify-center text-rose-500 text-7xl group-hover:scale-110 transition-transform duration-300">
                         <i class="fa-solid fa-warehouse"></i>
                     </div>
@@ -187,13 +187,25 @@
                 </div>
 
                 <!-- 7. معدات الطحن والتكسير -->
-                <div class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div onclick="navigate('crushing-grinding')" class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                     <div class="h-48 bg-gradient-to-br from-stone-50 to-stone-100 flex items-center justify-center text-stone-500 text-7xl group-hover:scale-110 transition-transform duration-300">
                         <i class="fa-solid fa-hammer"></i>
                     </div>
                     <div class="p-6 text-center">
                         <h4 class="text-2xl font-black text-slate-800 mb-2">معدات الطحن والتكسير</h4>
                         <p class="text-slate-500 font-medium leading-relaxed mb-4">كسارات وطواحين لتصغير حجم المواد الصلبة ومعالجتها.</p>
+                        <span class="inline-block px-4 py-2 bg-slate-50 text-secondary font-bold rounded-lg group-hover:bg-secondary group-hover:text-white transition-colors duration-300">عرض الأقسام <i class="fa-solid fa-arrow-left ms-2"></i></span>
+                    </div>
+                </div>
+
+                <!-- 7. أجهزة القياس والتحكم -->
+                <div class="power-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-48 bg-gradient-to-br from-cyan-50 to-cyan-100 flex items-center justify-center text-cyan-500 text-7xl group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-gauge-high"></i>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h4 class="text-2xl font-black text-slate-800 mb-2">أجهزة القياس والتحكم</h4>
+                        <p class="text-slate-500 font-medium leading-relaxed mb-4">أجهزة لقياس الحرارة، الضغط، والتدفق للتحكم في العمليات الكيميائية.</p>
                         <span class="inline-block px-4 py-2 bg-slate-50 text-secondary font-bold rounded-lg group-hover:bg-secondary group-hover:text-white transition-colors duration-300">عرض الأقسام <i class="fa-solid fa-arrow-left ms-2"></i></span>
                     </div>
                 </div>
@@ -215,7 +227,8 @@
             <!-- Social Icons -->
             <p class="text-lg font-bold text-slate-300 mb-4">للتواصل معنا:</p>
             <div class="flex justify-center items-center gap-4 mb-8">
-                <a href="https://wa.me/+966539899496?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D9%84%D8%AF%D9%8A%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D9%85%D9%86%20%D8%AE%D9%84%D8%A7%D9%84%20%D9%85%D9%88%D9%82%D8%B9%20%D8%A3%D8%AB%D8%B1." target="_blank"
+                <a href="https://wa.me/+966539899496?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D9%84%D8%AF%D9%8A%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D9%85%D9%86%20%D8%AE%D9%84%D8%A7%D9%84%20%D9%85%D9%88%D9%82%D8%B9%20%D8%A3%D8%AB%D8%B1."
+                    target="_blank"
                     class="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-[#25D366] text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-green-500/20 group"
                     title="تواصل عبر واتساب">
                     <i class="fa-brands fa-whatsapp text-2xl group-hover:-rotate-12 transition-transform"></i>
@@ -225,10 +238,21 @@
                     title="راسلنا عبر الإيميل">
                     <i class="fa-regular fa-envelope text-2xl group-hover:rotate-12 transition-transform"></i>
                 </a>
+                <a href="https://t.me/atheer3575" target="_blank"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-[#0088cc] text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/20 group"
+                    title="تواصل عبر تليجرام">
+                    <i class="fa-brands fa-telegram text-2xl group-hover:-rotate-12 transition-transform"></i>
+                </a>
             </div>
 
-            <div class="text-sm font-bold text-slate-500 pt-8 border-t border-slate-800/50 max-w-md mx-auto">
-                &copy; 2026 جميع الحقوق محفوظة لمنصة أثر.
+            <div class="flex flex-col items-center justify-center gap-4 pt-8 border-t border-slate-800/50 max-w-md mx-auto">
+                <div class="text-sm font-bold text-slate-500">
+                    &copy; 2026 جميع الحقوق محفوظة لمنصة أثر.
+                </div>
+                <a href="https://wa.me/967770721148?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D9%85%D9%88%D9%82%D8%B9%20%D8%A3%D8%AB%D8%B1%20%D9%88%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D9%85%D9%88%D9%82%D8%B9%20%D9%85%D8%B4%D8%A7%D8%A8%D9%87." target="_blank" class="flex items-center gap-2 text-xs font-medium text-slate-500 hover:text-white transition-colors duration-300 cursor-pointer bg-slate-800/30 hover:bg-slate-700/50 px-4 py-2 rounded-full border border-slate-700/50 group">
+                    <span>تم التصميم والتطوير من قبل</span>
+                    <img src="../Image/شعاري%20الرسمي.png" alt="شعار المطور" class="h-5 w-auto object-contain opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+                </a>
             </div>
         </div>
     </footer>
