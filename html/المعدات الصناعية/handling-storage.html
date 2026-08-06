@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أثر | عالم الهندسة الكيميائية</title>
+    <link rel="icon" href="../../Image/الشعار.png" type="image/png">
+    <!-- Google Fonts: Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="../../js/tailwind-config.js"></script>
+
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body class="flex flex-col min-h-screen text-slate-800">
+
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer group" onclick="navigate('home')">
+                    <img src="../../Image/الشعار.png" alt="شعار أثر"
+                        class="h-12 md:h-14 w-auto object-contain ms-2 group-hover:scale-105 transition-transform duration-300 drop-shadow-lg">
+                </div>
+
+                <!-- Menu Button -->
+                <div class="flex items-center">
+                    <button onclick="toggleSideMenu()"
+                        class="text-white hover:text-accent focus:outline-none p-2 transition-colors">
+                        <i class="fa-solid fa-bars-staggered text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Side Menu Overlay -->
+    <div id="menu-overlay" onclick="toggleSideMenu()"
+        class="fixed inset-0 bg-dark/60 backdrop-blur-sm z-[55] opacity-0 pointer-events-none transition-opacity duration-300">
+    </div>
+
+    <!-- Side Menu Panel -->
+    <div id="side-menu"
+        class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-primary/95 backdrop-blur-2xl z-[60] transform translate-x-full transition-transform duration-300 border-l border-white/10 shadow-2xl flex flex-col">
+        <div class="p-5 flex justify-between items-center border-b border-white/10">
+            <span class="font-black text-2xl text-white">القائمة</span>
+            <button onclick="toggleSideMenu()"
+                class="text-white hover:text-accent p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+        </div>
+        <div class="p-4 space-y-2 overflow-y-auto flex-grow">
+            <button onclick="navigate('home');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-house me-3 w-5 text-center"></i> الرئيسية</button>
+            <button onclick="navigate('about');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-user-graduate me-3 w-5 text-center"></i> عن الهندسة الكيميائية</button>
+            <button onclick="navigate('subjects');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-book-open me-3 w-5 text-center"></i> المواد الدراسية</button>
+            <button onclick="navigate('industries');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-atom me-3 w-5 text-center"></i> التخصصات الدقيقة</button>
+            <button onclick="navigate('fields');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-briefcase me-3 w-5 text-center"></i> مجالات العمل</button>
+            <button onclick="navigate('equipment');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-industry me-3 w-5 text-center"></i> المعدات الصناعية</button>
+            <button onclick="navigate('software');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-laptop-code me-3 w-5 text-center"></i> البرامج الهندسية</button>
+            
+            <button onclick="navigate('courses');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-certificate me-3 w-5 text-center"></i> الشهادات المهنية
+</button>
+            <button onclick="navigate('fieldwork');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-helmet-safety me-3 w-5 text-center"></i> العمل الميداني</button>
+            <button onclick="navigate('library');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-book me-3 w-5 text-center"></i> المكتبة</button>
+        </div>
+    </div>
+
+    <main class="flex-grow">
+    <!-- ==================== HANDLING & STORAGE VIEW ==================== -->
+        <div id="view-handling-storage" class="view-section pt-32 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 active">
+            <!-- Back Button -->
+            <div class="mb-8 flex justify-start items-center sticky top-24 z-40 mr-4 md:mr-0">
+                <button onclick="navigate('equipment')"
+                    class="w-12 h-12 flex items-center justify-center bg-white border border-slate-200 text-slate-500 hover:text-secondary hover:border-secondary hover:bg-slate-50 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group shrink-0"
+                    title="العودة للمعدات">
+                    <i class="fa-solid fa-arrow-right-long text-xl transform group-hover:translate-x-1 transition-transform"></i>
+                </button>
+                
+                </div>
+            
+            <div class="text-center mb-10">
+                <h2 class="text-4xl md:text-5xl font-black text-primary mb-6">معدات المناولة والتخزين</h2>
+                <div class="w-24 h-2 bg-rose-500 rounded-full mx-auto mb-8"></div>
+<p class="text-lg text-slate-600 max-w-2xl mx-auto font-medium leading-relaxed">نظرة تفصيلية على تقنيات ومعدات المناولة والتخزين المستخدمة في المنشآت الصناعية لضمان كفاءة وسلامة العمليات.</p>
+            </div>
+
+            <!-- Filters (Moved below introductory text) -->
+            <div class="flex flex-wrap justify-center gap-3 mb-16">
+                <a href="#storage-section" class="px-5 py-2.5 bg-white border border-slate-200 text-slate-600 rounded-xl hover:border-blue-500 hover:text-blue-600 transition-all font-bold text-sm shadow-sm hover:shadow-md"><i class="fa-solid fa-warehouse me-2"></i> التخزين</a>
+                    <a href="#handling-section" class="px-5 py-2.5 bg-white border border-slate-200 text-slate-600 rounded-xl hover:border-orange-500 hover:text-orange-600 transition-all font-bold text-sm shadow-sm hover:shadow-md"><i class="fa-solid fa-truck-ramp-box me-2"></i> المناولة</a>
+            </div>
+                
+
+            <div class="space-y-20">
+                <!-- 1. التخزين -->
+                <section id="storage-section" class="scroll-mt-32">
+                    <div class="bg-white rounded-[2.5rem] shadow-xl shadow-slate-200/40 border border-slate-100 overflow-hidden">
+                        <div class="bg-gradient-to-r from-blue-600 to-blue-400 p-8 md:p-10 text-white flex flex-col md:flex-row items-center gap-6 text-center md:text-right relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PHBhdGggZD0iTTAgMGgyMHYyMEgwem0xMCAxMGgxMHYxMEgxMHoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=')]"></div>
+                            <div class="w-24 h-24 bg-white/20 rounded-3xl flex items-center justify-center backdrop-blur-sm shrink-0 border border-white/30 z-10">
+                                <i class="fa-solid fa-warehouse text-5xl drop-shadow-md"></i>
+                            </div>
+                            <div class="z-10">
+                                <h3 class="text-3xl md:text-4xl font-black mb-3">معدات التخزين (Storage Equipment)</h3>
+                                <p class="text-blue-50 font-medium text-lg max-w-xl">معدات تستخدم لحفظ المواد الخام أو المنتجات بصورة آمنة مع المحافظة على جودتها.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="p-8 md:p-12 space-y-12">
+                            <!-- التعريف ومبدأ العمل -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="bg-slate-50/80 p-8 rounded-3xl border border-slate-100 hover:shadow-md transition-shadow">
+                                    <h4 class="text-xl font-black text-slate-800 mb-4 flex items-center gap-3"><i class="fa-solid fa-book-open text-blue-500 text-2xl"></i> التعريف</h4>
+                                    <p class="text-slate-600 font-medium leading-relaxed text-justify">معدات التخزين هي معدات صناعية تُستخدم لحفظ المواد الخام أو المنتجات الوسيطة أو النهائية، سواء كانت صلبة أو سائلة أو غازية، مع المحافظة على جودتها وسلامتها وتوفيرها عند الحاجة للعمليات الصناعية.</p>
+                                </div>
+                                <div class="bg-slate-50/80 p-8 rounded-3xl border border-slate-100 hover:shadow-md transition-shadow">
+                                    <h4 class="text-xl font-black text-slate-800 mb-4 flex items-center gap-3"><i class="fa-solid fa-gears text-blue-500 text-2xl"></i> مبدأ العمل</h4>
+                                    <p class="text-slate-600 font-medium leading-relaxed text-justify">تعتمد معدات التخزين على احتواء المادة داخل وعاء أو حاوية مصممة وفق خصائصها الفيزيائية والكيميائية، مع توفير ظروف تشغيل مناسبة مثل الضغط، ودرجة الحرارة، والتهوية، والعزل، لضمان سلامة المادة ومنع التلوث أو الفقد أثناء التخزين.</p>
+                                </div>
+                            </div>
+
+                            <!-- الأنواع -->
+                            <div>
+                                <h4 class="text-2xl font-black text-slate-800 mb-8 flex items-center gap-3"><i class="fa-solid fa-layer-group text-blue-500"></i> الأنواع والفرق بينها</h4>
+                                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                                    
+                                    <!-- الصلبة -->
+                                    <div class="p-6 border-2 border-slate-200 rounded-3xl bg-slate-50">
+                                        <h5 class="font-black text-xl text-blue-700 mb-4 border-b pb-2">1. معدات تخزين المواد الصلبة</h5>
+                                        <ul class="space-y-4">
+                                            <li>
+                                                <strong class="text-slate-800">القادوس (Hopper):</strong>
+                                                <p class="text-sm text-slate-600">يستخدم لاستقبال المواد الصلبة وتغذيتها تدريجيًا إلى المعدات التالية. يسهل التحكم في معدل التغذية.</p>
+                                            </li>
+                                            <li>
+                                                <strong class="text-slate-800">حاوية التخزين (Bin):</strong>
+                                                <p class="text-sm text-slate-600">لتخزين كميات صغيرة أو متوسطة من المواد الصلبة لفترات قصيرة. سهولة التعبئة والتفريغ.</p>
+                                            </li>
+                                            <li>
+                                                <strong class="text-slate-800">الصومعة (Silo):</strong>
+                                                <p class="text-sm text-slate-600">لتخزين كميات كبيرة من المواد السائبة مثل الأسمنت، الحبوب. سعة تخزين كبيرة مع حماية من العوامل الخارجية.</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <!-- السائلة -->
+                                    <div class="p-6 border-2 border-slate-200 rounded-3xl bg-slate-50">
+                                        <h5 class="font-black text-xl text-blue-700 mb-4 border-b pb-2">2. معدات تخزين السوائل</h5>
+                                        <ul class="space-y-4">
+                                            <li>
+                                                <strong class="text-slate-800">خزان التخزين (Storage Tank):</strong>
+                                                <p class="text-sm text-slate-600">يستخدم لتخزين السوائل المختلفة تحت الضغط الجوي أو ضغط منخفض. (مثل المياه، الزيوت، الوقود، المواد الكيميائية).</p>
+                                                <p class="text-sm text-slate-600 mt-2 font-bold text-emerald-600">الميزة: يتوفر بأحجام وتصاميم متنوعة تناسب طبيعة السائل.</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <!-- الغازية -->
+                                    <div class="p-6 border-2 border-slate-200 rounded-3xl bg-slate-50">
+                                        <h5 class="font-black text-xl text-blue-700 mb-4 border-b pb-2">3. معدات تخزين الغازات</h5>
+                                        <ul class="space-y-4">
+                                            <li>
+                                                <strong class="text-slate-800">وعاء الضغط (Pressure Vessel):</strong>
+                                                <p class="text-sm text-slate-600">يستخدم لتخزين الغازات أو السوائل تحت ضغط مرتفع. يتحمل الضغوط العالية ويوفر تخزينًا آمنًا.</p>
+                                            </li>
+                                            <li>
+                                                <strong class="text-slate-800">أسطوانة/خزان غاز (Gas Cylinder / Tank):</strong>
+                                                <p class="text-sm text-slate-600">لتخزين الغازات المضغوطة أو المسالة (أكسجين، نيتروجين). يسهل نقل الغازات وتداولها بأمان.</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- التطبيقات والأعطال -->
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                                <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-8 rounded-3xl text-white shadow-lg">
+                                    <h4 class="text-xl font-black text-blue-300 mb-6 flex items-center gap-3"><i class="fa-solid fa-industry text-2xl"></i> التطبيقات الصناعية</h4>
+                                    <div class="flex flex-wrap gap-3">
+                                        <span class="px-4 py-2 bg-white/10 border border-white/20 rounded-xl text-sm font-bold backdrop-blur-md hover:bg-white/20 transition-colors">الصناعات الكيميائية</span>
+                                        <span class="px-4 py-2 bg-white/10 border border-white/20 rounded-xl text-sm font-bold backdrop-blur-md hover:bg-white/20 transition-colors">الصناعات البتروكيميائية</span>
+                                        <span class="px-4 py-2 bg-white/10 border border-white/20 rounded-xl text-sm font-bold backdrop-blur-md hover:bg-white/20 transition-colors">الصناعات الغذائية</span>
+                                        <span class="px-4 py-2 bg-white/10 border border-white/20 rounded-xl text-sm font-bold backdrop-blur-md hover:bg-white/20 transition-colors">الصناعات الدوائية</span>
+                                        <span class="px-4 py-2 bg-white/10 border border-white/20 rounded-xl text-sm font-bold backdrop-blur-md hover:bg-white/20 transition-colors">محطات معالجة المياه</span>
+                                        <span class="px-4 py-2 bg-white/10 border border-white/20 rounded-xl text-sm font-bold backdrop-blur-md hover:bg-white/20 transition-colors">محطات الطاقة</span>
+                                        <span class="px-4 py-2 bg-white/10 border border-white/20 rounded-xl text-sm font-bold backdrop-blur-md hover:bg-white/20 transition-colors">مصانع الأسمنت والتعدين</span>
+                                    </div>
+                                </div>
+                                <div class="bg-rose-50 border border-rose-100 p-8 rounded-3xl shadow-sm">
+                                    <h4 class="text-xl font-black text-rose-700 mb-6 flex items-center gap-3"><i class="fa-solid fa-screwdriver-wrench text-2xl"></i> الأعطال الشائعة والصيانة</h4>
+                                    <ul class="space-y-4">
+                                        <li class="flex items-start gap-3">
+                                            <i class="fa-solid fa-triangle-exclamation text-rose-500 mt-1"></i>
+                                            <span class="text-slate-700 font-medium">تآكل أو صدأ جسم معدات التخزين <span class="text-rose-600 text-sm block mt-1">← إجراء فحص دوري للكشف عن التآكل.</span></span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <i class="fa-solid fa-triangle-exclamation text-rose-500 mt-1"></i>
+                                            <span class="text-slate-700 font-medium">تسرب المواد من الوصلات أو الصمامات <span class="text-rose-600 text-sm block mt-1">← فحص الوصلات والتأكد من عدم وجود تسربات.</span></span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <i class="fa-solid fa-triangle-exclamation text-rose-500 mt-1"></i>
+                                            <span class="text-slate-700 font-medium">تكتل المواد الصلبة داخل الخزانات أو الصوامع <span class="text-rose-600 text-sm block mt-1">← تنظيف المعدات وإزالة الرواسب.</span></span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <i class="fa-solid fa-triangle-exclamation text-rose-500 mt-1"></i>
+                                            <span class="text-slate-700 font-medium">ارتفاع الضغط أو تلف أجهزة الأمان <span class="text-rose-600 text-sm block mt-1">← اختبار صمامات الأمان والالتزام بحدود التصميم.</span></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. المناولة -->
+                <section id="handling-section" class="scroll-mt-32">
+                    <div class="bg-white rounded-[2.5rem] shadow-xl shadow-slate-200/40 border border-slate-100 overflow-hidden">
+                        <div class="bg-gradient-to-r from-orange-500 to-yellow-400 p-8 md:p-10 text-white flex flex-col md:flex-row items-center gap-6 text-center md:text-right relative overflow-hidden">
+                            <div class="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+                            <div class="w-24 h-24 bg-white/20 rounded-3xl flex items-center justify-center backdrop-blur-sm shrink-0 border border-white/30 z-10">
+                                <i class="fa-solid fa-truck-ramp-box text-5xl drop-shadow-md"></i>
+                            </div>
+                            <div class="z-10">
+                                <h3 class="text-3xl md:text-4xl font-black mb-3">معدات مناولة المواد (Material Handling)</h3>
+                                <p class="text-orange-50 font-medium text-lg max-w-xl">المعدات المستخدمة لنقل المواد من مكان إلى آخر لتسهيل العمليات.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="p-8 md:p-12 space-y-12">
+                            <!-- التعريف ومبدأ العمل -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="bg-slate-50/80 p-8 rounded-3xl border border-slate-100 hover:shadow-md transition-shadow">
+                                    <h4 class="text-xl font-black text-slate-800 mb-4 flex items-center gap-3"><i class="fa-solid fa-book-open text-orange-500 text-2xl"></i> التعريف</h4>
+                                    <p class="text-slate-600 font-medium leading-relaxed text-justify">معدات مناولة المواد هي المعدات المستخدمة لنقل المواد الصلبة أو السائلة أو الغازية من مكان إلى آخر داخل المنشأة الصناعية، بهدف تسهيل عمليات الإنتاج، وتقليل الجهد اليدوي، وزيادة كفاءة التشغيل، وتحسين السلامة.</p>
+                                </div>
+                                <div class="bg-slate-50/80 p-8 rounded-3xl border border-slate-100 hover:shadow-md transition-shadow">
+                                    <h4 class="text-xl font-black text-slate-800 mb-4 flex items-center gap-3"><i class="fa-solid fa-gears text-orange-500 text-2xl"></i> مبدأ العمل</h4>
+                                    <p class="text-slate-600 font-medium leading-relaxed text-justify">تعتمد معدات المناولة على نقل المواد باستخدام وسائل ميكانيكية أو باستخدام الموائع (الهواء أو السوائل)، ويُختار نظام المناولة وفقًا لنوع المادة، وحجمها، ومسافة النقل، والطاقة المطلوبة، وظروف التشغيل.</p>
+                                </div>
+                            </div>
+
+                            <!-- الأنواع -->
+                            <div>
+                                <h4 class="text-2xl font-black text-slate-800 mb-8 flex items-center gap-3"><i class="fa-solid fa-sitemap text-orange-500"></i> الأنواع والفرق بينها</h4>
+                                
+                                <div class="space-y-8">
+                                    <!-- الميكانيكية -->
+                                    <div class="bg-orange-50/50 p-8 rounded-3xl border border-orange-100 relative overflow-hidden">
+                                        <div class="absolute top-0 right-0 w-2 h-full bg-orange-400"></div>
+                                        <h5 class="font-black text-2xl text-orange-700 mb-6">أولاً: المناولة الميكانيكية (Mechanical Conveying)</h5>
+                                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-orange-100/50">
+                                                <strong class="text-slate-800 text-lg mb-2 block">1. الناقل بالحزام (Belt)</strong>
+                                                <p class="text-sm text-slate-600 mb-3">ينقل المواد بواسطة حزام متحرك. مناسب للمسافات الطويلة والإنتاجية العالية.</p>
+                                            </div>
+                                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-orange-100/50">
+                                                <strong class="text-slate-800 text-lg mb-2 block">2. الناقل اللولبي (Screw)</strong>
+                                                <p class="text-sm text-slate-600 mb-3">لولب دوار داخل أنبوب. مناسب للمسافات القصيرة والمواد الدقيقة (المساحيق).</p>
+                                            </div>
+                                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-orange-100/50">
+                                                <strong class="text-slate-800 text-lg mb-2 block">3. مصعد الدلاء (Bucket)</strong>
+                                                <p class="text-sm text-slate-600 mb-3">ينقل المواد رأسيًا بدلاء مثبتة على سير. مناسب لرفع المواد إلى ارتفاعات كبيرة.</p>
+                                            </div>
+                                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-orange-100/50">
+                                                <strong class="text-slate-800 text-lg mb-2 block">4. الناقل بالسلسلة (Chain)</strong>
+                                                <p class="text-sm text-slate-600 mb-3">سلاسل متحركة لنقل الأحمال الثقيلة، يتحمل الأوزان الكبيرة.</p>
+                                            </div>
+                                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-orange-100/50">
+                                                <strong class="text-slate-800 text-lg mb-2 block">5. الناقل بالأسطوانات (Roller)</strong>
+                                                <p class="text-sm text-slate-600 mb-3">مجموعة أسطوانات لنقل المنتجات المعبأة أو المغلفة.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- غير الميكانيكية -->
+                                    <div class="bg-yellow-50/50 p-8 rounded-3xl border border-yellow-100 relative overflow-hidden">
+                                        <div class="absolute top-0 right-0 w-2 h-full bg-yellow-400"></div>
+                                        <h5 class="font-black text-2xl text-yellow-700 mb-6">ثانياً: المناولة غير الميكانيكية (Non-Mechanical)</h5>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-yellow-100/50">
+                                                <strong class="text-slate-800 text-lg mb-2 block">1. النقل الهوائي (Pneumatic)</strong>
+                                                <p class="text-sm text-slate-600 mb-3">يعتمد على تيار من الهواء أو الغاز لنقل المواد داخل الأنابيب. (للمساحيق، الأسمنت).</p>
+                                                <span class="inline-block px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-bold rounded-lg border border-emerald-100">نظام مغلق يقلل التلوث</span>
+                                            </div>
+                                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-yellow-100/50">
+                                                <strong class="text-slate-800 text-lg mb-2 block">2. النقل الهيدروليكي (Hydraulic)</strong>
+                                                <p class="text-sm text-slate-600 mb-3">يعتمد على الماء أو سائل آخر لنقل المواد خلال الأنابيب. (لنقل الخامات والفحم).</p>
+                                                <span class="inline-block px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-bold rounded-lg border border-emerald-100">مناسب للمواد على شكل ملاط (Slurry)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- التطبيقات والأعطال -->
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                                <div class="bg-gradient-to-br from-slate-800 to-slate-700 p-8 rounded-3xl text-white shadow-lg">
+                                    <h4 class="text-xl font-black text-orange-300 mb-6 flex items-center gap-3"><i class="fa-solid fa-industry text-2xl"></i> التطبيقات الصناعية</h4>
+                                    <div class="flex flex-wrap gap-3">
+                                        <span class="px-4 py-2 bg-white/10 border border-white/20 rounded-xl text-sm font-bold backdrop-blur-md hover:bg-white/20 transition-colors">الصناعات الكيميائية</span>
+                                        <span class="px-4 py-2 bg-white/10 border border-white/20 rounded-xl text-sm font-bold backdrop-blur-md hover:bg-white/20 transition-colors">التعدين</span>
+                                        <span class="px-4 py-2 bg-white/10 border border-white/20 rounded-xl text-sm font-bold backdrop-blur-md hover:bg-white/20 transition-colors">صناعة الأسمنت</span>
+                                        <span class="px-4 py-2 bg-white/10 border border-white/20 rounded-xl text-sm font-bold backdrop-blur-md hover:bg-white/20 transition-colors">الصناعات الغذائية والدوائية</span>
+                                        <span class="px-4 py-2 bg-white/10 border border-white/20 rounded-xl text-sm font-bold backdrop-blur-md hover:bg-white/20 transition-colors">الموانئ والمستودعات</span>
+                                        <span class="px-4 py-2 bg-white/10 border border-white/20 rounded-xl text-sm font-bold backdrop-blur-md hover:bg-white/20 transition-colors">محطات معالجة المياه</span>
+                                    </div>
+                                </div>
+                                <div class="bg-rose-50 border border-rose-100 p-8 rounded-3xl shadow-sm">
+                                    <h4 class="text-xl font-black text-rose-700 mb-6 flex items-center gap-3"><i class="fa-solid fa-screwdriver-wrench text-2xl"></i> الأعطال الشائعة والصيانة</h4>
+                                    <ul class="space-y-4">
+                                        <li class="flex items-start gap-3">
+                                            <i class="fa-solid fa-triangle-exclamation text-rose-500 mt-1"></i>
+                                            <span class="text-slate-700 font-medium">تآكل السيور والسلاسل والبراغي اللولبية <span class="text-rose-600 text-sm block mt-1">← فحص واستبدال الأجزاء المتآكلة بانتظام.</span></span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <i class="fa-solid fa-triangle-exclamation text-rose-500 mt-1"></i>
+                                            <span class="text-slate-700 font-medium">انحراف السير الناقل عن مساره <span class="text-rose-600 text-sm block mt-1">← ضبط شد السيور ومحاذاة الناقلات.</span></span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <i class="fa-solid fa-triangle-exclamation text-rose-500 mt-1"></i>
+                                            <span class="text-slate-700 font-medium">انسداد خطوط النقل الهوائي أو الهيدروليكي <span class="text-rose-600 text-sm block mt-1">← تنظيف خطوط النقل لمنع تراكم المواد.</span></span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <i class="fa-solid fa-triangle-exclamation text-rose-500 mt-1"></i>
+                                            <span class="text-slate-700 font-medium">تلف المحامل والمحركات <span class="text-rose-600 text-sm block mt-1">← تشحيم المحامل وفحص أنظمة التشغيل دورياً.</span></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-slate-400 py-12 mt-auto border-t-4 border-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex justify-center mb-6 cursor-pointer group" onclick="navigate('home')">
+                <img src="../../Image/الشعار.png" alt="شعار أثر"
+                    class="h-20 md:h-24 w-auto object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <p class="font-medium max-w-md mx-auto mb-8">منصتك التعليمية الأقوى لاستكشاف الهندسة الكيميائية بأحدث الطرق
+                التفاعلية وبدون تعقيد.</p>
+
+            <!-- Social Icons -->
+            <p class="text-lg font-bold text-slate-300 mb-4">للتواصل معنا:</p>
+            <div class="flex justify-center items-center gap-4 mb-8">
+                <a href="https://wa.me/+966539899496?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D9%84%D8%AF%D9%8A%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D9%85%D9%86%20%D8%AE%D9%84%D8%A7%D9%84%20%D9%85%D9%88%D9%82%D8%B9%20%D8%A3%D8%AB%D8%B1."
+                    target="_blank"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-[#25D366] text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-green-500/20 group"
+                    title="تواصل عبر واتساب">
+                    <i class="fa-brands fa-whatsapp text-2xl group-hover:-rotate-12 transition-transform"></i>
+                </a>
+                <a href="mailto:AtheerBaessa@gmail.com"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-secondary text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-secondary/20 group"
+                    title="راسلنا عبر الإيميل">
+                    <i class="fa-regular fa-envelope text-2xl group-hover:rotate-12 transition-transform"></i>
+                </a>
+                <a href="https://t.me/atheer3575" target="_blank"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-[#0088cc] text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/20 group"
+                    title="تواصل عبر تليجرام">
+                    <i class="fa-brands fa-telegram text-2xl group-hover:-rotate-12 transition-transform"></i>
+                </a>
+            </div>
+
+            <div class="flex flex-col items-center justify-center gap-4 pt-8 border-t border-slate-800/50 max-w-md mx-auto">
+                <div class="text-sm font-bold text-slate-500">
+                    &copy; 2026 جميع الحقوق محفوظة لمنصة أثر.
+                </div>
+                <a href="https://mo-sakaf.github.io/mo_sakaf/" target="_blank" class="flex items-center gap-2 text-xs font-medium text-slate-500 hover:text-white transition-colors duration-300 cursor-pointer bg-slate-800/30 hover:bg-slate-700/50 px-4 py-2 rounded-full border border-slate-700/50 group">
+                    <span>تم التصميم والتطوير من قبل</span>
+                    <img src="../../Image/شعاري%20الرسمي.png" alt="شعار المطور" class="h-5 w-auto object-contain opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script src="../../js/script.js"></script>
+</body>
+</html>

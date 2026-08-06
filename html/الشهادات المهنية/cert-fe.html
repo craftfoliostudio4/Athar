@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أثر | عالم الهندسة الكيميائية</title>
+    <link rel="icon" href="../../Image/الشعار.png" type="image/png">
+    <!-- Google Fonts: Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="../../js/tailwind-config.js"></script>
+
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body class="flex flex-col min-h-screen text-slate-800">
+
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer group" onclick="navigate('home')">
+                    <img src="../../Image/الشعار.png" alt="شعار أثر"
+                        class="h-12 md:h-14 w-auto object-contain ms-2 group-hover:scale-105 transition-transform duration-300 drop-shadow-lg">
+                </div>
+
+                <!-- Menu Button -->
+                <div class="flex items-center">
+                    <button onclick="toggleSideMenu()"
+                        class="text-white hover:text-accent focus:outline-none p-2 transition-colors">
+                        <i class="fa-solid fa-bars-staggered text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- Side Menu Overlay -->
+    <div id="menu-overlay" onclick="toggleSideMenu()"
+        class="fixed inset-0 bg-dark/60 backdrop-blur-sm z-[55] opacity-0 pointer-events-none transition-opacity duration-300">
+    </div>
+
+    <!-- Side Menu Panel -->
+    <div id="side-menu"
+        class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-primary/95 backdrop-blur-2xl z-[60] transform translate-x-full transition-transform duration-300 border-l border-white/10 shadow-2xl flex flex-col">
+        <div class="p-5 flex justify-between items-center border-b border-white/10">
+            <span class="font-black text-2xl text-white">القائمة</span>
+            <button onclick="toggleSideMenu()"
+                class="text-white hover:text-accent p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+        </div>
+        <div class="p-4 space-y-2 overflow-y-auto flex-grow">
+            <button onclick="navigate('home');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-house me-3 w-5 text-center"></i> الرئيسية</button>
+            <button onclick="navigate('about');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-user-graduate me-3 w-5 text-center"></i> عن الهندسة الكيميائية</button>
+            <button onclick="navigate('subjects');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-book-open me-3 w-5 text-center"></i> المواد الدراسية</button>
+            <button onclick="navigate('industries');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-atom me-3 w-5 text-center"></i> التخصصات الدقيقة</button>
+            <button onclick="navigate('fields');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-briefcase me-3 w-5 text-center"></i> مجالات العمل</button>
+            <button onclick="navigate('equipment');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-industry me-3 w-5 text-center"></i> المعدات الصناعية</button>
+            <button onclick="navigate('software');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-laptop-code me-3 w-5 text-center"></i> البرامج الهندسية</button>
+            <button onclick="navigate('library');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-book me-3 w-5 text-center"></i> المكتبة</button>
+            <button onclick="navigate('courses');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-certificate me-3 w-5 text-center"></i> الشهادات المهنية
+</button>
+            <button onclick="navigate('fieldwork');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-helmet-safety me-3 w-5 text-center"></i> العمل الميداني</button>
+        </div>
+    </div>
+
+            <main class="flex-grow">
+        <div id="view-cert-fe" class="view-section active pt-32 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-8 sticky top-24 z-40 w-fit mr-4 md:mr-0">
+                <button onclick="navigate('courses')"
+                    class="w-12 h-12 flex items-center justify-center bg-white border border-slate-200 text-slate-500 hover:text-secondary hover:border-secondary hover:bg-slate-50 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group"
+                    title="العودة للشهادات المهنية">
+                    <i class="fa-solid fa-arrow-right-long text-xl transform group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </div>
+            
+            <div class="text-center mb-16">
+                <div class="w-20 h-20 bg-teal-50 text-teal-500 rounded-2xl flex items-center justify-center text-4xl mx-auto mb-6 shadow-sm">
+                    <i class="fa-solid fa-id-card"></i>
+                </div>
+                <h2 class="text-4xl font-black text-slate-800 mb-4">الترخيص الهندسي (FE Chemical)</h2>
+                <div class="w-24 h-2 bg-teal-500 rounded-full mx-auto"></div>
+                <p class="text-lg text-slate-600 font-medium max-w-2xl mx-auto mt-6">دليل شامل لاختبار أساسيات الهندسة الكيميائية - الخطوة الأولى نحو رخصة المهندس المحترف (PE).</p>
+            </div>
+
+            <!-- Intro Section -->
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm mb-12 flex flex-col md:flex-row items-center gap-8">
+                <div class="flex-grow">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">ما هو اختبار FE Chemical؟</h3>
+                    <p class="text-slate-600 font-medium leading-relaxed mb-4">
+                        اختبار مهني يقيس مدى إتقان خريج الهندسة الكيميائية للأساسيات الهندسية والعلمية التي اكتسبها خلال الدراسة الجامعية. ويُعد أول خطوة في مسار الحصول على رخصة المهندس المحترف <span class="font-bold text-primary">PE (Professional Engineer)</span> في الولايات المتحدة.
+                    </p>
+                    <p class="text-slate-600 font-medium leading-relaxed">
+                        يستهدف الاختبار طلاب السنة الأخيرة في الهندسة الكيميائية والخريجين الجدد، ويهدف إلى التأكد من امتلاكهم الحد الأدنى من المعارف والمهارات اللازمة لممارسة المهنة.
+                    </p>
+                </div>
+                <div class="flex-shrink-0 w-32 h-32 bg-teal-50 rounded-full flex items-center justify-center text-teal-500 text-6xl shadow-inner">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+            </div>
+
+            <!-- Grid for details -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                <!-- طبيعة الاختبار -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 bg-teal-50 text-teal-500 rounded-lg flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-laptop-file"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-800">طبيعة الاختبار</h4>
+                    </div>
+                    <ul class="space-y-3 text-slate-600 font-medium">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-teal-500 mt-1"></i><span>اختبار محوسب (Computer-Based Test).</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-teal-500 mt-1"></i><span>يعتمد على أسئلة الاختيار من متعدد وأنواع تفاعلية أخرى.</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-teal-500 mt-1"></i><span>مدته حوالي 6 ساعات، تتضمن وقتاً للتعليمات واستراحة قصيرة.</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-teal-500 mt-1"></i><span>يُسمح باستخدام NCEES FE Reference Handbook الإلكتروني فقط.</span></li>
+                    </ul>
+                </div>
+
+                <!-- لماذا يعد مهما -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 bg-teal-50 text-teal-500 rounded-lg flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-800">لماذا يُعد مهماً؟</h4>
+                    </div>
+                    <ul class="space-y-3 text-slate-600 font-medium">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-arrow-left text-teal-500 mt-1"></i><span>يثبت امتلاك المهندس لأساسيات الهندسة الكيميائية.</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-arrow-left text-teal-500 mt-1"></i><span>يعد المتطلب الأول للحصول على رخصة PE.</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-arrow-left text-teal-500 mt-1"></i><span>يزيد فرص العمل في الشركات العالمية والمكاتب الاستشارية.</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-arrow-left text-teal-500 mt-1"></i><span>يمنح صاحب العمل ثقة أكبر بكفاءة المهندس.</span></li>
+                    </ul>
+                </div>
+
+                <!-- بعد الاجتياز -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 bg-teal-50 text-teal-500 rounded-lg flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-medal"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-800">بعد اجتياز الاختبار</h4>
+                    </div>
+                    <p class="text-slate-600 font-medium leading-relaxed">
+                        يُسجل المهندس بصفة <span class="font-bold text-primary">Engineering Intern (EI)</span> أو <span class="font-bold text-primary">Engineer in Training (EIT)</span> بحسب الولاية.
+                        <br><br>
+                        ثم يكتسب الخبرة العملية المطلوبة، وبعدها يصبح مؤهلاً للتقدم لاختبار PE Chemical للحصول على رخصة المهندس المحترف.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Subjects Section -->
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-12 h-12 bg-teal-50 text-teal-500 rounded-xl flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">الموضوعات التي يغطيها الاختبار</h3>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                        <h4 class="font-bold text-teal-600 mb-2">1. الرياضيات (Mathematics)</h4>
+                        <p class="text-sm text-slate-600">(الهندسة التحليلية واللوغاريتمات وعلم المثلثات، التفاضل والتكامل، المعادلات التفاضلية، الطرق العددية، الجبر، الدقة والإحكام والأرقام المعنوية)</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                        <h4 class="font-bold text-teal-600 mb-2">2. الاحتمالات والإحصاء (Probability &amp; Statistics)</h4>
+                        <p class="text-sm text-slate-600">(التوزيعات الاحتمالية، القيمة المتوقعة، اختبار الفرضيات وتصميم التجارب، مقاييس النزعة المركزية والتشتت، الانحدار وملاءمة المنحنيات، التحكم الإحصائي في العمليات)</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                        <h4 class="font-bold text-teal-600 mb-2">3. العلوم الهندسية (Engineering Sciences)</h4>
+                        <p class="text-sm text-slate-600">(الميكانيكا الأساسية، الشغل والطاقة والقدرة، أساسيات الكهرباء والدوائر الكهربائية)</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                        <h4 class="font-bold text-teal-600 mb-2">4. علم المواد (Materials Science)</h4>
+                        <p class="text-sm text-slate-600">(الخصائص الكيميائية والفيزيائية والميكانيكية للمواد، أنواع المواد وتوافقها، التآكل وطرق مكافحته، البوليمرات والسيراميك والمواد المركبة)</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                        <h4 class="font-bold text-teal-600 mb-2">5. الكيمياء والأحياء (Chemistry &amp; Biology)</h4>
+                        <p class="text-sm text-slate-600">(الكيمياء غير العضوية، الكيمياء العضوية، الكيمياء التحليلية، الكيمياء الحيوية والأحياء الدقيقة والأحياء الجزيئية، العمليات الحيوية)</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                        <h4 class="font-bold text-teal-600 mb-2">6. ميكانيكا الموائع (Fluid Mechanics)</h4>
+                        <p class="text-sm text-slate-600">(خواص الموائع، الأعداد اللابعدية، معادلة الطاقة الميكانيكية، معادلة برنولي، الجريان الصفحي والمضطرب، قياس التدفق، المضخات والتوربينات والضواغط وأنظمة التفريغ، الجريان الانضغاطي والموائع غير النيوتونية)</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                        <h4 class="font-bold text-teal-600 mb-2">7. الديناميكا الحرارية (Thermodynamics)</h4>
+                        <p class="text-sm text-slate-600">(خواص المواد النقية والمخاليط، مخططات الأطوار والجداول الحرارية، قوانين الديناميكا الحرارية، العمليات الديناميكية الحرارية، الدورات الحرارية والكفاءة، اتزان الأطوار، الاتزان الكيميائي، حرارة التفاعل والخلط)</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                        <h4 class="font-bold text-teal-600 mb-2">8. موازنة المادة والطاقة (Material &amp; Energy Balances)</h4>
+                        <p class="text-sm text-slate-600">(موازنة المادة والطاقة في الحالة المستقرة وغير المستقرة، أنظمة إعادة التدوير والتجاوز، الموازنات مع التفاعلات الكيميائية)</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                        <h4 class="font-bold text-teal-600 mb-2">9. انتقال الحرارة (Heat Transfer)</h4>
+                        <p class="text-sm text-slate-600">(التوصيل الحراري، الحمل الحراري، الإشعاع الحراري، معاملات انتقال الحرارة، معدات انتقال الحرارة وتصميمها وتشغيلها)</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                        <h4 class="font-bold text-teal-600 mb-2">10. انتقال الكتلة وعمليات الفصل (Mass Transfer &amp; Separation)</h4>
+                        <p class="text-sm text-slate-600">(الانتشار الجزيئي، انتقال الكتلة بالحمل، عمليات الفصل، طرق الاتزان المرحلي، معدات التلامس المستمر، الترطيب والتجفيف والتبخير)</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                        <h4 class="font-bold text-teal-600 mb-2">11. مناولة المواد الصلبة (Solids Handling)</h4>
+                        <p class="text-sm text-slate-600">(خواص الجسيمات، عمليات معالجة المواد الصلبة، نقل وتخزين المواد الصلبة)</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                        <h4 class="font-bold text-teal-600 mb-2">12. هندسة التفاعلات الكيميائية (Chemical Reaction Engineering)</h4>
+                        <p class="text-sm text-slate-600">(معدلات التفاعل ورتبة التفاعل، ثابت سرعة التفاعل، التحول والمردود والانتقائية، أنواع التفاعلات، أنواع المفاعلات الكيميائية، الحفز)</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                        <h4 class="font-bold text-teal-600 mb-2">13. الاقتصاد الهندسي (Engineering Economics)</h4>
+                        <p class="text-sm text-slate-600">(القيمة الزمنية للنقود، التحليل الاقتصادي، عدم اليقين وتحليل المخاطر، اختيار وتقييم المشاريع)</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                        <h4 class="font-bold text-teal-600 mb-2">14. تصميم العمليات (Process Design)</h4>
+                        <p class="text-sm text-slate-600">(مخططات العمليات ومخططات الأنابيب والأجهزة، اختيار المعدات والتحجيم، تقدير تكاليف المعدات والمنشآت، تصميم وتحسين العمليات، المواصفات والمعايير الهندسية)</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                        <h4 class="font-bold text-teal-600 mb-2">15. التحكم في العمليات (Process Control)</h4>
+                        <p class="text-sm text-slate-600">(ديناميكية العمليات، استراتيجيات التحكم، تصميم حلقات التحكم وأنظمة التحكم الصناعية)</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                        <h4 class="font-bold text-teal-600 mb-2">16. السلامة والصحة والبيئة (Safety, Health &amp; Environment)</h4>
+                        <p class="text-sm text-slate-600">(خصائص المواد الخطرة، الصحة الصناعية، سلامة العمليات وتحليل المخاطر، الحماية من الضغط الزائد والمنخفض، إدارة ومعالجة النفايات، مخاطر التفاعلات الكيميائية)</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                        <h4 class="font-bold text-teal-600 mb-2">17. الأخلاقيات والممارسة المهنية (Ethics &amp; Professional Practice)</h4>
+                        <p class="text-sm text-slate-600">(أخلاقيات المهنة، العقود والاتفاقيات، السلامة والمسؤولية المهنية، الملكية الفكرية)</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+
+
+    <footer class="bg-dark text-slate-400 py-12 mt-auto border-t-4 border-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex justify-center mb-6 cursor-pointer group" onclick="navigate('home')">
+                <img src="../../Image/الشعار.png" alt="شعار أثر"
+                    class="h-20 md:h-24 w-auto object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <p class="font-medium max-w-md mx-auto mb-8">منصتك التعليمية الأقوى لاستكشاف الهندسة الكيميائية بأحدث الطرق
+                التفاعلية وبدون تعقيد.</p>
+
+            <!-- Social Icons -->
+            <p class="text-lg font-bold text-slate-300 mb-4">للتواصل معنا:</p>
+            <div class="flex justify-center items-center gap-4 mb-8">
+                <a href="https://wa.me/+966539899496?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D9%84%D8%AF%D9%8A%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D9%85%D9%86%20%D8%AE%D9%84%D8%A7%D9%84%20%D9%85%D9%88%D9%82%D8%B9%20%D8%A3%D8%AB%D8%B1."
+                    target="_blank"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-[#25D366] text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-green-500/20 group"
+                    title="تواصل عبر واتساب">
+                    <i class="fa-brands fa-whatsapp text-2xl group-hover:-rotate-12 transition-transform"></i>
+                </a>
+                <a href="mailto:AtheerBaessa@gmail.com"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-secondary text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-secondary/20 group"
+                    title="راسلنا عبر الإيميل">
+                    <i class="fa-regular fa-envelope text-2xl group-hover:rotate-12 transition-transform"></i>
+                </a>
+                <a href="https://t.me/atheer3575" target="_blank"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-[#0088cc] text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/20 group"
+                    title="تواصل عبر تليجرام">
+                    <i class="fa-brands fa-telegram text-2xl group-hover:-rotate-12 transition-transform"></i>
+                </a>
+            </div>
+
+            <div class="flex flex-col items-center justify-center gap-4 pt-8 border-t border-slate-800/50 max-w-md mx-auto">
+                <div class="text-sm font-bold text-slate-500">
+                    &copy; 2026 جميع الحقوق محفوظة لمنصة أثر.
+                </div>
+                <a href="https://mo-sakaf.github.io/mo_sakaf/" target="_blank" class="flex items-center gap-2 text-xs font-medium text-slate-500 hover:text-white transition-colors duration-300 cursor-pointer bg-slate-800/30 hover:bg-slate-700/50 px-4 py-2 rounded-full border border-slate-700/50 group">
+                    <span>تم التصميم والتطوير من قبل</span>
+                    <img src="../../Image/شعاري%20الرسمي.png" alt="شعار المطور" class="h-5 w-auto object-contain opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Toast Message Container -->
+    <div id="toast-container">
+        <i class="fa-solid fa-circle-info text-accent text-xl"></i>
+        <span id="toast-message" class="font-bold"></span>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script src="../../js/script.js"></script>
+</body>
+
+</html>

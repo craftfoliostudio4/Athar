@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أثر | عالم الهندسة الكيميائية</title>
+    <link rel="icon" href="../../Image/الشعار.png" type="image/png">
+    <!-- Google Fonts: Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="../../js/tailwind-config.js"></script>
+
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body class="flex flex-col min-h-screen text-slate-800">
+
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer group" onclick="navigate('home')">
+                    <img src="../../Image/الشعار.png" alt="شعار أثر"
+                        class="h-12 md:h-14 w-auto object-contain ms-2 group-hover:scale-105 transition-transform duration-300 drop-shadow-lg">
+                </div>
+
+                <!-- Menu Button -->
+                <div class="flex items-center">
+                    <button onclick="toggleSideMenu()"
+                        class="text-white hover:text-accent focus:outline-none p-2 transition-colors">
+                        <i class="fa-solid fa-bars-staggered text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- Side Menu Overlay -->
+    <div id="menu-overlay" onclick="toggleSideMenu()"
+        class="fixed inset-0 bg-dark/60 backdrop-blur-sm z-[55] opacity-0 pointer-events-none transition-opacity duration-300">
+    </div>
+
+    <!-- Side Menu Panel -->
+    <div id="side-menu"
+        class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-primary/95 backdrop-blur-2xl z-[60] transform translate-x-full transition-transform duration-300 border-l border-white/10 shadow-2xl flex flex-col">
+        <div class="p-5 flex justify-between items-center border-b border-white/10">
+            <span class="font-black text-2xl text-white">القائمة</span>
+            <button onclick="toggleSideMenu()"
+                class="text-white hover:text-accent p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+        </div>
+        <div class="p-4 space-y-2 overflow-y-auto flex-grow">
+            <button onclick="navigate('home');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-house me-3 w-5 text-center"></i> الرئيسية</button>
+            <button onclick="navigate('about');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-user-graduate me-3 w-5 text-center"></i> عن الهندسة الكيميائية</button>
+            <button onclick="navigate('subjects');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-book-open me-3 w-5 text-center"></i> المواد الدراسية</button>
+            <button onclick="navigate('industries');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-atom me-3 w-5 text-center"></i> التخصصات الدقيقة</button>
+            <button onclick="navigate('fields');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-briefcase me-3 w-5 text-center"></i> مجالات العمل</button>
+            <button onclick="navigate('equipment');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-industry me-3 w-5 text-center"></i> المعدات الصناعية</button>
+            <button onclick="navigate('software');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-laptop-code me-3 w-5 text-center"></i> البرامج الهندسية</button>
+            <button onclick="navigate('library');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-book me-3 w-5 text-center"></i> المكتبة</button>
+            <button onclick="navigate('courses');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-certificate me-3 w-5 text-center"></i> الشهادات المهنية
+</button>
+            <button onclick="navigate('fieldwork');"
+                class="block w-full text-right px-4 py-3 rounded-xl text-base font-bold text-white/90 hover:bg-white/10 hover:text-accent transition-colors"><i
+                    class="fa-solid fa-helmet-safety me-3 w-5 text-center"></i> العمل الميداني</button>
+        </div>
+    </div>
+
+            <main class="flex-grow pt-20">
+        <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <!-- Back Button -->
+            <div class="mb-8 animate-slide-down sticky top-24 z-40 w-fit mr-4 md:mr-0">
+                <button onclick="navigate('home')"
+                    class="w-12 h-12 flex items-center justify-center bg-white border border-slate-200 text-slate-500 hover:text-rose-500 hover:border-rose-500 hover:bg-rose-50 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group"
+                    title="العودة للرئيسية">
+                    <i class="fa-solid fa-arrow-right-long text-xl transform group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </div>
+            
+            <div class="text-center mb-12 animate-slide-up">
+                <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-rose-50 text-rose-500 mb-6 shadow-sm border border-rose-100">
+                    <i class="fa-solid fa-book-open-reader text-4xl"></i>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-black text-slate-800 mb-4">المكتبة</h1>
+                <div class="w-24 h-1.5 bg-gradient-to-r from-rose-500 to-rose-300 rounded-full mx-auto mb-6"></div>
+                <p class="text-lg text-slate-500 font-medium max-w-2xl mx-auto">مكتبة شاملة تحتوي على أهم الكتب والمراجع المفيدة للمهندس الكيميائي.</p>
+            </div>
+
+                        <div class="mb-12 animate-slide-up">
+                <div class="relative max-w-2xl mx-auto">
+                    <input type="text" id="globalSearchInput" placeholder="ابحث عن كتاب في المكتبة الشاملة..." 
+                        class="w-full pl-12 pr-4 py-4 rounded-2xl border border-slate-200 focus:border-rose-500 focus:ring-2 focus:ring-rose-200 outline-none transition-all shadow-sm text-slate-700 bg-white/80 backdrop-blur-sm"
+                        onkeyup="searchGlobalBooks()">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 text-lg"></i>
+                </div>
+            </div>
+            
+            <div id="searchResultsContainer" class="hidden mb-16 space-y-4 animate-slide-up">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-black text-slate-800">نتائج البحث</h2>
+                    <button onclick="clearSearch()" class="text-sm font-bold text-rose-500 hover:text-rose-600 bg-rose-50 px-4 py-2 rounded-xl transition-colors">إلغاء البحث <i class="fa-solid fa-xmark ms-1"></i></button>
+                </div>
+                <div id="resultsList" class="space-y-4"></div>
+            </div>
+            
+            <script>
+                const allBooks = [{"title":"AIChE Student Handbook","url":"https://drive.google.com/file/d/16HZUhdIV5sseQH79eCPSY23vSS4_gKKu/view?usp=drive_link","category":"أساسيات الهندسة الكيميائية","categoryLink":"lib-basics.html"},{"title":"Introduction to Chemical Engineering","url":"https://drive.google.com/file/d/1EaO1htIfSpH5GP9As7F6t-zcFPIfo1pG/view?usp=drive_link","category":"أساسيات الهندسة الكيميائية","categoryLink":"lib-basics.html"},{"title":"Basic Principles and Calculations in Chemical Engineering","url":"https://drive.google.com/file/d/1xPUsVVNVc24j9x3BUDG2e7bM0EkcuiZj/view?usp=drive_link","category":"أساسيات الهندسة الكيميائية","categoryLink":"lib-basics.html"},{"title":"Principles of Chemical Processes, 4th Edition","url":"https://drive.google.com/file/d/14mk4pb4BzfhVR1HIvd7vJRvOztu1EwJK/view?usp=drive_link","category":"أساسيات الهندسة الكيميائية","categoryLink":"lib-basics.html"},{"title":"Introduction to Chemical Engineering Thermodynamics (Smith, Van Ness, Abbott)","url":"https://drive.google.com/file/d/1ZuCiWRKsSPm1_sYVAMyYJLj1NW93KsJ8/view?usp=drive_link","category":"أساسيات الهندسة الكيميائية","categoryLink":"lib-basics.html"},{"title":"Perry's Chemical Engineers' Handbook","url":"https://drive.google.com/file/d/1299KNgcuVa__sPTfwKiA-mzY9Jz-cE7-/view?usp=drive_link","category":"أساسيات الهندسة الكيميائية","categoryLink":"lib-basics.html"},{"title":"انتقال الحرارة","url":"https://drive.google.com/file/d/1ecDCziH7ptoD2TJjXdlTF6fHwflXPQnn/view?usp=drive_link","category":"انتقال الحرارة","categoryLink":"lib-heat.html"},{"title":"Heat Transfer","url":"https://drive.google.com/file/d/1ub69LPmrZWhIIS7YkCz3L8_7uTRm_CnB/view?usp=drive_link","category":"انتقال الحرارة","categoryLink":"lib-heat.html"},{"title":"Fundamentals of Fluid Mechanics (2009)","url":"https://drive.google.com/file/d/1AY3o2sf37sZMDvI0VpCd5htpAXAiOAzn/view?usp=drive_link","category":"ميكانيكا الموائع","categoryLink":"lib-fluid.html"},{"title":"Introduction to Chemical Engineering","url":"https://drive.google.com/file/d/1EaO1htIfSpH5GP9As7F6t-zcFPIfo1pG/view?usp=drive_link","category":"الديناميكا الحرارية","categoryLink":"lib-thermo.html"},{"title":"Introduction to Chemical Engineering Thermodynamics (Smith, Van Ness, Abbott)","url":"https://drive.google.com/file/d/1ZuCiWRKsSPm1_sYVAMyYJLj1NW93KsJ8/view?usp=drive_link","category":"الديناميكا الحرارية","categoryLink":"lib-thermo.html"},{"title":"Coulson & Richardson's Chemical Engineering Volume 2","url":"https://drive.google.com/file/d/1CADpUfoXJYnWcYhz4MLC6bmP4qYhaNjf/view?usp=drive_link","category":"عمليات الانتقال والعمليات","categoryLink":"lib-transport.html"},{"title":"Transport Processes and Unit Operations (Geankoplis)","url":"https://drive.google.com/file/d/1-QuFCPd7uJJvlJ2Ayq0mLZe4hpgHqqYJ/view?usp=drive_link","category":"عمليات الانتقال والعمليات","categoryLink":"lib-transport.html"},{"title":"الصناعات الكيميائية الصغيرة","url":"https://drive.google.com/file/d/12dObCbhASccjH63s820U7zovOisChoCr/view?usp=drive_link","category":"الصناعات الكيميائية","categoryLink":"lib-industries.html"},{"title":"Industrial Chemical Processes (Tarek Kakhia)","url":"https://drive.google.com/file/d/1O8Ll4uu0E47zWZvLhL4CbfqI2wvGGnyx/view?usp=drive_link","category":"الصناعات الكيميائية","categoryLink":"lib-industries.html"},{"title":"البتروكيماويات والصناعات البتروكيماوية","url":"https://drive.google.com/file/d/1RBvOtiEzSSlUlHZ1yR7krFqkF8qXzkOG/view?usp=drive_link","category":"البتروكيماويات","categoryLink":"lib-petro.html"},{"title":"دليل المختبرات الكيميائية TURKICHEM","url":"https://drive.google.com/file/d/1PmHWaCEQ_C3_yHQXAeFIRgQ_b6f-b65W/view?usp=drive_link","category":"المختبرات","categoryLink":"lib-labs.html"},{"title":"Free Books, Courses For Engineers","url":"https://drive.google.com/file/d/1Phv40A0So-7V5-iJsbflvcC0NBodb_2X/view?usp=drive_link","category":"مراجع عامة","categoryLink":"lib-general.html"}];
+                
+                function searchGlobalBooks() {
+                    const query = document.getElementById('globalSearchInput').value.toLowerCase().trim();
+                    const categoriesGrid = document.getElementById('categoriesGrid');
+                    const resultsContainer = document.getElementById('searchResultsContainer');
+                    const resultsList = document.getElementById('resultsList');
+                    
+                    if (query === '') {
+                        clearSearch();
+                        return;
+                    }
+                    
+                    categoriesGrid.style.display = 'none';
+                    resultsContainer.classList.remove('hidden');
+                    
+                    const matches = allBooks.filter(b => b.title.toLowerCase().includes(query));
+                    
+                    if (matches.length > 0) {
+                        resultsList.innerHTML = matches.map(b => `
+                            <div class="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-100 hover:shadow-md transition-all duration-300 flex flex-col sm:flex-row items-center justify-between gap-4 group">
+                                <div class="flex items-center gap-4 w-full sm:w-auto">
+                                    <div class="w-14 h-14 rounded-2xl bg-rose-50 text-rose-500 flex flex-shrink-0 items-center justify-center text-2xl">
+                                        <i class="fa-solid fa-book"></i>
+                                    </div>
+                                    <div class="text-right w-full sm:w-auto">
+                                        <h3 class="font-bold text-slate-800 text-lg" dir="auto">${b.title}</h3>
+                                        <a href="${b.categoryLink}" class="text-xs font-bold text-slate-400 hover:text-rose-500 transition-colors mt-1 inline-flex items-center gap-1"><i class="fa-solid fa-folder-open"></i> ${b.category}</a>
+                                    </div>
+                                </div>
+                                <a href="${b.url}" target="_blank" class="w-full sm:w-auto text-center px-8 py-3 bg-gradient-to-r from-rose-600 to-rose-400 hover:from-rose-500 hover:to-rose-300 text-white rounded-xl font-bold transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2 whitespace-nowrap">
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i> إطلاع
+                                </a>
+                            </div>
+                        `).join('');
+                    } else {
+                        resultsList.innerHTML = '<div class="text-center text-slate-500 font-medium py-12 bg-slate-50 rounded-2xl border border-slate-100"><i class="fa-solid fa-face-frown text-4xl mb-4 text-slate-300 block"></i> لم نجد أي كتاب يطابق بحثك</div>';
+                    }
+                }
+                
+                function clearSearch() {
+                    document.getElementById('globalSearchInput').value = '';
+                    document.getElementById('categoriesGrid').style.display = 'grid';
+                    document.getElementById('searchResultsContainer').classList.add('hidden');
+                }
+            </script>
+<div id="categoriesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-slide-up" style="animation-delay: 0.1s;">
+
+        <div onclick="window.location.href='lib-basics.html'" class="power-card bg-white rounded-[2rem] p-8 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col items-center text-center relative overflow-hidden hover:-translate-y-2">
+            <div class="absolute -right-10 -top-10 w-32 h-32 bg-blue-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-700 ease-out"></div>
+            
+            <div class="w-20 h-20 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center text-4xl mb-6 relative z-10 transition-transform group-hover:scale-110 duration-300 shadow-sm border border-blue-100">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+            
+            <h3 class="text-2xl font-black text-slate-800 mb-3 relative z-10">أساسيات الهندسة الكيميائية</h3>
+            <p class="text-slate-500 font-medium leading-relaxed relative z-10 mb-6">كتب أساسية لمدخل الهندسة الكيميائية.</p>
+            
+            <div class="mt-auto relative z-10 w-full">
+                <span class="inline-flex w-full items-center justify-center px-6 py-3 bg-slate-50 text-slate-600 font-bold rounded-xl group-hover:bg-blue-500 group-hover:text-white transition-colors duration-300">
+                    عرض الكتب <i class="fa-solid fa-arrow-left ms-2"></i>
+                </span>
+            </div>
+        </div>
+    
+        <div onclick="window.location.href='lib-heat.html'" class="power-card bg-white rounded-[2rem] p-8 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col items-center text-center relative overflow-hidden hover:-translate-y-2">
+            <div class="absolute -right-10 -top-10 w-32 h-32 bg-orange-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-700 ease-out"></div>
+            
+            <div class="w-20 h-20 bg-orange-50 text-orange-500 rounded-2xl flex items-center justify-center text-4xl mb-6 relative z-10 transition-transform group-hover:scale-110 duration-300 shadow-sm border border-orange-100">
+                <i class="fa-solid fa-fire"></i>
+            </div>
+            
+            <h3 class="text-2xl font-black text-slate-800 mb-3 relative z-10">انتقال الحرارة</h3>
+            <p class="text-slate-500 font-medium leading-relaxed relative z-10 mb-6">مقررات ومراجع تخص انتقال الحرارة.</p>
+            
+            <div class="mt-auto relative z-10 w-full">
+                <span class="inline-flex w-full items-center justify-center px-6 py-3 bg-slate-50 text-slate-600 font-bold rounded-xl group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300">
+                    عرض الكتب <i class="fa-solid fa-arrow-left ms-2"></i>
+                </span>
+            </div>
+        </div>
+    
+        <div onclick="window.location.href='lib-fluid.html'" class="power-card bg-white rounded-[2rem] p-8 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col items-center text-center relative overflow-hidden hover:-translate-y-2">
+            <div class="absolute -right-10 -top-10 w-32 h-32 bg-cyan-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-700 ease-out"></div>
+            
+            <div class="w-20 h-20 bg-cyan-50 text-cyan-500 rounded-2xl flex items-center justify-center text-4xl mb-6 relative z-10 transition-transform group-hover:scale-110 duration-300 shadow-sm border border-cyan-100">
+                <i class="fa-solid fa-water"></i>
+            </div>
+            
+            <h3 class="text-2xl font-black text-slate-800 mb-3 relative z-10">ميكانيكا الموائع</h3>
+            <p class="text-slate-500 font-medium leading-relaxed relative z-10 mb-6">كتب تشرح حركة وسلوك الموائع.</p>
+            
+            <div class="mt-auto relative z-10 w-full">
+                <span class="inline-flex w-full items-center justify-center px-6 py-3 bg-slate-50 text-slate-600 font-bold rounded-xl group-hover:bg-cyan-500 group-hover:text-white transition-colors duration-300">
+                    عرض الكتب <i class="fa-solid fa-arrow-left ms-2"></i>
+                </span>
+            </div>
+        </div>
+    
+        <div onclick="window.location.href='lib-thermo.html'" class="power-card bg-white rounded-[2rem] p-8 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col items-center text-center relative overflow-hidden hover:-translate-y-2">
+            <div class="absolute -right-10 -top-10 w-32 h-32 bg-red-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-700 ease-out"></div>
+            
+            <div class="w-20 h-20 bg-red-50 text-red-500 rounded-2xl flex items-center justify-center text-4xl mb-6 relative z-10 transition-transform group-hover:scale-110 duration-300 shadow-sm border border-red-100">
+                <i class="fa-solid fa-temperature-half"></i>
+            </div>
+            
+            <h3 class="text-2xl font-black text-slate-800 mb-3 relative z-10">الديناميكا الحرارية</h3>
+            <p class="text-slate-500 font-medium leading-relaxed relative z-10 mb-6">الديناميكا الحرارية وتطبيقاتها.</p>
+            
+            <div class="mt-auto relative z-10 w-full">
+                <span class="inline-flex w-full items-center justify-center px-6 py-3 bg-slate-50 text-slate-600 font-bold rounded-xl group-hover:bg-red-500 group-hover:text-white transition-colors duration-300">
+                    عرض الكتب <i class="fa-solid fa-arrow-left ms-2"></i>
+                </span>
+            </div>
+        </div>
+    
+        <div onclick="window.location.href='lib-transport.html'" class="power-card bg-white rounded-[2rem] p-8 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col items-center text-center relative overflow-hidden hover:-translate-y-2">
+            <div class="absolute -right-10 -top-10 w-32 h-32 bg-indigo-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-700 ease-out"></div>
+            
+            <div class="w-20 h-20 bg-indigo-50 text-indigo-500 rounded-2xl flex items-center justify-center text-4xl mb-6 relative z-10 transition-transform group-hover:scale-110 duration-300 shadow-sm border border-indigo-100">
+                <i class="fa-solid fa-arrows-turn-right"></i>
+            </div>
+            
+            <h3 class="text-2xl font-black text-slate-800 mb-3 relative z-10">عمليات الانتقال والعمليات</h3>
+            <p class="text-slate-500 font-medium leading-relaxed relative z-10 mb-6">كتب هندسة العمليات.</p>
+            
+            <div class="mt-auto relative z-10 w-full">
+                <span class="inline-flex w-full items-center justify-center px-6 py-3 bg-slate-50 text-slate-600 font-bold rounded-xl group-hover:bg-indigo-500 group-hover:text-white transition-colors duration-300">
+                    عرض الكتب <i class="fa-solid fa-arrow-left ms-2"></i>
+                </span>
+            </div>
+        </div>
+    
+        <div onclick="window.location.href='lib-industries.html'" class="power-card bg-white rounded-[2rem] p-8 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col items-center text-center relative overflow-hidden hover:-translate-y-2">
+            <div class="absolute -right-10 -top-10 w-32 h-32 bg-emerald-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-700 ease-out"></div>
+            
+            <div class="w-20 h-20 bg-emerald-50 text-emerald-500 rounded-2xl flex items-center justify-center text-4xl mb-6 relative z-10 transition-transform group-hover:scale-110 duration-300 shadow-sm border border-emerald-100">
+                <i class="fa-solid fa-industry"></i>
+            </div>
+            
+            <h3 class="text-2xl font-black text-slate-800 mb-3 relative z-10">الصناعات الكيميائية</h3>
+            <p class="text-slate-500 font-medium leading-relaxed relative z-10 mb-6">تطبيقات الصناعات الكيميائية.</p>
+            
+            <div class="mt-auto relative z-10 w-full">
+                <span class="inline-flex w-full items-center justify-center px-6 py-3 bg-slate-50 text-slate-600 font-bold rounded-xl group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300">
+                    عرض الكتب <i class="fa-solid fa-arrow-left ms-2"></i>
+                </span>
+            </div>
+        </div>
+    
+        <div onclick="window.location.href='lib-petro.html'" class="power-card bg-white rounded-[2rem] p-8 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col items-center text-center relative overflow-hidden hover:-translate-y-2">
+            <div class="absolute -right-10 -top-10 w-32 h-32 bg-slate-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-700 ease-out"></div>
+            
+            <div class="w-20 h-20 bg-slate-50 text-slate-500 rounded-2xl flex items-center justify-center text-4xl mb-6 relative z-10 transition-transform group-hover:scale-110 duration-300 shadow-sm border border-slate-100">
+                <i class="fa-solid fa-oil-well"></i>
+            </div>
+            
+            <h3 class="text-2xl font-black text-slate-800 mb-3 relative z-10">البتروكيماويات</h3>
+            <p class="text-slate-500 font-medium leading-relaxed relative z-10 mb-6">صناعة البتروكيماويات وتكرير النفط.</p>
+            
+            <div class="mt-auto relative z-10 w-full">
+                <span class="inline-flex w-full items-center justify-center px-6 py-3 bg-slate-50 text-slate-600 font-bold rounded-xl group-hover:bg-slate-500 group-hover:text-white transition-colors duration-300">
+                    عرض الكتب <i class="fa-solid fa-arrow-left ms-2"></i>
+                </span>
+            </div>
+        </div>
+    
+        <div onclick="window.location.href='lib-labs.html'" class="power-card bg-white rounded-[2rem] p-8 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col items-center text-center relative overflow-hidden hover:-translate-y-2">
+            <div class="absolute -right-10 -top-10 w-32 h-32 bg-purple-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-700 ease-out"></div>
+            
+            <div class="w-20 h-20 bg-purple-50 text-purple-500 rounded-2xl flex items-center justify-center text-4xl mb-6 relative z-10 transition-transform group-hover:scale-110 duration-300 shadow-sm border border-purple-100">
+                <i class="fa-solid fa-flask"></i>
+            </div>
+            
+            <h3 class="text-2xl font-black text-slate-800 mb-3 relative z-10">المختبرات</h3>
+            <p class="text-slate-500 font-medium leading-relaxed relative z-10 mb-6">أدلة وتجارب المختبرات.</p>
+            
+            <div class="mt-auto relative z-10 w-full">
+                <span class="inline-flex w-full items-center justify-center px-6 py-3 bg-slate-50 text-slate-600 font-bold rounded-xl group-hover:bg-purple-500 group-hover:text-white transition-colors duration-300">
+                    عرض الكتب <i class="fa-solid fa-arrow-left ms-2"></i>
+                </span>
+            </div>
+        </div>
+    
+        <div onclick="window.location.href='lib-general.html'" class="power-card bg-white rounded-[2rem] p-8 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col items-center text-center relative overflow-hidden hover:-translate-y-2">
+            <div class="absolute -right-10 -top-10 w-32 h-32 bg-teal-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-700 ease-out"></div>
+            
+            <div class="w-20 h-20 bg-teal-50 text-teal-500 rounded-2xl flex items-center justify-center text-4xl mb-6 relative z-10 transition-transform group-hover:scale-110 duration-300 shadow-sm border border-teal-100">
+                <i class="fa-solid fa-layer-group"></i>
+            </div>
+            
+            <h3 class="text-2xl font-black text-slate-800 mb-3 relative z-10">مراجع عامة</h3>
+            <p class="text-slate-500 font-medium leading-relaxed relative z-10 mb-6">كتب منوعة ومصادر شاملة للمهندسين.</p>
+            
+            <div class="mt-auto relative z-10 w-full">
+                <span class="inline-flex w-full items-center justify-center px-6 py-3 bg-slate-50 text-slate-600 font-bold rounded-xl group-hover:bg-teal-500 group-hover:text-white transition-colors duration-300">
+                    عرض الكتب <i class="fa-solid fa-arrow-left ms-2"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+    </main>
+
+
+    <footer class="bg-dark text-slate-400 py-12 mt-auto border-t-4 border-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex justify-center mb-6 cursor-pointer group" onclick="navigate('home')">
+                <img src="../../Image/الشعار.png" alt="شعار أثر"
+                    class="h-20 md:h-24 w-auto object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <p class="font-medium max-w-md mx-auto mb-8">منصتك التعليمية الأقوى لاستكشاف الهندسة الكيميائية بأحدث الطرق
+                التفاعلية وبدون تعقيد.</p>
+
+            <!-- Social Icons -->
+            <p class="text-lg font-bold text-slate-300 mb-4">للتواصل معنا:</p>
+            <div class="flex justify-center items-center gap-4 mb-8">
+                <a href="https://wa.me/+966539899496?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D9%84%D8%AF%D9%8A%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D9%85%D9%86%20%D8%AE%D9%84%D8%A7%D9%84%20%D9%85%D9%88%D9%82%D8%B9%20%D8%A3%D8%AB%D8%B1."
+                    target="_blank"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-[#25D366] text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-green-500/20 group"
+                    title="تواصل عبر واتساب">
+                    <i class="fa-brands fa-whatsapp text-2xl group-hover:-rotate-12 transition-transform"></i>
+                </a>
+                <a href="mailto:AtheerBaessa@gmail.com"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-secondary text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-secondary/20 group"
+                    title="راسلنا عبر الإيميل">
+                    <i class="fa-regular fa-envelope text-2xl group-hover:rotate-12 transition-transform"></i>
+                </a>
+                <a href="https://t.me/atheer3575" target="_blank"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-[#0088cc] text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/20 group"
+                    title="تواصل عبر تليجرام">
+                    <i class="fa-brands fa-telegram text-2xl group-hover:-rotate-12 transition-transform"></i>
+                </a>
+            </div>
+
+            <div class="flex flex-col items-center justify-center gap-4 pt-8 border-t border-slate-800/50 max-w-md mx-auto">
+                <div class="text-sm font-bold text-slate-500">
+                    &copy; 2026 جميع الحقوق محفوظة لمنصة أثر.
+                </div>
+                <a href="https://mo-sakaf.github.io/mo_sakaf/" target="_blank" class="flex items-center gap-2 text-xs font-medium text-slate-500 hover:text-white transition-colors duration-300 cursor-pointer bg-slate-800/30 hover:bg-slate-700/50 px-4 py-2 rounded-full border border-slate-700/50 group">
+                    <span>تم التصميم والتطوير من قبل</span>
+                    <img src="../../Image/شعاري%20الرسمي.png" alt="شعار المطور" class="h-5 w-auto object-contain opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Toast Message Container -->
+    <div id="toast-container">
+        <i class="fa-solid fa-circle-info text-accent text-xl"></i>
+        <span id="toast-message" class="font-bold"></span>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script src="../../js/script.js"></script>
+</body>
+
+</html>
