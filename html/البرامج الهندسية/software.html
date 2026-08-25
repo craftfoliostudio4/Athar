@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
@@ -138,22 +138,46 @@
                 <p class="text-slate-600 font-medium leading-relaxed mb-8 text-lg">
                     تُستخدم لمحاكاة العمليات الصناعية، دراسة سلوك العملية، إجراء موازنة المادة والطاقة، وتحليل الأداء التشغيلي قبل التنفيذ الفعلي.
                 </p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-indigo-200 hover:shadow-md transition-all flex items-center gap-4">
-                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-indigo-500 text-xl font-bold"><i class="fa-solid fa-cube"></i></div>
-                        <h4 class="text-xl font-bold text-slate-800">Aspen HYSYS</h4>
+                <!-- Aspen Programs (Stacked vertically) -->
+                <div class="flex flex-col gap-6 mb-6">
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-indigo-200 hover:shadow-md transition-all flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-right w-full">
+                        <div class="w-16 h-16 shrink-0 bg-white rounded-xl shadow-sm flex items-center justify-center text-indigo-500 text-2xl font-bold"><i class="fa-solid fa-cube"></i></div>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">Aspen HYSYS</h4>
+                            <p class="text-slate-600 leading-relaxed text-sm">يستخدم لمحاكاة وتصميم العمليات في النفط والغاز والتكرير والبتروكيماويات، وتحليل أداء وحدات المعالجة في ظروف التشغيل المختلفة.</p>
+                        </div>
                     </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-indigo-200 hover:shadow-md transition-all flex items-center gap-4">
-                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-indigo-500 text-xl font-bold"><i class="fa-solid fa-cubes"></i></div>
-                        <h4 class="text-xl font-bold text-slate-800">Aspen Plus</h4>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-indigo-200 hover:shadow-md transition-all flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-right w-full">
+                        <div class="w-16 h-16 shrink-0 bg-white rounded-xl shadow-sm flex items-center justify-center text-indigo-500 text-2xl font-bold"><i class="fa-solid fa-cubes"></i></div>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">Aspen Plus</h4>
+                            <p class="text-slate-600 leading-relaxed text-sm">يستخدم لمحاكاة وتصميم العمليات الكيميائية والصناعية، وإجراء موازين المادة والطاقة وتحليل أداء الوحدات والمعدات.</p>
+                        </div>
                     </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-indigo-200 hover:shadow-md transition-all flex items-center gap-4">
-                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-indigo-500 text-xl font-bold"><i class="fa-solid fa-flask"></i></div>
-                        <h4 class="text-xl font-bold text-slate-800">ChemCAD</h4>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-indigo-200 hover:shadow-md transition-all flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-right w-full">
+                        <div class="w-16 h-16 shrink-0 bg-white rounded-xl shadow-sm flex items-center justify-center text-indigo-500 text-2xl font-bold"><i class="fa-solid fa-fire-burner"></i></div>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">Aspen EDR</h4>
+                            <p class="text-slate-600 leading-relaxed text-sm">يستخدم لتصميم وتحليل المبادلات الحرارية، وحساب مساحة التبادل الحراري وفقد الضغط وتقييم أداء المبادل.</p>
+                        </div>
                     </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-indigo-200 hover:shadow-md transition-all flex items-center gap-4">
-                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-indigo-500 text-xl font-bold"><i class="fa-solid fa-laptop-code"></i></div>
-                        <h4 class="text-xl font-bold text-slate-800">DWSIM</h4>
+                </div>
+                
+                <!-- Other Simulation Programs (Grid layout) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-indigo-200 hover:shadow-md transition-all flex flex-col items-center text-center gap-4">
+                        <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-indigo-500 text-xl font-bold"><i class="fa-solid fa-flask"></i></div>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">ChemCAD</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">يستخدم لمحاكاة العمليات الكيميائية والصناعية، وإجراء موازين المادة والطاقة وتصميم الوحدات ودراسة ظروف التشغيل المختلفة.</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-indigo-200 hover:shadow-md transition-all flex flex-col items-center text-center gap-4">
+                        <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-indigo-500 text-xl font-bold"><i class="fa-solid fa-laptop-code"></i></div>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">DWSIM</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">يستخدم لمحاكاة العمليات وإجراء الحسابات الهندسية، ويتميز بكونه برنامجًا مفتوح المصدر ومجانيًا، للتعلم والمشاريع الأكاديمية.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -170,13 +194,19 @@
                     تُستخدم لرسم وتوثيق المخططات الهندسية مثل مخططات التدفق والمخططات التفصيلية، ولا تقوم بالمحاكاة الحسابية.
                 </p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-sky-200 hover:shadow-md transition-all flex items-center gap-4">
-                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-sky-500 text-xl font-bold"><i class="fa-solid fa-compass-drafting"></i></div>
-                        <h4 class="text-xl font-bold text-slate-800">AutoCAD</h4>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-sky-200 hover:shadow-md transition-all flex flex-col items-center text-center gap-4">
+                        <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-sky-500 text-xl font-bold"><i class="fa-solid fa-compass-drafting"></i></div>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">AutoCAD</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">يستخدم لرسم المخططات الهندسية التفصيلية، مثل P&ID و PFD والمخططات والمعدات والأنابيب، وإعداد الرسومات بدقة للتوثيق والتنفيذ.</p>
+                        </div>
                     </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-sky-200 hover:shadow-md transition-all flex items-center gap-4">
-                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-sky-500 text-xl font-bold"><i class="fa-solid fa-shapes"></i></div>
-                        <h4 class="text-xl font-bold text-slate-800">Visio</h4>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-sky-200 hover:shadow-md transition-all flex flex-col items-center text-center gap-4">
+                        <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-sky-500 text-xl font-bold"><i class="fa-solid fa-shapes"></i></div>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">Microsoft Visio</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">يستخدم لإنشاء وتوثيق مخططات العمليات والتدفق والـ Flowcharts والـ PFD والـ P&ID بشكل مبسط، وعرض العلاقات بصورة واضحة.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -193,25 +223,40 @@
                     تُستخدم برامج التحليل الهندسي في الهندسة الكيميائية لتحليل أداء العمليات والمعدات، ودراسة موازنة المادة والطاقة، وتقييم ظروف التشغيل، مما يساعد على فهم سلوك العملية، تحسين الكفاءة التشغيلية، ودعم اتخاذ القرار الهندسي.
                 </p>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-emerald-200 hover:shadow-md transition-all flex items-center gap-4">
-                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-emerald-500 text-xl font-bold"><i class="fa-solid fa-file-excel"></i></div>
-                        <h4 class="text-xl font-bold text-slate-800">Microsoft Excel</h4>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-emerald-200 hover:shadow-md transition-all flex flex-col items-center text-center gap-4">
+                        <div class="w-14 h-14 shrink-0 bg-white rounded-xl shadow-sm flex items-center justify-center text-emerald-500 text-xl font-bold"><i class="fa-solid fa-file-excel"></i></div>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">Microsoft Excel</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">يستخدم لتنظيم وتحليل البيانات الهندسية، وإجراء الحسابات وموازين المادة والطاقة، وإنشاء الجداول والرسوم البيانية.</p>
+                        </div>
                     </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-emerald-200 hover:shadow-md transition-all flex items-center gap-4">
-                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-emerald-500 text-xl font-bold"><i class="fa-solid fa-chart-line"></i></div>
-                        <h4 class="text-xl font-bold text-slate-800">PI System</h4>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-emerald-200 hover:shadow-md transition-all flex flex-col items-center text-center gap-4">
+                        <div class="w-14 h-14 shrink-0 bg-white rounded-xl shadow-sm flex items-center justify-center text-emerald-500 text-xl font-bold"><i class="fa-solid fa-chart-line"></i></div>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">PI System</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">يستخدم لجمع وتخزين وعرض بيانات التشغيل الفعلية للمصانع مثل درجات الحرارة والضغط والتدفق ومتابعة أداء العمليات.</p>
+                        </div>
                     </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-emerald-200 hover:shadow-md transition-all flex items-center gap-4">
-                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-emerald-500 text-xl font-bold"><i class="fa-solid fa-chart-simple"></i></div>
-                        <h4 class="text-xl font-bold text-slate-800">Power BI</h4>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-emerald-200 hover:shadow-md transition-all flex flex-col items-center text-center gap-4">
+                        <div class="w-14 h-14 shrink-0 bg-white rounded-xl shadow-sm flex items-center justify-center text-emerald-500 text-xl font-bold"><i class="fa-solid fa-chart-simple"></i></div>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">Power BI</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">يستخدم لتحليل بيانات العمليات وتحويلها إلى تقارير ولوحات معلومات تفاعلية تساعد في متابعة مؤشرات الأداء والمشكلات.</p>
+                        </div>
                     </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-emerald-200 hover:shadow-md transition-all flex items-center gap-4">
-                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-emerald-500 text-xl font-bold"><i class="fa-solid fa-square-root-variable"></i></div>
-                        <h4 class="text-xl font-bold text-slate-800">MATLAB</h4>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-emerald-200 hover:shadow-md transition-all flex flex-col items-center text-center gap-4">
+                        <div class="w-14 h-14 shrink-0 bg-white rounded-xl shadow-sm flex items-center justify-center text-emerald-500 text-xl font-bold"><i class="fa-solid fa-square-root-variable"></i></div>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">MATLAB</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">يستخدم لإجراء الحسابات والنمذجة والمحاكاة الرياضية للعمليات الهندسية، وتحليل البيانات وحل المعادلات المعقدة.</p>
+                        </div>
                     </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-emerald-200 hover:shadow-md transition-all flex items-center gap-4">
-                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-emerald-500 text-xl font-bold"><i class="fa-brands fa-python"></i></div>
-                        <h4 class="text-xl font-bold text-slate-800">Python</h4>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-emerald-200 hover:shadow-md transition-all flex flex-col items-center text-center gap-4">
+                        <div class="w-14 h-14 shrink-0 bg-white rounded-xl shadow-sm flex items-center justify-center text-emerald-500 text-xl font-bold"><i class="fa-brands fa-python"></i></div>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">Python</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">يستخدم في تحليل البيانات والأتمتة والنمذجة، وبناء نماذج حسابية وتطوير أدوات تساعد في تحليل العمليات.</p>
+                        </div>
                     </div>
                 </div>
             </div>
